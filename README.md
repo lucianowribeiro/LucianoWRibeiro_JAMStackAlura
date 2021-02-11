@@ -4,18 +4,13 @@
 
 Project done during the Alura'Bootcamp JamStack 
 
- :computer: Tecnologies usaded
+ :computer:Technologies used 
 
-HTML
-
-CSS
-
-Js
-
-React
-
-:NextJS
-
+HTML |
+CSS |
+Js |
+React |
+NextJS |
 StyledComponents
 
 Hope to enjoy  :smile:
