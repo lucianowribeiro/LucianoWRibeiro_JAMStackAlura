@@ -1,7 +1,5 @@
 # Instalura
 
-## Aula 1
-
 Project done during the Alura'Bootcamp JamStack 
 
  :computer:Technologies used 
@@ -11,6 +9,8 @@ CSS |
 Js |
 React |
 NextJS |
-StyledComponents
+StyledComponents |
+Styled-normalize |
+Lodash
 
 Hope to enjoy  :smile:
