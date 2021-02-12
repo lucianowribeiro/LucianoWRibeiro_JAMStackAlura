@@ -1,5 +1,6 @@
 import React from 'react';
 import { Logo } from '../../../theme/Logo';
+import { Button } from '../Button';
 import { MenuWrapper } from './styles/MenuWrapper';
 
 export default function Menu() {
@@ -7,28 +8,30 @@ export default function Menu() {
     {url: '/', name: 'Home' },
     {url: '/faq', name: 'Perguntas Frequentes' },
     {url: '/sobre', name: 'Sobre'}
-  ]
+  ];
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide> {/* MenuWrapper.LeftSide */}
         <Logo />
       </MenuWrapper.LeftSide>
-      <MenuWrapper.CentralSide as="ul"> {/* MenuWrapper.CentralSide */}
-        {links.map((link) => (
-          <li key={link.url}>
-            <a href={link.url}>
-              {link.name}
-            </a>
-          </li>
-        ))}
+      <MenuWrapper.CentralSide> {/* MenuWrapper.CentralSide */}
+        {links.map((link) => {
+            return (
+                <li key={link.url}>
+                    <a href={link.url}>
+                        {link.name}
+                    </a>
+                </li>
+            )
+        })}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide> {/* MenuWrapper.RightSide */}
-        <button type="button">
+        <Button ghost variant="secondary.main">
           Entrar
-        </button>
-        <button type="button">
+        </Button>
+        <Button variant="primary.main">
           Cadastrar
-        </button>
+        </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   );
