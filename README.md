@@ -11,6 +11,7 @@ React |
 NextJS |
 StyledComponents |
 Styled-normalize |
-Lodash
+Lodash |
+Prop-types
 
 Hope to enjoy  :smile:
