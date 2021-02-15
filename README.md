@@ -2,7 +2,7 @@
 
 Project done during the Alura'Bootcamp JamStack 
 
- :computer:Technologies used 
+:computer: Technologies used 
 
 HTML |
 CSS |
