@@ -1,6 +1,7 @@
-import {createGlobalStyle} from 'styled-components';
-import {normalize} from 'styled-normalize'
-export const GlobalStyle = createGlobalStyle`
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
+
+const GlobalStyle = createGlobalStyle`
   *{
     box-sizing: border-box;
   }
@@ -23,3 +24,5 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 `;
+
+export default GlobalStyle;
