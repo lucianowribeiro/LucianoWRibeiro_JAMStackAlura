@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
-import { TextStyleVariants } from '../../../foundation/Text';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
+import { TextStyleVariantsMap } from '../../../foundation/Text';
 
-
-export const MenuWrapper = styled.nav`
-  font-family: ${({theme})=> theme.fontFamily};
+const MenuWrapper = styled.nav`
+  font-family: 'Rubik', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,6 +47,7 @@ MenuWrapper.LeftSide = styled.div`
     `,
   })}
 `;
+
 MenuWrapper.CentralSide = styled.div`
   padding: 0;
   margin: 0;
@@ -58,9 +58,10 @@ MenuWrapper.CentralSide = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 17px;
-  border-top: 1px solid ${({theme})=> theme.colors.tertiary.light.color};
-  border-bottom: 1px solid ${({theme})=> theme.colors.tertiary.light.color};
+  border-top: 1px solid #88989E;
+  border-bottom: 1px solid #88989E;
   padding: 12px;
+  
   ${breakpointsMedia({
     md: css`
       max-width: 332px;
@@ -77,20 +78,20 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     display: block;
     text-decoration: none;
-    color: ${({theme})=> theme.colors.tertiary.light.color};
-    transition: ${({theme})=> theme.transition};
+    color: #88989E;
+    transition: 200ms ease-in-out;
     ${breakpointsMedia({
-      xs: css`
-          ${TextStyleVariants.smallestException}
-      `,
-      md: css`
-        ${TextStyleVariants.paragraph1}
+    xs: css`
+        ${TextStyleVariantsMap.smallestException}
     `,
-    })}
+    md: css`
+      ${TextStyleVariantsMap.paragraph1}
+    `,
+  })}
     &:hover,
     &:focus {
       font-weight: 500;
-      color: ${({theme})=> theme.colors.tertiary.main.color};
+      color: #070C0E;
       
     }
   }
@@ -108,4 +109,5 @@ MenuWrapper.RightSide = styled.div`
       order: initial;
     `,
   })}
-`
+`;
+export default MenuWrapper;
