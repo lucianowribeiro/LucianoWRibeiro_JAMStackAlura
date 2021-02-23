@@ -1,4 +1,3 @@
-import React from 'react';
 import typographyVariants from './typographyVariants';
 
 const colors = {
@@ -38,7 +37,43 @@ const colors = {
     },
   },
   modes: {
-    dark: {},
+    dark: {
+      background: {
+        dark: {
+          color: '#030506',
+        },
+        main: {
+          color: '#F2F2F2',
+        },
+      },
+      borders: {
+        main: {
+          color: '#181F22',
+        },
+      },
+      primary: {
+        main: {
+          color: '#F27895',
+          contrastText: '#fff',
+        },
+      },
+      secondary: {
+        main: {
+          color: '#FFA59A',
+          contrastText: '#fff',
+        },
+      },
+      tertiary: {
+        main: {
+          color: '#D5D5D5',
+          contrastText: '#fff',
+        },
+        dark: {
+          color: '#88989E',
+          contrastText: '#fff',
+        },
+      },
+    },
   },
 };
 const breakpoints = {

@@ -35,10 +35,10 @@ export default function Footer(props) {
       <a href="https://www.alura.com.br/">
         <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
       </a>
-      <p>   
+      <p>
         Criado com
         <img src="https://www.flaticon.com/svg/static/icons/svg/2107/2107845.svg" alt="heart"/>
-        por 
+        por
         {' '}
         <a href="https://github.com/lucianowribeiro/">
           <span>@lucianowribeiro</span>

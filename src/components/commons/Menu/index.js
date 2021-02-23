@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../../../theme/Logo';
 import Text from '../../foundation/Text';
 import Button from '../Button';
+import Switch from '../Swich';
 import MenuWrapper from './styles/MenuWrapper';
 
 const links = [
@@ -18,7 +19,6 @@ const links = [
     url: '/sobre',
   },
 ];
-
 export default function Menu() {
   return (
     <MenuWrapper>
