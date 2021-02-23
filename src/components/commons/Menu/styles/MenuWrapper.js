@@ -78,7 +78,10 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #88989E;
+    color: ${(props) => {
+    if (props.mode === 'light') return props.theme.colors.tertiary.dark.color;
+    return props.theme.colors.modes.dark.tertiary.dark.color;
+  }};
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
