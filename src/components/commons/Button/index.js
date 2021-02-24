@@ -52,7 +52,13 @@ const Button = styled.button`
      ${TextStyleVariantsMap.paragraph1}
     `,
   })}
-
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .2;
+  }
+  ${({ fullWidth }) => fullWidth && css`
+    width: 100%;
+  `};
   ${propToStyle('margin')}
   ${propToStyle('display')}
 `;
