@@ -9,7 +9,6 @@ const Container = styled.div`
     margin-right: auto;
     margin-left: auto;
     max-width: initial;
-
     ${breakpointsMedia({
     sm: css`
       max-width: 576px; 
@@ -26,7 +25,6 @@ const Container = styled.div`
       max-width: 1222px;
     `,
   })}
-
   ${propToStyle('marginTop')}
 `;
 
@@ -49,7 +47,6 @@ const Grid = {
     flex-grow: 1;
     max-width: 100%;
     
-
     ${function ({ value }) {
     if (typeof value === 'number') {
       return css`
@@ -59,7 +56,6 @@ const Grid = {
           max-width: ${(100 * value) / 12}%;
         `;
     }
-
     return breakpointsMedia({
       xs: value?.xs
         ? css`
@@ -103,15 +99,12 @@ const Grid = {
         : '',
     });
   }}
-
-
     ${function ({ offset }) {
     if (typeof offset === 'number') {
       return css`
           margin-left: ${(100 * offset) / 12}%;
         `;
     }
-
     return breakpointsMedia({
       xs: offset?.xs
         ? css`
@@ -140,7 +133,6 @@ const Grid = {
         : '',
     });
   }}
-
     ${propToStyle('display')}
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
@@ -148,6 +140,7 @@ const Grid = {
     ${propToStyle('paddingRight')}
     ${propToStyle('boxShadow')}
     ${propToStyle('padding')}
+    ${propToStyle('backgroundColor')}
   `,
 };
 export default Grid;
