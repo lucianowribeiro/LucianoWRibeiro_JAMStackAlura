@@ -6,7 +6,7 @@ import Grid from '../../foundation/layout/Grid';
 import Box from '../../foundation/layout/Box';
 import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
-import CloseModal from '../../commons/CloseModal';
+import CloseModal from '../../../theme/CloseModal';
 
 function FormContent() {
   const [userInfo, setUserInfo] = React.useState({
