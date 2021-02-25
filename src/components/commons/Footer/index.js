@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import RedHeart from '../../../theme/RedHeart';
 
 const FooterWrapper = styled.footer`
   padding: 14px;
@@ -12,10 +13,6 @@ const FooterWrapper = styled.footer`
   img {
     width: 58px;
     margin-right: 23px;
-  }
-  img[alt="heart"]{
-    width: 13px;
-    margin: 0 6px; 
   }
   a {
     color: ${({ theme }) => theme.colors.primary.main.color};
@@ -37,7 +34,7 @@ export default function Footer(props) {
       </a>
       <p>
         Criado com
-        <img src="https://www.flaticon.com/svg/static/icons/svg/2107/2107845.svg" alt="heart"/>
+        <RedHeart />
         por
         {' '}
         <a href="https://github.com/lucianowribeiro/">

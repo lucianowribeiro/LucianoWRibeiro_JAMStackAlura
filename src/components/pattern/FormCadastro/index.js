@@ -1,10 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+
 import Button from '../../commons/Button';
 import Grid from '../../foundation/layout/Grid';
 import Box from '../../foundation/layout/Box';
 import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
+import CloseModal from '../../../theme/CloseModal';
 
 function FormContent() {
   const [userInfo, setUserInfo] = React.useState({
@@ -70,9 +72,11 @@ function FormContent() {
     </form>
   );
 }
+
 // eslint-disable-next-line react/prop-types
-export default function FormCadastro({ propsModal }) {
+export default function FormCadastro({ onClose, propsModal }) {
   return (
+
     <Grid.Row
       marginLeft={0}
       marginRight={0}
@@ -81,10 +85,15 @@ export default function FormCadastro({ propsModal }) {
     >
       <Grid.Col
         display="flex"
+        flexDirection="row-reverse"
+        backgroundColor="white"
         paddingRight={{ md: '0' }}
-        flex={1}
         value={{ xs: 12, md: 5, lg: 4 }}
       >
+        <CloseModal onClick={() => {
+          onClose();
+        }}
+        />
         <Box
           boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
           display="flex"
