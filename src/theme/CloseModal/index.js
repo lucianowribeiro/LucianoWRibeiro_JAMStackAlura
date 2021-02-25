@@ -6,6 +6,7 @@ const CloseModal = styled(CloseCircle)`
   color: ${({ theme }) => theme.colors.tertiary.light.color};
   width: 2rem;
   margin-top: 2rem;
+  cursor: pointer;
   ${breakpointsMedia({
     md: css`
       margin-right: 1rem;
