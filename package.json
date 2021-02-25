@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@crello/react-lottie": "^0.0.11",
     "@styled-icons/boxicons-solid": "^10.23.0",
     "@styled-icons/evaicons-solid": "^10.18.0",
     "framer-motion": "^3.6.7",
