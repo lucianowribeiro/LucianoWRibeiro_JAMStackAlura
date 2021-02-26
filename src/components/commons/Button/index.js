@@ -11,12 +11,8 @@ const ButtonGhost = css`
 
 const ButtonDefault = css`
   color: white;
-  background-color: ${function (props) {
-    return get(props.theme, `colors.${props.variant}.color`);
-  }};
-  color: ${function (props) {
-    return get(props.theme, `colors.${props.variant}.contrastText`);
-  }};
+  background-color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
+  color: ${(props) => get(props.theme, `colors.${props.variant}.contrastText`)};
 `;
 
 const Button = styled.button`
@@ -29,7 +25,7 @@ const Button = styled.button`
 
   ${TextStyleVariantsMap.smallestException}
 
-  ${function (props) {
+  ${(props) => {
     if (props.ghost) {
       return ButtonGhost;
     }
