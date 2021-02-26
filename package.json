@@ -17,7 +17,7 @@
     "@styled-icons/evaicons-solid": "^10.18.0",
     "cz-conventional-changelog": "3.3.0",
     "framer-motion": "^3.6.7",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
