@@ -36,7 +36,6 @@ const LockScroll = createGlobalStyle`
   }
 `;
 
-
 function Modal({ isOpen, onClose, children }) {
   return (
     <ModalWrapper
