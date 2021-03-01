@@ -172,7 +172,7 @@ export default function FormCadastro({ onClose, propsModal }) {
           }}
         />
         <Box
-          boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
+          /* boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)" */
           display="flex"
           flexDirection="column"
           justifyContent="center"
