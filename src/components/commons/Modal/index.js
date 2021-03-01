@@ -22,11 +22,13 @@ const ModalWrapper = styled.div`
       return css`
         opacity: 1;
         pointer-events: all;
+        overflow: hidden;
       `;
     }
     return css`
       opacity: 0;
       pointer-events: none;
+      overflow: hidden;
     `;
   }}
 `;
