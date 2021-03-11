@@ -114,18 +114,17 @@ function FormContent() {
       >
         Cadastrar
       </Button>
-
       {isFormSubmited && submissionStatus === formStates.DONE && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            config={{ animationData: SuccessAnimation, loop: true, autoplay: true }}
-          />
-        </Box>
+      <Box
+        display="flex"
+        justifyContent="center"
+      >
+        <Lottie
+          width="150px"
+          height="150px"
+          config={{ animationData: SuccessAnimation, loop: true, autoplay: true }}
+        />
+      </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.LOADING && (
         <Box
