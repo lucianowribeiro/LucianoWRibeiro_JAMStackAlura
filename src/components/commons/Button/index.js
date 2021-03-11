@@ -1,12 +1,16 @@
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 import { TextStyleVariantsMap } from '../../foundation/Text';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import propToStyle from '../../../theme/utils/propToStyle';
+import Link from '../Link';
 
 const ButtonGhost = css`
   color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
-  background: transparent; 
+  background: transparent;
 `;
 
 const ButtonDefault = css`
@@ -15,7 +19,7 @@ const ButtonDefault = css`
   color: ${(props) => get(props.theme, `colors.${props.variant}.contrastText`)};
 `;
 
-const Button = styled.button`
+const ButtonWrapper = styled.button`
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
@@ -35,7 +39,7 @@ const Button = styled.button`
   border-radius: ${(props) => props.theme.borderRadius};
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   ${breakpointsMedia({
@@ -44,18 +48,32 @@ const Button = styled.button`
       ${TextStyleVariantsMap.smallestException}
     `,
     md: css`
-     /* From md breakpoint */
-     ${TextStyleVariantsMap.paragraph1}
+      /* From md breakpoint */
+      ${TextStyleVariantsMap.paragraph1}
     `,
   })}
   &:disabled {
     cursor: not-allowed;
-    opacity: .2;
+    opacity: 0.2;
   }
-  ${({ fullWidth }) => fullWidth && css`
-    width: 100%;
-  `};
+  ${({ fullWidth }) => fullWidth
+    && css`
+      width: 100%;
+    `};
   ${propToStyle('margin')}
   ${propToStyle('display')}
 `;
-export default Button;
+export default function Button({ href, ...props }) {
+  const isLink = Boolean(href);
+  const componentTag = isLink ? Link : 'button';
+  return (
+    <ButtonWrapper as={componentTag} href={href} {...props} />
+  );
+}
+Button.defaultProps = {
+  href: undefined,
+};
+
+Button.propTypes = {
+  href: PropTypes.string,
+};
