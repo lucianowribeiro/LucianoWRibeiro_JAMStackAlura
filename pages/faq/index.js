@@ -1,34 +1,39 @@
 import React from 'react';
-import Text from '../../src/components/foundation/Text';
-import Grid from '../../src/components/foundation/layout/Grid';
-import Button from '../../src/components/commons/Button';
+import FAQScreen from '../../src/components/screens/FAQScreen';
 
-export default function Page404() {
+export default function FAQPage(props) {
+  // const [faqCategories, setFaqCategories] = React.useState([]);
+
+  // React.useEffect(() => {
+  //   fetch('https://instalura-api.vercel.app/api/content/faq').then(async (res) => {
+  //     const response = await res.json();
+  //     return response.data;
+  //   })
+  //     .then((faqCategoriesFromServer) => {
+  //       setFaqCategories(faqCategoriesFromServer);
+  //     });
+  // });
+
+  // const props = {
+  //   faqCategories,
+  // };
+
   return (
-    <Grid.Container>
-      <Grid.Row>
-        <Grid.Col
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          height="100vh"
-        >
-          <Text
-            tag="h1"
-            variant="title"
-            color="tertiary.main"
-          >
-            Pagina FAQ
-          </Text>
-          <Button
-            variant="primary.main"
-            href="/"
-          >
-            Voltar
-          </Button>
-        </Grid.Col>
-      </Grid.Row>
-    </Grid.Container>
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <FAQScreen {...props} />
   );
+}
+
+export async function getStaticProps() {
+  const faqCategories = await fetch('https://instalura-api.vercel.app/api/content/faq').then(async (res) => {
+    const response = await res.json();
+    return response.data;
+  });
+
+  // Falar sobre tamanho da página aqui e tomar cuidado com recursos extras que vão pra página
+  return {
+    props: {
+      faqCategories,
+    },
+  };
 }

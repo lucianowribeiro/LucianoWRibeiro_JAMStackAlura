@@ -39,7 +39,10 @@ const Grid = {
     ${propToStyle('marginLeft')}
     ${propToStyle('marginRight')}
     ${propToStyle('justifyContent')}
-    
+    ${propToStyle('marginTop')}
+    ${propToStyle('marginBottom')}
+    ${propToStyle('flexDirection')}
+
   `,
   Col: styled.div`
     padding-right: 16px;
@@ -143,6 +146,7 @@ const Grid = {
     ${propToStyle('padding')}
     ${propToStyle('backgroundColor')}
     ${propToStyle('height')}
+    ${propToStyle('order')}
   `,
 };
 export default Grid;
