@@ -28,7 +28,7 @@ export default function WebPage({
         <Modal isOpen={isModalOpen} onClose={() => setModalState(false)}>
           {(propsModal) => (
             <FormCadastro
-              onClose={() => setModalState(false)}
+              onClose={() => setModalState(!isModalOpen)}
               propsModal={propsModal}
             />
           )}
