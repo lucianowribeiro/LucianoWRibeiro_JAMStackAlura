@@ -17,7 +17,7 @@
     "@styled-icons/boxicons-solid": "^10.23.0",
     "@styled-icons/evaicons-solid": "^10.18.0",
     "cz-conventional-changelog": "3.3.0",
-    "framer-motion": "^3.6.7",
+    "framer-motion": "^4.0.3",
     "lodash": "^4.17.20",
     "next": "latest",
     "prop-types": "^15.7.2",
