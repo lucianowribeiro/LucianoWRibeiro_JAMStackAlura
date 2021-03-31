@@ -9,5 +9,10 @@ export default webPageHOC(LoginScreen, {
     menuProps: {
       display: false,
     },
+    boxProps: {
+      backgroundImage: 'url(/images/bubbles.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'bottom right',
+    },
   },
 });
