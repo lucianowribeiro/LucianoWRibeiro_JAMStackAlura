@@ -1,4 +1,4 @@
-import LoginScreen from '../../src/components/screens/LoginScreen';
+import LoginScreen from '../../src/components/screens/LoginScreeen';
 import webPageHOC from '../../src/components/wrappers/WebPage/hoc';
 
 export default webPageHOC(LoginScreen, {
