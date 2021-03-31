@@ -27,7 +27,10 @@ export default function Logo({ size }) {
     </svg>
   );
 }
+Logo.defaultProps = {
+  size: 'small',
+};
 
 Logo.propTypes = {
-  size: PropTypes.string.isRequired,
+  size: PropTypes.string,
 };
