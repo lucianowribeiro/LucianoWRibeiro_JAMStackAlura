@@ -1,40 +1,12 @@
 import React from 'react';
-import Button from '../commons/Button';
 import Link from '../commons/Link';
-import TextField from '../forms/TextField';
 import Box from '../foundation/layout/Box';
 import Grid from '../foundation/layout/Grid';
 import Text from '../foundation/Text';
 import { WebPageContext } from '../wrappers/WebPage';
 import Logo from '../../theme/Logo';
+import FormLogin from '../pattern/FormLogin';
 
-function LoginForm() {
-  return (
-    <form id="formCadastro" action="/app/profile">
-      <TextField
-        placeholder="Usuário"
-        name="usuario"
-      />
-      <TextField
-        placeholder="Senha"
-        name="senha"
-        type="password"
-      />
-
-      <Button
-        type="submit"
-        variant="primary.main"
-        margin={{
-          xs: '0 auto',
-          md: 'initial',
-        }}
-        fullWidth
-      >
-        Entrar
-      </Button>
-    </form>
-  );
-}
 export default function LoginScreen() {
   const webPageContext = React.useContext(WebPageContext);
 
@@ -71,7 +43,7 @@ export default function LoginScreen() {
               <Logo size="large" />
             </Link>
           </Box>
-          <LoginForm />
+          <FormLogin />
           <Text
             variant="paragraph1"
             tag="p"
@@ -98,7 +70,6 @@ export default function LoginScreen() {
             justifyContent="center"
           >
             <img
-              align="center"
               src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"
               alt="Telefones mostrando as páginas internas do app"
             />
