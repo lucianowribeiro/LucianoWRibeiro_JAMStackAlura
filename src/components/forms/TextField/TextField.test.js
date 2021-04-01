@@ -8,7 +8,7 @@ describe('<TextField />', () => {
     render(
       <TextField
         placeholder="Nome"
-        value="Ju"
+        value="Luciano"
         onChange={() => {}}
         name="nome"
       />
