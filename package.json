@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@commitlint/cli": "^12.0.0",
-    "@commitlint/config-conventional": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.1",
     "@crello/react-lottie": "0.0.11",
     "@styled-icons/boxicons-solid": "^10.23.0",
     "@styled-icons/evaicons-solid": "^10.18.0",
