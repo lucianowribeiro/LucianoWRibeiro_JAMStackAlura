@@ -1,11 +1,16 @@
 import React from 'react';
+import { Lottie } from '@crello/react-lottie';
 import { useRouter } from 'next/router';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import Button from '../../commons/Button';
 import TextField from '../../forms/TextField';
+import Box from '../../foundation/layout/Box';
 import useForm from '../../../infra/hooks/form/UseForm';
 import loginService from '../../../services/login/loginService';
+import Text from '../../foundation/Text';
+import ErrorAnimation from '../animations/ErrorAnimation.json';
+import LoadingAnimation from '../animations/LoadingAnimation.json';
 
 const loginSchema = yup.object().shape({
   usuario: yup
@@ -24,10 +29,15 @@ export default function FormLogin({ onSubmit }) {
     usuario: '',
     senha: '',
   };
-
+  const loginStatus = {
+    LOADING: 'LOADING',
+    ERROR: 'ERROR',
+  };
+  const [loginErrorSubmit, setloginErrorSubmit] = React.useState('');
   const form = useForm({
     initialValues,
     onSubmit: (values) => {
+      setloginErrorSubmit(loginStatus.LOADING);
       form.setIsFormDisabled(true);
       loginService.login({
         username: values.usuario, // 'omariosouto'
@@ -36,9 +46,9 @@ export default function FormLogin({ onSubmit }) {
         .then(() => {
           router.push('/app/profile');
         })
-        .catch((err) => {
+        .catch(() => {
           // Desafio: Mostrar o erro na tela
-          console.error(err);
+          setloginErrorSubmit(loginStatus.ERROR);
         })
         .finally(() => {
           form.setIsFormDisabled(false);
@@ -85,6 +95,53 @@ export default function FormLogin({ onSubmit }) {
       >
         Entrar
       </Button>
+      <Text
+        tag="span"
+        variant="smallestException"
+        color="error.main"
+        role="alert"
+      >
+        {loginErrorSubmit === loginStatus.ERROR && (
+        <Box
+          display="flex"
+          flexDirection="column-reverse"
+          alignItems="center"
+        >
+          <Lottie
+            width="100px"
+            height="100px"
+            config={{ animationData: ErrorAnimation, loop: true, autoplay: true }}
+          />
+          <Text
+            variant="smallestException"
+            color="error.main"
+            role="alert"
+          >
+            Por favor prenche com valores validos!
+          </Text>
+        </Box>
+        )}
+        {loginErrorSubmit === loginStatus.LOADING && (
+        <Box
+          display="flex"
+          flexDirection="column-reverse"
+          alignItems="center"
+        >
+          <Lottie
+            width="100px"
+            height="100px"
+            config={{ animationData: LoadingAnimation, loop: true, autoplay: true }}
+          />
+          <Text
+            variant="smallestException"
+            color="success.main"
+            role="alert"
+          >
+            LOADING ...
+          </Text>
+        </Box>
+        )}
+      </Text>
     </form>
   );
 }

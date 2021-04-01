@@ -9,9 +9,9 @@ import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
 import CloseModal from '../../../theme/CloseModal';
 
-import ErrorAnimation from './animations/ErrorAnimation.json';
-import LoadingAnimation from './animations/LoadingAnimation.json';
-import SuccessAnimation from './animations/SuccessAnimation.json';
+import ErrorAnimation from '../animations/ErrorAnimation.json';
+import LoadingAnimation from '../animations/LoadingAnimation.json';
+import SuccessAnimation from '../animations/SuccessAnimation.json';
 
 const formStates = {
   DEFAULT: 'DEFAULT',
