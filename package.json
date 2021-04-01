@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0",
-    "commitlint": "^11.0.0",
+    "commitlint": "^12.0.1",
     "commitlint-config-gitmoji": "^2.2.2",
     "cypress": "^6.8.0",
     "eslint": "^7.20.0",
