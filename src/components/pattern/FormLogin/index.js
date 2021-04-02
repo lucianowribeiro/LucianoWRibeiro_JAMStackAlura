@@ -33,11 +33,12 @@ export default function FormLogin({ onSubmit }) {
     LOADING: 'LOADING',
     ERROR: 'ERROR',
   };
-  const [loginErrorSubmit, setloginErrorSubmit] = React.useState('');
+  const [animationSubmit, setAnimationSubmit] = React.useState({});
+  const [messagError, setMessageError] = React.useState('');
   const form = useForm({
     initialValues,
     onSubmit: (values) => {
-      setloginErrorSubmit(loginStatus.LOADING);
+      setAnimationSubmit(loginStatus.LOADING);
       form.setIsFormDisabled(true);
       loginService.login({
         username: values.usuario, // 'omariosouto'
@@ -46,9 +47,10 @@ export default function FormLogin({ onSubmit }) {
         .then(() => {
           router.push('/app/profile');
         })
-        .catch(() => {
+        .catch((error) => {
           // Desafio: Mostrar o erro na tela
-          setloginErrorSubmit(loginStatus.ERROR);
+          setMessageError(error.message);
+          setAnimationSubmit(loginStatus.ERROR);
         })
         .finally(() => {
           form.setIsFormDisabled(false);
@@ -95,7 +97,8 @@ export default function FormLogin({ onSubmit }) {
       >
         Entrar
       </Button>
-      {loginErrorSubmit === loginStatus.ERROR && (
+      {animationSubmit === loginStatus.ERROR && (
+
         <Box
           display="flex"
           flexDirection="column-reverse"
@@ -110,11 +113,11 @@ export default function FormLogin({ onSubmit }) {
             variant="smallestException"
             color="error.main"
           >
-            Por favor prenche com valores validos!
+            {messagError}
           </Text>
         </Box>
       )}
-      {loginErrorSubmit === loginStatus.LOADING && (
+      {animationSubmit === loginStatus.LOADING && (
         <Box
           display="flex"
           flexDirection="column-reverse"
