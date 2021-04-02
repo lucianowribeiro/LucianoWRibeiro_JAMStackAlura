@@ -95,13 +95,7 @@ export default function FormLogin({ onSubmit }) {
       >
         Entrar
       </Button>
-      <Text
-        tag="span"
-        variant="smallestException"
-        color="error.main"
-        role="alert"
-      >
-        {loginErrorSubmit === loginStatus.ERROR && (
+      {loginErrorSubmit === loginStatus.ERROR && (
         <Box
           display="flex"
           flexDirection="column-reverse"
@@ -115,13 +109,12 @@ export default function FormLogin({ onSubmit }) {
           <Text
             variant="smallestException"
             color="error.main"
-            role="alert"
           >
             Por favor prenche com valores validos!
           </Text>
         </Box>
-        )}
-        {loginErrorSubmit === loginStatus.LOADING && (
+      )}
+      {loginErrorSubmit === loginStatus.LOADING && (
         <Box
           display="flex"
           flexDirection="column-reverse"
@@ -135,13 +128,11 @@ export default function FormLogin({ onSubmit }) {
           <Text
             variant="smallestException"
             color="success.main"
-            role="alert"
           >
             LOADING ...
           </Text>
         </Box>
-        )}
-      </Text>
+      )}
     </form>
   );
 }
