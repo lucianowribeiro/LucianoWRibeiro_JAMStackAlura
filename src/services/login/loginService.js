@@ -14,8 +14,7 @@ async function HttpClient(url, { headers, body, ...options }) {
       if (respostaDoServer.ok) {
         return respostaDoServer.json();
       }
-
-      throw new Error('Falha em pegar os dados do servidor :(');
+      throw new Error();
     });
 }
 const BASE_URL = isStagingEnv
