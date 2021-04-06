@@ -29,6 +29,8 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint-plugin-jest": "^24.3.2",
     "framer-motion": "^3.6.7",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "jest": "^26.6.3",
     "jest-canvas-mock": "^2.3.1",
     "jest-styled-components": "^7.0.3",
@@ -71,3 +73,4 @@
     }
   }
 }
+
