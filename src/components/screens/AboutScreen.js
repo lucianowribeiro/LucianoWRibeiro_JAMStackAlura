@@ -1,40 +1,47 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Text from '../foundation/Text';
 import Grid from '../foundation/layout/Grid';
-import Button from '../commons/Button';
 import Box from '../foundation/layout/Box';
 
-export default function AboutScreen() {
+export default function AboutScreen({ messages }) {
   return (
     <Box
       display="flex"
       flexDirection="column"
-      justifyContent="center"
-      flex="1"
+      flex={1}
     >
       <Grid.Container>
-        <Grid.Row>
+        <Grid.Row
+          marginTop={{ xs: '32px', md: '120px' }}
+          flex="1"
+        >
           <Grid.Col
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
+            value={{ xs: 12, md: 6, lg: 6 }}
+            offset={{ md: 2 }}
+            flex={1}
           >
             <Text
-              tag="h1"
               variant="title"
+              tag="h2"
               color="tertiary.main"
             >
-              Sobre - Pagina ainda em construção
+              {messages.pageSobre.sobreTitle}
             </Text>
-            <Button
-              variant="primary.main"
-              href="/"
-            >
-              Voltar
-            </Button>
+
+            <Box
+              dangerouslySetInnerHTML={{
+                __html: messages.pageSobre.sobreDescription,
+              }}
+            />
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
     </Box>
   );
 }
+
+AboutScreen.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  messages: PropTypes.object.isRequired,
+};
