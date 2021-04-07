@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Text from '../foundation/Text';
-import Grid from '../foundation/layout/Grid';
-import Box from '../foundation/layout/Box';
+import Text from '../../foundation/Text';
+import Grid from '../../foundation/layout/Grid';
+import Box from '../../foundation/layout/Box';
+
+export { getContent } from './getContent';
 
 export default function AboutScreen({ messages }) {
   return (
@@ -26,12 +28,12 @@ export default function AboutScreen({ messages }) {
               tag="h2"
               color="tertiary.main"
             >
-              {messages.pageSobre.sobreTitle}
+              {messages.pageSobre.pageTitle}
             </Text>
 
             <Box
               dangerouslySetInnerHTML={{
-                __html: messages.pageSobre.sobreDescription,
+                __html: messages.pageSobre.pageDescription,
               }}
             />
           </Grid.Col>
