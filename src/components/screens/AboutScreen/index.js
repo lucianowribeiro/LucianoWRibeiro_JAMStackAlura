@@ -27,13 +27,11 @@ export default function AboutScreen({ messages }) {
               variant="title"
               tag="h2"
               color="tertiary.main"
-            >
-              {messages.pageSobre.pageTitle}
-            </Text>
-
+              csmkey="pageSobre.sobreTitle"
+            />
             <Box
               dangerouslySetInnerHTML={{
-                __html: messages.pageSobre.pageDescription,
+                __html: messages.pageSobre.sobreDescription,
               }}
             />
           </Grid.Col>
