@@ -12,6 +12,7 @@ export default function webPageHOC(PageComponent, { pageProps } = { pageProps: {
       <WebPage
         {...pageProps}
         {...props.pageProps}
+        messages={props.messages}
       >
         <PageComponent {...props} />
       </WebPage>

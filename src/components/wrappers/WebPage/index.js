@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import Footer from '../../commons/Footer';
 import Menu from '../../commons/Menu';
 import Modal from '../../commons/Modal';
@@ -8,11 +9,12 @@ import Box from '../../foundation/layout/Box';
 import FormCadastro from '../../pattern/FormCadastro';
 import SEO from '../../commons/SEO';
 
-export const WebPageContext = React.createContext({
-  toogleModalCadastro: () => {},
-});
+import { WebPageContext } from './context';
+
+export { WebPageContext } from './context';
+
 export default function WebPage({
-  children, seoProps, boxProps, menuProps,
+  children, seoProps, boxProps, menuProps, messages,
 }) {
   const [isModalOpen, setModalState] = React.useState(false);
 
@@ -20,6 +22,7 @@ export default function WebPage({
     <WebPageContext.Provider
       value={{
         toogleModalCadastro: () => setModalState(!isModalOpen),
+        getCMSContent: (csmkey) => get(messages, csmkey),
       }}
     >
       <SEO {...seoProps} />
@@ -46,6 +49,7 @@ WebPage.defaultProps = {
   menuProps: {
     display: true,
   },
+  messages: {},
 };
 
 WebPage.propTypes = {
@@ -61,4 +65,6 @@ WebPage.propTypes = {
     backgroundPosition: PropTypes.string,
   }),
   children: PropTypes.node.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  messages: PropTypes.object,
 };
