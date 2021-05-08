@@ -17,7 +17,7 @@ async function HttpClientModuleError() {
   };
 }
 const setCookieModule = jest.fn();
-
+const LOGIN_APP_TOKEN = 'APP_TOKEN';
 describe('loginService', () => {
   describe('login()', () => {
     describe('when user try to login', () => {
@@ -29,7 +29,7 @@ describe('loginService', () => {
           }, setCookieModule, HttpClientModule);
 
           expect(setCookieModule).toHaveBeenCalledWith(
-            null, 'LOGIN_APP_TOKEN', token, {
+            null, LOGIN_APP_TOKEN, token, {
               path: '/',
               maxAge: 604800,
             },
@@ -56,7 +56,7 @@ describe('loginService', () => {
       test('remove its token', async () => {
         const destroyCookie = jest.fn();
         await loginService.logout(null, destroyCookie);
-        expect(destroyCookie).toHaveBeenCalledWith(null, 'LOGIN_APP_TOKEN', { path: '/' }); // que apague o token
+        expect(destroyCookie).toHaveBeenCalledWith(null, LOGIN_APP_TOKEN, { path: '/' }); // que apague o token
       });
     });
   });
