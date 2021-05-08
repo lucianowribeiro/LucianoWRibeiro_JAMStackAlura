@@ -26,7 +26,7 @@ const loginService = {
         // Salvar o Token
         setCookieModule(null, LOGIN_APP_TOKEN, token, {
           path: '/',
-          maxAge: DAY_IN_SECONDS * 10,
+          maxAge: DAY_IN_SECONDS * 7,
         });
         // Escrever os testes
         return {
