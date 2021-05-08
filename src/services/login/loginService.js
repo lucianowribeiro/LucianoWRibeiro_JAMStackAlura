@@ -6,7 +6,7 @@ const BASE_URL = isStagingEnv
   ? 'https://instalura-api-git-master-omariosouto.vercel.app'
   : 'https://instalura-api-omariosouto.vercel.app';
 
-export const LOGIN_APP_TOKEN = 'APP_TOKEN';
+export const LOGIN_APP_TOKEN = 'TOKEN_APP';
 const loginService = {
   async login({ username, password }, setCookieModule = setCookie, HttpClientModule = HttpClient) {
     return HttpClientModule(`${BASE_URL}/api/login`, {
@@ -26,7 +26,7 @@ const loginService = {
         // Salvar o Token
         setCookieModule(null, LOGIN_APP_TOKEN, token, {
           path: '/',
-          maxAge: DAY_IN_SECONDS * 7,
+          maxAge: DAY_IN_SECONDS * 10,
         });
         // Escrever os testes
         return {

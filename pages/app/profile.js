@@ -16,7 +16,6 @@ export async function getServerSideProps(context) {
   const auth = authService(context);
   const hasActiveSession = await auth.hasActiveSession();
   if (hasActiveSession) {
-    console.log(hasActiveSession);
     const session = await auth.getSession();
     const profilePage = await userService.getProfilePage(context);
     return {

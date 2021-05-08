@@ -10,6 +10,7 @@ const BASE_URL = isStagingEnv
 
 const authService = (context) => {
   const cookies = parseCookies(context);
+  console.log('o aqui ', cookies);
   const token = cookies[LOGIN_APP_TOKEN];
   return {
     async getToken() {
@@ -24,9 +25,9 @@ const authService = (context) => {
       })
         .then(({ data }) => {
           if (data.authenticated) {
-            loginService.logout(context);
             return true;
           }
+          loginService.logout(context);
           return false;
         })
         .catch(() => {

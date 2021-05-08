@@ -1,4 +1,4 @@
-import loginService from './loginService';
+import loginService, { LOGIN_APP_TOKEN } from './loginService';
 
 const token = 'fake-token';
 async function HttpClientModule() {
@@ -17,7 +17,6 @@ async function HttpClientModuleError() {
   };
 }
 const setCookieModule = jest.fn();
-const LOGIN_APP_TOKEN = 'APP_TOKEN';
 describe('loginService', () => {
   describe('login()', () => {
     describe('when user try to login', () => {
