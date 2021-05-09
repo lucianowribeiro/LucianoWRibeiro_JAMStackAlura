@@ -5,6 +5,7 @@ import Grid from '../foundation/layout/Grid';
 import Text from '../foundation/Text';
 
 export default function FAQQuestionScreen({ category, question }) {
+  /* theme.colors.borders.main.color */
   return (
     <Grid.Container
       flex="1"
@@ -19,15 +20,8 @@ export default function FAQQuestionScreen({ category, question }) {
           md: 'row',
         }}
       >
-        <Grid.Col
-          offset={{ sm: 0, lg: 1 }}
-          value={{ xs: 12, md: 4, lg: 4 }}
-        >
-          <Text
-            variant="title"
-            color="tertiary.main"
-            marginBottom="25px"
-          >
+        <Grid.Col offset={{ sm: 0, lg: 1 }} value={{ xs: 12, md: 4, lg: 4 }}>
+          <Text variant="title" color="tertiary.main" marginBottom="25px">
             Artigos
             <br />
             Relacionados
@@ -36,7 +30,7 @@ export default function FAQQuestionScreen({ category, question }) {
             as="ul"
             listStyle="none"
             padding="24px 30px"
-            backgroundColor={({ theme }) => theme.colors.borders.main.color}
+            backgroundColor="#F2F2F2"
             borderRadiusTheme
           >
             {category.questions.map((currentQuestion) => (
@@ -55,23 +49,31 @@ export default function FAQQuestionScreen({ category, question }) {
         </Grid.Col>
 
         <Grid.Col
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-start"
           value={{ lg: 6 }}
           marginBottom={{
             xs: '50px',
             md: '0',
           }}
         >
-          <Text
-            variant="title"
-            color="tertiary.main"
-          >
+          <div>
+            <Text variant="paragraph2" color="tertiary.light" href="/faq">
+              {'Perguntas frequentes >'}
+            </Text>
+            <Text variant="paragraph2" color="primary.main" style={{ paddingLeft: '4px' }}>
+              {question.title}
+            </Text>
+          </div>
+          <Text variant="title" style={{ paddingTop: '16px' }} color="tertiary.main">
             {question.title}
           </Text>
           <Text
             as="p"
             variant="paragraph1"
             color="tertiary.light"
-              // eslint-disable-next-line react/no-danger
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: question.description }}
           />
         </Grid.Col>
@@ -83,9 +85,11 @@ export default function FAQQuestionScreen({ category, question }) {
 FAQQuestionScreen.propTypes = {
   category: PropTypes.shape({
     title: PropTypes.string,
-    questions: PropTypes.arrayOf(PropTypes.shape({
-      title: PropTypes.string,
-    })),
+    questions: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    ),
   }).isRequired,
   question: PropTypes.shape({
     title: PropTypes.string,

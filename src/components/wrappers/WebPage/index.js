@@ -14,7 +14,11 @@ import { WebPageContext } from './context';
 export { WebPageContext } from './context';
 
 export default function WebPage({
-  children, seoProps, boxProps, menuProps, messages,
+  children,
+  seoProps,
+  boxProps,
+  menuProps,
+  messages,
 }) {
   const [isModalOpen, setModalState] = React.useState(false);
 
@@ -25,7 +29,7 @@ export default function WebPage({
         getCMSContent: (csmkey) => get(messages, csmkey),
       }}
     >
-      <SEO {...seoProps} />
+      <SEO headTitle={seoProps.headTitle} />
 
       <Box flex="1" display="flex" flexDirection="column" {...boxProps}>
         <Modal isOpen={isModalOpen} onClose={() => setModalState(false)}>
@@ -36,7 +40,12 @@ export default function WebPage({
             />
           )}
         </Modal>
-        {menuProps.display && <Menu onCadastrarClick={() => setModalState(true)} />}
+        {menuProps.display && (
+          <Menu
+            currentPage={seoProps.pathName}
+            onCadastrarClick={() => setModalState(true)}
+          />
+        )}
         {children}
         <Footer />
       </Box>
@@ -55,6 +64,7 @@ WebPage.defaultProps = {
 WebPage.propTypes = {
   seoProps: PropTypes.shape({
     headTitle: PropTypes.string,
+    pathName: PropTypes.string,
   }),
   menuProps: PropTypes.shape({
     display: PropTypes.bool,

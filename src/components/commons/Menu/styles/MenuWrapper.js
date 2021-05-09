@@ -78,7 +78,6 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #88989E;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
@@ -88,12 +87,6 @@ MenuWrapper.CentralSide = styled.div`
       ${TextStyleVariantsMap.paragraph1}
     `,
   })}
-    &:hover,
-    &:focus {
-      font-weight: 500;
-      color: #070C0E;
-      
-    }
   }
 `;
 

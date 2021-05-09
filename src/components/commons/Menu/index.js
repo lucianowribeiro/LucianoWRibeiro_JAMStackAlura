@@ -11,7 +11,7 @@ const links = [
     url: '/',
   },
   {
-    texto: 'Perguntas frequentes',
+    texto: 'Perguntas Frequentes',
     url: '/faq',
   },
   {
@@ -19,7 +19,7 @@ const links = [
     url: '/sobre',
   },
 ];
-export default function Menu({ onCadastrarClick }) {
+export default function Menu({ currentPage, onCadastrarClick }) {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
@@ -28,8 +28,11 @@ export default function Menu({ onCadastrarClick }) {
       <MenuWrapper.CentralSide>
         {links.map((link) => (
           <li key={link.url}>
-            <Text variant="smallestException" tag="a" href={link.url}>
-              {link.texto}
+            <Text color="tertiary.main" href={link.url}>
+              {link.texto === currentPage && link.texto}
+            </Text>
+            <Text color="tertiary.light" href={link.url}>
+              {link.texto !== currentPage && link.texto}
             </Text>
           </li>
         ))}
@@ -46,5 +49,6 @@ export default function Menu({ onCadastrarClick }) {
   );
 }
 Menu.propTypes = {
+  currentPage: PropTypes.string.isRequired,
   onCadastrarClick: PropTypes.func.isRequired,
 };

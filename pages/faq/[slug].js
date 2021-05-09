@@ -48,6 +48,7 @@ export async function getStaticProps({ params }) {
       pageProps: {
         seoProps: {
           headTitle: dadosDaPagina.question.title,
+          pathName: 'Perguntas Frequentes',
         },
       },
     },

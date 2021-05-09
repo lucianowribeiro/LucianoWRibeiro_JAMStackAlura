@@ -37,15 +37,15 @@ export const TextStyleVariantsMap = {
 };
 
 const TextBase = styled.span`
-  ${(props) => TextStyleVariantsMap[props.variant]}
-  color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
+  ${({ variant }) => TextStyleVariantsMap[variant]}
+  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
   ${propToStyle('textAlign')}
   ${propToStyle('marginBottom')}
   ${propToStyle('margin')}
 `;
 
 export default function Text({
-  tag, variant, children, href, csmkey, ...props
+  tag, variant, children, href, csmkey, color, ...props
 }) {
   const webcontext = React.useContext(WebPageContext);
   const contentCSM = csmkey
@@ -57,6 +57,7 @@ export default function Text({
         as={Link}
         variant={variant}
         href={href}
+        color={color}
     // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
@@ -68,6 +69,7 @@ export default function Text({
     <TextBase
       as={tag}
       variant={variant}
+      color={color}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
       // style
@@ -84,6 +86,7 @@ Text.propTypes = {
   variant: PropTypes.string,
   children: PropTypes.node,
   href: PropTypes.string,
+  color: PropTypes.string,
   csmkey: PropTypes.string,
 };
 
@@ -92,5 +95,6 @@ Text.defaultProps = {
   variant: 'paragraph1',
   children: null,
   href: '',
+  color: 'primary.main',
   csmkey: undefined,
 };

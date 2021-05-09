@@ -13,7 +13,8 @@ export async function getStaticProps({ preview }) {
 export default webPageHOC(AboutScreen, {
   pageProps: {
     seoProps: {
-      headTitle: 'About',
+      headTitle: 'Sobre',
+      pathName: 'Sobre',
     },
   },
 });

@@ -13,6 +13,7 @@ export default webPageHOC(FAQPage, {
   pageProps: {
     seoProps: {
       headTitle: 'Perguntas Frequentes',
+      pathName: 'Perguntas Frequentes',
     },
   },
 });
