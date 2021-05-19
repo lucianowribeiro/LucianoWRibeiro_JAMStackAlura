@@ -48,7 +48,11 @@ export default function Menu({ currentPage, onCadastrarClick }) {
     </MenuWrapper>
   );
 }
+Menu.defaultProps = {
+  currentPage: 'Home',
+};
+
 Menu.propTypes = {
-  currentPage: PropTypes.string.isRequired,
+  currentPage: PropTypes.string,
   onCadastrarClick: PropTypes.func.isRequired,
 };

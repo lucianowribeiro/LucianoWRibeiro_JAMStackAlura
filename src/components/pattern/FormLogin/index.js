@@ -9,8 +9,8 @@ import Box from '../../foundation/layout/Box';
 import useForm from '../../../infra/hooks/form/UseForm';
 import loginService from '../../../services/login/loginService';
 import Text from '../../foundation/Text';
-import ErrorAnimation from '../animations/ErrorAnimation.json';
-import LoadingAnimation from '../animations/LoadingAnimation.json';
+import ErrorAnimation from '../../../theme/animations/ErrorAnimation.json';
+import LoadingAnimation from '../../../theme/animations/LoadingAnimation.json';
 
 const loginSchema = yup.object().shape({
   usuario: yup
@@ -48,7 +48,6 @@ export default function FormLogin({ onSubmit }) {
           router.push('/app/profile');
         })
         .catch((error) => {
-          // Desafio: Mostrar o erro na tela
           setMessageError(error.message);
           setAnimationSubmit(loginStatus.ERROR);
         })

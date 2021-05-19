@@ -45,6 +45,7 @@ const Grid = {
     ${propToStyle('marginTop')}
     ${propToStyle('marginBottom')}
     ${propToStyle('flexDirection')}
+    
 
   `,
   Col: styled.div`
@@ -150,6 +151,8 @@ const Grid = {
     ${propToStyle('backgroundColor')}
     ${propToStyle('height')}
     ${propToStyle('order')}
+    ${propToStyle('marginTop')}
+    
   `,
 };
 export default Grid;

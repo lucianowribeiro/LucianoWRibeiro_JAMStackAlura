@@ -18,6 +18,7 @@ const loginService = {
     })
       .then((respostaConvertida) => {
         const { token } = respostaConvertida.data;
+        const { user } = respostaConvertida.data;
         const hasToken = token;
         if (!hasToken) {
           throw new Error('Failed to login');
@@ -31,6 +32,7 @@ const loginService = {
         // Escrever os testes
         return {
           token,
+          user,
         };
       });
   },

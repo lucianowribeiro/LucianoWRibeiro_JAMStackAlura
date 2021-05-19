@@ -72,9 +72,6 @@ export default function Text({
       color={color}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
-      // style
-      // className
-      // e ai vai
     >
       {contentCSM}
     </TextBase>
@@ -95,6 +92,6 @@ Text.defaultProps = {
   variant: 'paragraph1',
   children: null,
   href: '',
-  color: 'primary.main',
+  color: 'tertiary.main',
   csmkey: undefined,
 };
