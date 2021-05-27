@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 const ModalWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    background: rgba(0,0,0,0.1);
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
     position: fixed;
     top: 0;
     left: 0;
@@ -17,6 +17,7 @@ const ModalWrapper = styled.div`
     overflow: scroll;
     transition: .3s;
     z-index: 100;
+    backdrop-filter: blur(4px);
     ${({ isOpen }) => {
     if (isOpen) {
       return css`
@@ -61,8 +62,6 @@ function Modal({ isOpen, onClose, children }) {
         transition={{ duration: 0.5 }}
         style={{
           display: 'flex',
-          flex: 1,
-          justifyContent: 'flex-end',
         }}
       >
         {children({

@@ -26,7 +26,6 @@ const ButtonWrapper = styled.button`
   font-weight: bold;
   opacity: 1;
   border-radius: 8px;
-
   ${TextStyleVariantsMap.smallestException}
 
   ${(props) => {
@@ -35,11 +34,11 @@ const ButtonWrapper = styled.button`
     }
     return ButtonDefault;
   }}
-  transition: opacity ${({ theme }) => theme.transition};
+  transition: filter ${({ theme }) => theme.transition};
   border-radius: ${(props) => props.theme.borderRadius};
   &:hover,
   &:focus {
-    opacity: 0.5;
+    filter: blur(0.65px);
   }
 
   ${breakpointsMedia({

@@ -13,7 +13,6 @@ export default function UserDetail({
     if (spacing === 'small') return '0 0 10px 0';
     return '0';
   };
-  console.log(padding());
   return (
     <Box padding={padding()} display="flex" justifyContent="space-around">
       <Box display="flex" justifyContent="center" alignItems="center">

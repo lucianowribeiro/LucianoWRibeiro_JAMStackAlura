@@ -6,10 +6,10 @@ import Footer from '../../commons/Footer';
 import Menu from '../../commons/Menu';
 import Modal from '../../commons/Modal';
 import Box from '../../foundation/layout/Box';
-import FormCadastro from '../../pattern/FormCadastro';
 import SEO from '../../commons/SEO';
 
 import { WebPageContext } from './context';
+import FormCadastro from '../../pattern/FormCadastro';
 
 export { WebPageContext } from './context';
 

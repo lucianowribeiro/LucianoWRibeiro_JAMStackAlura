@@ -1,6 +1,6 @@
 import { setCookie, destroyCookie } from 'nookies';
-import isStagingEnv from '../../infra/env/isStagingEnv';
-import HttpClient from '../../infra/http/HttpClient';
+import isStagingEnv from '../../env/isStagingEnv';
+import HttpClient from '../../http/HttpClient';
 
 const BASE_URL = isStagingEnv
   ? 'https://instalura-api-git-master-omariosouto.vercel.app'

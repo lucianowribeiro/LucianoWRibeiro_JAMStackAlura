@@ -1,13 +1,15 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Lottie } from '@crello/react-lottie';
-
-import Button from '../../commons/Button';
-import Grid from '../../foundation/layout/Grid';
+import PropTypes from 'prop-types';
 import Box from '../../foundation/layout/Box';
+import Grid from '../../foundation/layout/Grid';
+import CloseModal from '../../../theme/CloseModal';
+// eslint-disable-next-line react/prop-types
+import Button from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
-import CloseModal from '../../../theme/CloseModal';
 
 import ErrorAnimation from '../../../theme/animations/ErrorAnimation.json';
 import LoadingAnimation from '../../../theme/animations/LoadingAnimation.json';
@@ -20,9 +22,11 @@ const formStates = {
   ERROR: 'ERROR',
 };
 
-function FormContent() {
+function UserContent() {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
-  const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
+  const [submissionStatus, setSubmissionStatus] = React.useState(
+    formStates.DEFAULT,
+  );
 
   const [userInfo, setUserInfo] = React.useState({
     user: '',
@@ -62,7 +66,9 @@ function FormContent() {
               if (respostaDoServidor.ok) {
                 return respostaDoServidor.json();
               }
-              throw new Error('Não foi possível cadastrar o usuário agora :(');
+              throw new Error(
+                'Não foi possível cadastrar o usuário agora :(',
+              );
             })
             .then((respostaConvertidaEmObjeto) => {
               setSubmissionStatus(formStates.DONE);
@@ -87,8 +93,8 @@ function FormContent() {
         color="tertiary.light"
         marginBottom="32px"
       >
-        Você está a um passo de saber tudoo que está rolando no bairro, complete
-        seu cadastro agora!
+        Você está a um passo de saber tudoo que está rolando no bairro,
+        complete seu cadastro agora!
       </Text>
       <div>
         <TextField
@@ -115,78 +121,84 @@ function FormContent() {
         Cadastrar
       </Button>
       {isFormSubmited && submissionStatus === formStates.DONE && (
-      <Box
-        display="flex"
-        justifyContent="center"
-      >
+      <Box display="flex" justifyContent="center">
         <Lottie
           width="150px"
           height="150px"
-          config={{ animationData: SuccessAnimation, loop: true, autoplay: true }}
+          config={{
+            animationData: SuccessAnimation,
+            loop: true,
+            autoplay: true,
+          }}
         />
       </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.LOADING && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            config={{ animationData: LoadingAnimation, loop: true, autoplay: true }}
-          />
-        </Box>
+      <Box display="flex" justifyContent="center">
+        <Lottie
+          width="150px"
+          height="150px"
+          config={{
+            animationData: LoadingAnimation,
+            loop: true,
+            autoplay: true,
+          }}
+        />
+      </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.ERROR && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            config={{ animationData: ErrorAnimation, loop: true, autoplay: true }}
-          />
-        </Box>
+      <Box display="flex" justifyContent="center">
+        <Lottie
+          width="150px"
+          height="150px"
+          config={{
+            animationData: ErrorAnimation,
+            loop: true,
+            autoplay: true,
+          }}
+        />
+      </Box>
       )}
     </form>
   );
 }
 
-// eslint-disable-next-line react/prop-types
 export default function FormCadastro({ onClose, propsModal }) {
   return (
-    <Grid.Row marginLeft={0} marginRight={0} flex={1} justifyContent="flex-end">
+    <Grid.Row marginLeft={0} marginRight={0} flex={1} justifyContent="center" position="relative">
       <Grid.Col
         display="flex"
-        flexDirection="row-reverse"
         backgroundColor="white"
         paddingRight={{ md: '0' }}
         value={{ xs: 12, md: 5, lg: 4 }}
       >
-        <CloseModal
-          onClick={() => {
-            onClose();
-          }}
-        />
         <Box
           /* boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)" */
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          flex={1}
+          backgroundColor="white"
           padding={{
             xs: '16px',
             md: '85px',
           }}
-          backgroundColor="white"
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsModal}
         >
-          <FormContent />
+          <CloseModal
+            onClick={() => {
+              onClose();
+            }}
+          />
+          <UserContent />
+
         </Box>
       </Grid.Col>
     </Grid.Row>
   );
 }
+
+FormCadastro.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  propsModal: PropTypes.object.isRequired,
+};

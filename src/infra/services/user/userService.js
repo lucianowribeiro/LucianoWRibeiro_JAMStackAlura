@@ -1,5 +1,5 @@
-import isStagingEnv from '../../infra/env/isStagingEnv';
-import HttpClient from '../../infra/http/HttpClient';
+import isStagingEnv from '../../env/isStagingEnv';
+import HttpClient from '../../http/HttpClient';
 import authService from '../auth/authService';
 import loginService from '../login/loginService';
 

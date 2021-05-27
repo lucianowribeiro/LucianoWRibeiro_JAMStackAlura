@@ -27,6 +27,8 @@ const Box = styled.div`
   ${propToStyle('marginBottom')}
   ${propToStyle('marginRight')}
   ${propToStyle('minHeight')}
+  ${propToStyle('textAlign')}
+  
   
   ${({ theme, borderRadiusTheme }) => borderRadiusTheme && `border-radius: ${theme.borderRadius}`};
   ${({ theme, backgroundColor }) => backgroundColor && `background-color: ${lodash.get(theme, `colors.${backgroundColor}.color`)}`}

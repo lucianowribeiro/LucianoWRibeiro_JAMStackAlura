@@ -45,6 +45,7 @@ const Grid = {
     ${propToStyle('marginTop')}
     ${propToStyle('marginBottom')}
     ${propToStyle('flexDirection')}
+    ${propToStyle('position')}
     
 
   `,
@@ -152,7 +153,7 @@ const Grid = {
     ${propToStyle('height')}
     ${propToStyle('order')}
     ${propToStyle('marginTop')}
-    
+    ${propToStyle('marginLeft')}
   `,
 };
 export default Grid;

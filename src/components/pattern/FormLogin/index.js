@@ -7,7 +7,7 @@ import Button from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Box from '../../foundation/layout/Box';
 import useForm from '../../../infra/hooks/form/UseForm';
-import loginService from '../../../services/login/loginService';
+import loginService from '../../../infra/services/login/loginService';
 import Text from '../../foundation/Text';
 import ErrorAnimation from '../../../theme/animations/ErrorAnimation.json';
 import LoadingAnimation from '../../../theme/animations/LoadingAnimation.json';

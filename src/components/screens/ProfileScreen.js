@@ -6,6 +6,7 @@ import { LoggedPageContext } from '../wrappers/LoggedPage';
 import Menu from '../logged/Menu';
 import PostCombo from '../logged/PostCombo';
 import UserDetail from '../logged/UserDetail';
+import UserAvatar from '../../theme/UserAvatar';
 import Box from '../foundation/layout/Box';
 
 export default function ProfileScreen() {
@@ -17,16 +18,67 @@ export default function ProfileScreen() {
         <Grid.Container>
           <Grid.Row>
             <Grid.Col
+              value={{ xs: 12, sm: 12, md: 6 }}
               as="section"
               display="flex"
               flexDirection="column"
-              alignItems="center"
+              justifyContent="center"
+              alignItems={{ xs: 'center', md: 'flex-end' }}
+              marginTop={{ xs: '50px', md: '0' }}
             >
               <Text tag="h1" variant="title" color="tertiary.main">
-                {webLogged.profile.user.username}
+                <UserAvatar size="biggest" />
               </Text>
             </Grid.Col>
+            <Grid.Col
+              as="section"
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems={{ xs: 'center', md: 'flex-start' }}
+              marginLeft={{ xs: 'initial', md: '5%' }}
+            >
+              <Box marginBottom="16px" textAlign={{ xs: 'center', md: 'left' }}>
+                <Text
+                  tag="h3"
+                  variant="paragraph1"
+                  style={{ fontWeight: '500', margin: '0', marginBottom: '8px' }}
+                  color="tertiary.main"
+                >
+                  200
+                </Text>
+                <Text tag="h3" variant="paragraph1" color="tertiary.light" style={{ margin: '0' }}>
+                  Publicacoes
+                </Text>
+              </Box>
+              <Box textAlign={{ xs: 'center', md: 'left' }} width={{ xs: 'initial ', md: '70%' }}>
+                <Text
+                  tag="h3"
+                  variant="paragraph1"
+                  style={{ fontWeight: '500', margin: '0', marginBottom: '8px' }}
+                  color="tertiary.main"
+                >
+                  {webLogged.profile.user.name}
+                </Text>
+                <Text
+                  tag="h3"
+                  variant="paragraph1"
+                  color="tertiary.light"
+                  style={{ margin: '0' }}
+                >
+                  A simple person that like to do simple things ...
+                </Text>
+              </Box>
+            </Grid.Col>
           </Grid.Row>
+          <Grid.Row>
+            <Grid.Col>
+              <PostCombo />
+              <PostCombo />
+              <PostCombo />
+            </Grid.Col>
+          </Grid.Row>
+
         </Grid.Container>
       )}
       {!webLogged.isUserPerfil && (
@@ -51,11 +103,14 @@ export default function ProfileScreen() {
                 spacing="big"
                 size="big"
               />
-              <Box paddingLeft="55px">
-                <Text tag="h2" variant="paragraph1" color="tertiary.light" style={{ fontWeight: '500' }}>
-                  Projetos da galera
-                </Text>
-              </Box>
+              <Text
+                tag="h2"
+                variant="paragraph1"
+                color="tertiary.light"
+                style={{ paddingLeft: '55px', fontWeight: '500' }}
+              >
+                Projetos da galera
+              </Text>
               <UserDetail
                 username="john_cena"
                 name="IT’S JOHN CENA"
@@ -66,7 +121,7 @@ export default function ProfileScreen() {
               <UserDetail
                 username="leeroy.jenkins"
                 name="Leeroy Jenkins Official"
-                src="https://www.selectgame.com.br/wp-content/uploads/2017/12/Leeroy-Jenkins-Carta-de-Hearthstone-Art.jpg"
+                src="https://ocdn.eu/images/pulscms/Mjc7MDA_/e2340fc4d1c27ba063115973a477ef87.jpeg"
                 spacing="small"
                 size="medium"
               />

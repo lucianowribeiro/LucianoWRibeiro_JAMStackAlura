@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import LikeIcon from '../../../theme/LikeIcon';
 import UserAvatar from '../../../theme/UserAvatar';
 import Button from '../../commons/Button';
@@ -9,6 +9,7 @@ import MoreIcon from './icons/MoreIcon';
 import MessageIcon from './icons/MessageIcon';
 import DirectIcon from './icons/DirectIcon';
 import BookmarkIcon from './icons/BookmarkIcon';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 const PostComboStyle = styled.article`
   display: flex;
@@ -16,7 +17,7 @@ const PostComboStyle = styled.article`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.background.light.color};
-  width: 500px;
+  width: 100%;
   margin-top: 32px;
   & > img {
     width: 100%;
@@ -84,22 +85,32 @@ const DescriptionPost = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.background.main.color};
   }
   & > div img:first-child(1) {
+    position: absolute;
     z-index: 4;
     top: 0;
     left: 0;
-    position: absolute;
   }
   & > div img:nth-child(2) {
     z-index: 6;
     top: 0;
-    left: -40px;
+    left: -30px;
     position: absolute;
   }
   & > div img:nth-child(3) {
     z-index: 5;
     top: 0;
-    left: -20px;
+    left: -15px;
     position: absolute;
+  }
+  & > p {
+    ${breakpointsMedia({
+    xs: css`
+        width: 50%;
+      `,
+    md: css`
+        width: initial;
+      `,
+  })}
   }
   & button:disabled {
     padding: 6px 12px;
@@ -144,7 +155,7 @@ export default function PostCombo() {
             size="small"
           />
           <UserAvatar
-            src="https://www.selectgame.com.br/wp-content/uploads/2017/12/Leeroy-Jenkins-Carta-de-Hearthstone-Art.jpg"
+            src="https://ocdn.eu/images/pulscms/Mjc7MDA_/e2340fc4d1c27ba063115973a477ef87.jpeg"
             size="small"
           />
           <UserAvatar

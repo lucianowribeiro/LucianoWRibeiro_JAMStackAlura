@@ -1,5 +1,5 @@
 import React from 'react';
-import userService from '../../../services/user/userService';
+import userService from '../../services/user/userService';
 
 const useUserService = {
   getProfilePage() {

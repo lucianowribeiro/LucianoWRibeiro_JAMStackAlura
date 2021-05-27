@@ -1,8 +1,8 @@
 import { parseCookies } from 'nookies';
 import jwt from 'jsonwebtoken';
 import loginService, { LOGIN_APP_TOKEN } from '../login/loginService';
-import HttpClient from '../../infra/http/HttpClient';
-import isStagingEnv from '../../infra/env/isStagingEnv';
+import HttpClient from '../../http/HttpClient';
+import isStagingEnv from '../../env/isStagingEnv';
 
 const BASE_URL = isStagingEnv
   ? 'https://instalura-api-git-master-omariosouto.vercel.app'

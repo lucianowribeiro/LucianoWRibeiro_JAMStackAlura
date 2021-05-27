@@ -29,6 +29,12 @@ export const UserStyle = styled.img`
       height: 64px;
       `;
     }
+    if (size === 'biggest') {
+      return css`  
+      width: 188px;
+      height: 188px;
+      `;
+    }
     if (size === 'other') {
       return css`  
       width: 48px;

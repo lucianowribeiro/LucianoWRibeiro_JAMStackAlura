@@ -5,6 +5,7 @@ exports[`<TextField /> renders component 1`] = `
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
+  color: #070C0E;
 }
 
 .c1 {
@@ -17,6 +18,7 @@ exports[`<TextField /> renders component 1`] = `
 
 <input
   class="c0 c1"
+  color="tertiary.main"
   name="nome"
   placeholder="Nome"
   type="text"
@@ -29,6 +31,7 @@ exports[`<TextField /> when field is invalid displays the respective error messa
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
+  color: #070C0E;
 }
 
 .c1 {
@@ -47,6 +50,7 @@ exports[`<TextField /> when field is invalid displays the respective error messa
 
 <input
   class="c0 c1"
+  color="tertiary.main"
   name="email"
   placeholder="Email"
   type="text"

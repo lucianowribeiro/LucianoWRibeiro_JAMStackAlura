@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 
 export default function SEO({ headTitle }) {
   const hasHeadTitle = Boolean(headTitle);
-  const baseTitle = 'Instalura - Projeto Base do Alura Bootcamp JAMStack';
+  const baseTitle = 'Instalura';
   const title = hasHeadTitle
     ? (`${headTitle} | ${baseTitle}`)
     : baseTitle;
 
-  const description = 'Aprenda Programação, Front-end, Data Science, UX, DevOps, Marketing, Inovação e Gestão na maior plataforma de tecnologia do Brasil';
-  const image = 'https://www.alura.com.br/assets/img/alura-share.1571848411.png';
-  const urlBase = 'urldomeuprojeto.com.br';
+  const description = 'Projeto desenvolvido durante a Bootcamp da JamStack da Alura com React e NextJS';
+  const image = '/images/instalura.png';
+  const urlBase = 'https://instalura-lucianowribeiro.vercel.app/';
 
   return (
     <Head>

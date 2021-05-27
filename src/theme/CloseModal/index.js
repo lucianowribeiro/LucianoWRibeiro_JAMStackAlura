@@ -5,14 +5,26 @@ import breakpointsMedia from '../utils/breakpointsMedia';
 const CloseModal = styled(CloseCircle)`
   color: ${({ theme }) => theme.colors.tertiary.light.color};
   width: 2rem;
-  margin-top: 2rem;
   cursor: pointer;
+  align-self: flex-end;
+  position: absolute;
   ${breakpointsMedia({
+    xs: css`
+      top: 10px;
+      right: 12px;
+    `,
+    sm: css`
+      top: 14px;
+      right: 20px;
+    `,
     md: css`
-      margin-right: 1rem;
+      top: 18px;
+      right: 31%;
+    `,
+    lg: css`
+      right: 34.5%;
     `,
   })}
-  align-self: flex-start;
 `;
 
 export default CloseModal;
