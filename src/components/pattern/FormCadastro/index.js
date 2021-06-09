@@ -186,6 +186,7 @@ export default function FormCadastro({ onClose, propsModal }) {
           {...propsModal}
         >
           <CloseModal
+            type="user"
             onClick={() => {
               onClose();
             }}

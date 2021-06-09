@@ -2,7 +2,7 @@ import React from 'react';
 import { Lottie } from '@crello/react-lottie';
 import authService from '../../src/infra/services/auth/authService';
 import userService from '../../src/infra/services/user/userService';
-import useUserService from '../../src/infra/hooks/UseUserService';
+import useUserService from '../../src/infra/hooks/user/useUserService';
 import LoadingAnimation from '../../src/theme/animations/LoadingAnimation.json';
 import ErrorAnimation from '../../src/theme/animations/ErrorAnimation.json';
 import Box from '../../src/components/foundation/layout/Box';

@@ -17,7 +17,7 @@ const ModalWrapper = styled.div`
     overflow: scroll;
     transition: .3s;
     z-index: 100;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(10px);
     ${({ isOpen }) => {
     if (isOpen) {
       return css`
@@ -45,7 +45,9 @@ function Modal({ isOpen, onClose, children }) {
       isOpen={isOpen}
       onClick={(event) => {
         const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
-        if (!isSafeArea) onClose();
+        if (!isSafeArea) {
+          onClose();
+        }
       }}
     >
       {isOpen && <LockScroll />}
@@ -59,9 +61,10 @@ function Modal({ isOpen, onClose, children }) {
           },
         }}
         animate={isOpen ? 'open' : 'closed'}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         style={{
           display: 'flex',
+          justifyContent: 'center',
         }}
       >
         {children({

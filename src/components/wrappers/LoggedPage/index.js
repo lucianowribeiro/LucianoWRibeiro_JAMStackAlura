@@ -13,6 +13,12 @@ export { LoggedPageContext } from './context';
 export default function LoggedPage({ children, profile }) {
   const [isUserPerfil, setUserPerfil] = React.useState(false);
   const [isPostOpen, setPostOpen] = React.useState(false);
+  const [image, setImage] = React.useState({
+    have: false,
+    loading: false,
+    url: '',
+    ready: false,
+  });
   return (
     <LoggedPageContext.Provider
       value={{
@@ -29,10 +35,21 @@ export default function LoggedPage({ children, profile }) {
         flexDirection={{ xs: 'column-reverse', md: 'column' }}
         alignItems="center"
       >
-        <Modal isOpen={isPostOpen} onClose={() => setPostOpen(!isPostOpen)}>
+        <Modal
+          isOpen={isPostOpen}
+          onClose={() => setPostOpen(!isPostOpen)}
+        >
           {(propsModal) => (
             <FormPost
+              image={image}
+              setImage={setImage}
               onClose={() => setPostOpen(!isPostOpen)}
+              resetPostForm={() => setImage({
+                have: false,
+                loading: false,
+                url: '',
+                ready: false,
+              })}
               propsModal={propsModal}
             />
           )}

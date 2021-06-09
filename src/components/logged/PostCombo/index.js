@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 import LikeIcon from '../../../theme/LikeIcon';
 import UserAvatar from '../../../theme/UserAvatar';
 import Button from '../../commons/Button';
@@ -117,7 +118,7 @@ const DescriptionPost = styled.div`
   }
 `;
 
-export default function PostCombo() {
+export default function PostCombo({ filter, url }) {
   const webLogged = React.useContext(LoggedPageContext);
   return (
     <PostComboStyle>
@@ -131,7 +132,8 @@ export default function PostCombo() {
         <MoreIcon />
       </HeaderPost>
       <img
-        src="https://i.ytimg.com/vi/aEtm69mLK6w/hqdefault.jpg"
+        src={url}
+        className={`filter-${filter}`}
         alt="post face"
       />
       <IconsPost>
@@ -175,3 +177,7 @@ export default function PostCombo() {
     </PostComboStyle>
   );
 }
+PostCombo.propTypes = {
+  url: PropTypes.string.isRequired,
+  filter: PropTypes.string.isRequired,
+};

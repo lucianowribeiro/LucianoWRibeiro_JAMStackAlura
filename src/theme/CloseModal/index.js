@@ -7,24 +7,40 @@ const CloseModal = styled(CloseCircle)`
   width: 2rem;
   cursor: pointer;
   align-self: flex-end;
-  position: absolute;
-  ${breakpointsMedia({
-    xs: css`
-      top: 10px;
-      right: 12px;
-    `,
-    sm: css`
-      top: 14px;
-      right: 20px;
-    `,
-    md: css`
-      top: 18px;
-      right: 31%;
-    `,
-    lg: css`
-      right: 34.5%;
-    `,
-  })}
+  ${({ type }) => (type === 'user'
+    ? css`
+          position: absolute;
+          ${breakpointsMedia({
+      xs: css`
+              top: 10px;
+              right: 12px;
+            `,
+      sm: css`
+              top: 14px;
+              right: 20px;
+            `,
+      md: css`
+              top: 18px;
+              right: 31%;
+            `,
+      lg: css`
+              right: 34.5%;
+            `,
+    })}
+        `
+    : css`
+          ${breakpointsMedia({
+      xs: css`
+              margin-bottom: 0.5rem;
+            `,
+      md: css`
+              margin-bottom: 0rem;
+            `,
+    })}
+
+          margin-top: 0.5rem;
+          margin-right: 1rem;
+        `)}
 `;
 
 export default CloseModal;

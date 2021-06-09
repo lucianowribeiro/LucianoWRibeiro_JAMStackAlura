@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import LoginScreenPageObject from '../../../../src/components/screens/LoginScreeen/LoginScreeen.pageObject';
-import { LOGIN_APP_TOKEN } from '../../../../src/services/login/loginService';
+import { LOGIN_APP_TOKEN } from '../../../../src/infra/services/login/loginService';
 
 describe('/pages/app/login/', () => {
   describe('when fill and submit a form login request', () => {

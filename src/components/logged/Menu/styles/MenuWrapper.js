@@ -16,7 +16,7 @@ const MenuWrapper = styled.header`
   align-items: center;
   ${breakpointsMedia({
     xs: css`
-      height: 12vh;
+      height: 76.8px;
       justify-content: center;
       & button:nth-child(2) {
         order: 4;

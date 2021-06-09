@@ -1,3 +1,4 @@
+/* eslint-disable dot-notation */
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import Grid from '../foundation/layout/Grid';
@@ -42,20 +43,36 @@ export default function ProfileScreen() {
                 <Text
                   tag="h3"
                   variant="paragraph1"
-                  style={{ fontWeight: '500', margin: '0', marginBottom: '8px' }}
+                  style={{
+                    fontWeight: '500',
+                    margin: '0',
+                    marginBottom: '8px',
+                  }}
                   color="tertiary.main"
                 >
                   200
                 </Text>
-                <Text tag="h3" variant="paragraph1" color="tertiary.light" style={{ margin: '0' }}>
-                  Publicacoes
-                </Text>
-              </Box>
-              <Box textAlign={{ xs: 'center', md: 'left' }} width={{ xs: 'initial ', md: '70%' }}>
                 <Text
                   tag="h3"
                   variant="paragraph1"
-                  style={{ fontWeight: '500', margin: '0', marginBottom: '8px' }}
+                  color="tertiary.light"
+                  style={{ margin: '0' }}
+                >
+                  Publicacoes
+                </Text>
+              </Box>
+              <Box
+                textAlign={{ xs: 'center', md: 'left' }}
+                width={{ xs: 'initial ', md: '70%' }}
+              >
+                <Text
+                  tag="h3"
+                  variant="paragraph1"
+                  style={{
+                    fontWeight: '500',
+                    margin: '0',
+                    marginBottom: '8px',
+                  }}
                   color="tertiary.main"
                 >
                   {webLogged.profile.user.name}
@@ -73,12 +90,16 @@ export default function ProfileScreen() {
           </Grid.Row>
           <Grid.Row>
             <Grid.Col>
-              <PostCombo />
-              <PostCombo />
-              <PostCombo />
+              {webLogged.profile.posts.map((post) => (
+                <img
+                  key={post['_id']}
+                  src={post.photoUrl}
+                  className={`filter-${post.filter}`}
+                  alt="posts user feed"
+                />
+              ))}
             </Grid.Col>
           </Grid.Row>
-
         </Grid.Container>
       )}
       {!webLogged.isUserPerfil && (
@@ -92,9 +113,13 @@ export default function ProfileScreen() {
               alignItems="center"
               marginTop={{ xs: '40px', md: '0' }}
             >
-              <PostCombo />
-              <PostCombo />
-              <PostCombo />
+              {webLogged.profile.posts.map((post) => (
+                <PostCombo
+                  key={post['_id']}
+                  filter={post.filter}
+                  url={post.photoUrl}
+                />
+              ))}
             </Grid.Col>
             <Grid.Col as="section">
               <UserDetail

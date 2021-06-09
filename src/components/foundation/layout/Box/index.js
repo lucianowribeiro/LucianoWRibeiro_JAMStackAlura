@@ -28,6 +28,7 @@ const Box = styled.div`
   ${propToStyle('marginRight')}
   ${propToStyle('minHeight')}
   ${propToStyle('textAlign')}
+  ${propToStyle('borderRadius')}
   
   
   ${({ theme, borderRadiusTheme }) => borderRadiusTheme && `border-radius: ${theme.borderRadius}`};
