@@ -20,18 +20,17 @@ export default function Menu() {
             type="search"
             placeholder="Pesquisar"
             name="pesquisar"
-            value=""
           />
           <SearchIcon />
         </MenuWrapper.SearchSide>
         <Button variant="secondary.main" onClick={webLogged.tooglePost}>
           <AddIcon />
         </Button>
-        <Button variant="background.light" onClick={webLogged.isUserPerfil && webLogged.toogleUserPerfil}>
+        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(false)}>
           <HomeIcon />
         </Button>
         <LikeIcon />
-        <Button variant="background.light" onClick={!webLogged.isUserPerfil && webLogged.toogleUserPerfil}>
+        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(true)}>
           <UserAvatar size="smallest" />
         </Button>
       </MenuWrapper.LeftSide>
