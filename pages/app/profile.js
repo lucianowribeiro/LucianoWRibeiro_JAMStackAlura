@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Lottie } from '@crello/react-lottie';
 import authService from '../../src/infra/services/auth/authService';
@@ -12,8 +13,8 @@ import Button from '../../src/components/commons/Button';
 import ProfileScreen from '../../src/components/screens/ProfileScreen';
 import LoggedPage from '../../src/components/wrappers/LoggedPage';
 
-export default function ProfilePage() {
-  const response = useUserService.getProfilePage();
+export default function ProfilePage({ password }) {
+  const response = useUserService.getProfilePage(password);
   return (
     <WebGlobalProvider>
       {response.LOADING && (
@@ -72,12 +73,10 @@ export async function getServerSideProps(context) {
   const auth = authService(context);
   const hasActiveSession = await auth.hasActiveSession();
   if (hasActiveSession) {
-    const profilePage = await userService.getProfilePage(context);
+    const password = await userService.getPassword();
     return {
       props: {
-        user: {
-          ...profilePage,
-        },
+        password,
       },
     };
   }

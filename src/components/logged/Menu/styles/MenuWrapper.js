@@ -34,10 +34,13 @@ const MenuWrapper = styled.header`
       box-shadow: 0.5px 0 3px
         ${({ theme }) => theme.colors.tertiary.light.color};
       border-radius: ${({ theme }) => theme.borderRadius};
-      & > svg {
+      & > a {
         position: absolute;
         top: 0;
         height: 64px;
+      }
+      & > a > svg{
+        height: inherit;
       }
     `,
     md: css`
@@ -59,7 +62,7 @@ const MenuWrapper = styled.header`
         ${({ theme }) => theme.colors.tertiary.light.color};
       border-radius: initial;
       justify-content: space-around;
-      & > svg {
+      & > a{
         position: initial;
       }
     `,

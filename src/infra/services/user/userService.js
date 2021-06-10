@@ -8,11 +8,11 @@ const BASE_URL = isStagingEnv
   : 'https://instalura-api-omariosouto.vercel.app';
 
 const userService = {
-  async getProfilePage(context) {
+  async getProfilePage(password, context) {
     try {
       const token = await authService(context).getToken();
       const session = await authService(context).getSession();
-      const { user } = await loginService.login({ username: session.user.username, password: 'senhasegura' });
+      const { user } = await loginService.login({ username: session.user.username, password });
       const response = await HttpClient(`${BASE_URL}/api/users/posts`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -28,6 +28,9 @@ const userService = {
     } catch (error) {
       return null;
     }
+  },
+  getPassword() {
+    return process.env.PASSWORD_DEFAULT;
   },
 };
 export default userService;

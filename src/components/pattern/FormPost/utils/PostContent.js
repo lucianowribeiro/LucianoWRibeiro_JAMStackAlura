@@ -25,6 +25,7 @@ export default function PostContent({ image, setImage, setFilter }) {
       >
         <TextField
           placeholder="URL da imagem"
+          name="image_url"
           onChange={(event) => {
             setImage({
               have: false,

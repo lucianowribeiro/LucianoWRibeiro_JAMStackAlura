@@ -2,14 +2,14 @@ import React from 'react';
 import userService from '../../services/user/userService';
 
 const useUserService = {
-  getProfilePage() {
+  getProfilePage(password) {
     const [response, setResponse] = React.useState({
       DATA: null,
       LOADING: true,
       ERROR: null,
     });
     React.useEffect(() => {
-      userService.getProfilePage()
+      userService.getProfilePage(password)
         .then((responseFromServer) => {
           if (responseFromServer) {
             setResponse({

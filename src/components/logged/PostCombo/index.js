@@ -135,6 +135,7 @@ export default function PostCombo({ filter, url }) {
         src={url}
         className={`filter-${filter}`}
         alt="post face"
+        loading="lazy"
       />
       <IconsPost>
         <div>

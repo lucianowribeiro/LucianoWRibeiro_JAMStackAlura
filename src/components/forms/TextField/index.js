@@ -59,6 +59,8 @@ export default function TextField({
 TextField.defaultProps = {
   error: '',
   isTouched: false,
+  value: undefined,
+  onChange: undefined,
 };
 
 TextField.propTypes = {
@@ -66,6 +68,6 @@ TextField.propTypes = {
   name: PropTypes.string.isRequired,
   error: PropTypes.string,
   isTouched: PropTypes.bool,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 };

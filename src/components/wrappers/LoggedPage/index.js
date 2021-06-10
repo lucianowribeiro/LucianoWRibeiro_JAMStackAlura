@@ -22,7 +22,7 @@ export default function LoggedPage({ children, profile }) {
   return (
     <LoggedPageContext.Provider
       value={{
-        toogleUserPerfil: () => setUserPerfil(!isUserPerfil),
+        toogleUserPerfil: (status) => setUserPerfil(status),
         tooglePost: () => setPostOpen(!isPostOpen),
         isUserPerfil,
         profile,

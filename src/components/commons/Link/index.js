@@ -14,7 +14,7 @@ const StyledLink = styled.a`
   opacity: 1;
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: .7;
   }
 `;
 

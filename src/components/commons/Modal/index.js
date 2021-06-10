@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const ModalWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     background: rgba(0,0,0,0.4);
     position: fixed;
     top: 0;
@@ -54,14 +54,14 @@ function Modal({ isOpen, onClose, children }) {
       <motion.div
         variants={{
           open: {
-            x: 0,
+            y: 180,
           },
           close: {
-            x: '100%',
+            y: 0,
           },
         }}
         animate={isOpen ? 'open' : 'closed'}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.2 }}
         style={{
           display: 'flex',
           justifyContent: 'center',
