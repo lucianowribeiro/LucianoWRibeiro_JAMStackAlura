@@ -9,6 +9,7 @@ import PostCombo from '../logged/PostCombo';
 import UserDetail from '../logged/UserDetail';
 import UserAvatar from '../../theme/UserAvatar';
 import Box from '../foundation/layout/Box';
+import FeedUserImage from '../logged/FeedUserImage';
 
 export default function ProfileScreen() {
   const webLogged = React.useContext(LoggedPageContext);
@@ -16,8 +17,8 @@ export default function ProfileScreen() {
     <>
       <Menu />
       {webLogged.isUserPerfil && (
-        <Grid.Container>
-          <Grid.Row>
+        <Grid.Container as="main">
+          <Grid.Row as="article">
             <Grid.Col
               value={{ xs: 12, sm: 12, md: 6 }}
               as="section"
@@ -50,7 +51,7 @@ export default function ProfileScreen() {
                   }}
                   color="tertiary.main"
                 >
-                  200
+                  {webLogged.profile.posts.length}
                 </Text>
                 <Text
                   tag="h3"
@@ -88,10 +89,18 @@ export default function ProfileScreen() {
               </Box>
             </Grid.Col>
           </Grid.Row>
-          <Grid.Row>
-            <Grid.Col>
+          <Grid.Row as="article">
+            <Grid.Col
+              as="section"
+              marginTop="2rem"
+              marginBottom="2rem"
+              padding="initial"
+              display="flex"
+              flexWrap="wrap"
+              justifyContent="center"
+            >
               {webLogged.profile.posts.map((post) => (
-                <img
+                <FeedUserImage
                   key={post['_id']}
                   src={post.photoUrl}
                   className={`filter-${post.filter}`}
@@ -103,8 +112,8 @@ export default function ProfileScreen() {
         </Grid.Container>
       )}
       {!webLogged.isUserPerfil && (
-        <Grid.Container>
-          <Grid.Row>
+        <Grid.Container as="main">
+          <Grid.Row as="article">
             <Grid.Col
               as="section"
               display="flex"

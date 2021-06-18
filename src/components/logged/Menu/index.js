@@ -29,7 +29,7 @@ export default function Menu() {
         <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(false)}>
           <HomeIcon />
         </Button>
-        <LikeIcon />
+        <LikeIcon isButton />
         <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(true)}>
           <UserAvatar size="smallest" />
         </Button>

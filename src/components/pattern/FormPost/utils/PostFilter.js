@@ -143,7 +143,9 @@ export default function PostFilter({
             autoplay: true,
           }}
         />
-        <Text variant="smallestException" color="success.main">Post cadastrado com sucesso!</Text>
+        <Text variant="smallestException" color="success.main">
+          Post cadastrado com sucesso!
+        </Text>
       </Box>
       )}
       {!response.DATA && !response.LOADING && response.ERROR && (
@@ -164,11 +166,13 @@ export default function PostFilter({
             autoplay: true,
           }}
         />
-        <Text variant="smallestException" color="error.main">Parece que algo deu errado,tente novamente</Text>
+        <Text variant="smallestException" color="error.main">
+          Parece que algo deu errado,tente novamente
+        </Text>
         <Button
           onClick={() => {
             setResponse({
-              DATA: null,
+              DATA: response.DATA,
               LOADING: false,
               ERROR: false,
             });

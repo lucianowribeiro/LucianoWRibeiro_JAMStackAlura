@@ -18,6 +18,7 @@ export default function FormPost({
   const [filter, setFilter] = React.useState({ submit: false, type: '' });
   return (
     <Box
+      as="article"
       display="flex"
       flexDirection="column"
       justifyContent="space-between"

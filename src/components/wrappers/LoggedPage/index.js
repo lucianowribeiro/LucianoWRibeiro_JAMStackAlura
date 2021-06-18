@@ -34,6 +34,7 @@ export default function LoggedPage({ children, profile }) {
         backgroundColor="background.main"
         flexDirection={{ xs: 'column-reverse', md: 'column' }}
         alignItems="center"
+        minHeight="100vh"
       >
         <Modal
           isOpen={isPostOpen}

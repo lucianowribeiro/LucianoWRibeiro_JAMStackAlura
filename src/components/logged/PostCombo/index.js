@@ -108,7 +108,7 @@ const DescriptionPost = styled.div`
     xs: css`
         width: 50%;
       `,
-    md: css`
+    lg: css`
         width: initial;
       `,
   })}
@@ -139,7 +139,7 @@ export default function PostCombo({ filter, url }) {
       />
       <IconsPost>
         <div>
-          <LikeIcon />
+          <LikeIcon isButton />
           <Text tag="p" variant="paragraph1" color="tertiary.main">
             5.2k
           </Text>

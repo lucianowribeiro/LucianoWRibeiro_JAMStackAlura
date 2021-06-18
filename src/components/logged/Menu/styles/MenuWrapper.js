@@ -69,7 +69,7 @@ const MenuWrapper = styled.header`
   })}
 `;
 
-MenuWrapper.LeftSide = styled.div`
+MenuWrapper.LeftSide = styled.nav`
   display: flex;
   & button {
     padding: 0;

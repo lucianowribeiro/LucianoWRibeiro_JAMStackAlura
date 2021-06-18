@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-const ModalWrapper = styled.div`
+const ModalWrapper = styled.aside`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

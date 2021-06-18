@@ -143,6 +143,7 @@ const Grid = {
     });
   }}
     ${propToStyle('display')}
+    ${propToStyle('flexWrap')}
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
@@ -153,7 +154,9 @@ const Grid = {
     ${propToStyle('height')}
     ${propToStyle('order')}
     ${propToStyle('marginTop')}
+    ${propToStyle('marginBottom')}
     ${propToStyle('marginLeft')}
+    ${propToStyle('textAlign')}
   `,
 };
 export default Grid;
