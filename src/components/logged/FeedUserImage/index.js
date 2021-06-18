@@ -59,6 +59,7 @@ const ImageStyle = styled.figure`
   & > div > svg {
     width: 20%;
     height: 20%;
+    margin-bottom: 10px;
   }
 `;
 
@@ -129,6 +130,7 @@ export default function FeedUserImage({ src, className, alt }) {
               autoplay: true,
             }}
           />
+          <Text color="primary.main">{like.numberLikes}</Text>
         </Box>
       )}
       {console.log(like.numberLikes)}
