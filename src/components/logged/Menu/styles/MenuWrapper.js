@@ -31,6 +31,9 @@ const MenuWrapper = styled.header`
       & button:nth-child(5) {
         order: 6;
       }
+      & button:nth-child(6) {
+        order: 7;
+      }
       box-shadow: 0.5px 0 3px
         ${({ theme }) => theme.colors.tertiary.light.color};
       border-radius: ${({ theme }) => theme.borderRadius};
@@ -57,6 +60,9 @@ const MenuWrapper = styled.header`
       }
       & button:nth-child(5) {
         order: 5;
+      }
+      & button:nth-child(6) {
+        order: 6;
       }
       box-shadow: 0 0.5px 1px
         ${({ theme }) => theme.colors.tertiary.light.color};

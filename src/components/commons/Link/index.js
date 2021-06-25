@@ -3,11 +3,11 @@ import React from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+import { get } from 'lodash';
 
 const StyledLink = styled.a`
-  ${({ theme, color }) => (color
-    ? `color: ${get(theme, `colors.${color}.color`)}`
+  ${({ theme, mode, color }) => (color
+    ? `color: ${get(theme, `${mode}.${color}.color`)}`
     : 'color: inherit;')};
   text-decoration: none;
   transition: opacity ${({ theme }) => theme.transition};

@@ -14,6 +14,7 @@ import Text from '../../foundation/Text';
 import ErrorAnimation from '../../../theme/animations/ErrorAnimation.json';
 import LoadingAnimation from '../../../theme/animations/LoadingAnimation.json';
 import SuccessAnimation from '../../../theme/animations/SuccessAnimation.json';
+import Link from '../../commons/Link';
 
 const formStates = {
   DEFAULT: 'DEFAULT',
@@ -22,7 +23,7 @@ const formStates = {
   ERROR: 'ERROR',
 };
 
-function UserContent() {
+function UserContent({ mode }) {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState(
     formStates.DEFAULT,
@@ -41,7 +42,6 @@ function UserContent() {
       [nameField]: valueField,
     });
   }
-
   const isfomInvalid = userInfo.user.length === 0 || userInfo.username.length === 0;
   return (
     <form
@@ -83,7 +83,7 @@ function UserContent() {
         }, 2000);
       }}
     >
-      <Text variant="title" tag="h1" color="tertiary.main">
+      <Text variant="title" tag="h1" color="tertiary.main" mode={mode}>
         Pronto para saber da vida dos outros?
       </Text>
 
@@ -92,6 +92,7 @@ function UserContent() {
         tag="p"
         color="tertiary.light"
         marginBottom="32px"
+        mode={mode}
       >
         Você está a um passo de saber tudoo que está rolando no bairro,
         complete seu cadastro agora!
@@ -102,6 +103,7 @@ function UserContent() {
           placeholder="User"
           value={userInfo.user}
           onChange={handleChange}
+          mode={mode}
         />
       </div>
       <div>
@@ -110,6 +112,7 @@ function UserContent() {
           placeholder="Username"
           value={userInfo.username}
           onChange={handleChange}
+          mode={mode}
         />
       </div>
       <Button
@@ -117,9 +120,26 @@ function UserContent() {
         variant="primary.main"
         disabled={isfomInvalid}
         fullWidth
+        mode={mode}
       >
         Cadastrar
       </Button>
+      <Text
+        variant="paragraph1"
+        tag="p"
+        color="tertiary.main"
+        textAlign="center"
+        mode={mode}
+      >
+        Já tem uma conta?
+        {' '}
+        <Link
+          href="/app/login"
+          color="secondary.main"
+        >
+          Entrar
+        </Link>
+      </Text>
       {isFormSubmited && submissionStatus === formStates.DONE && (
       <Box display="flex" justifyContent="center">
         <Lottie
@@ -163,21 +183,23 @@ function UserContent() {
   );
 }
 
-export default function FormCadastro({ onClose, propsModal }) {
+export default function FormCadastro({ onClose, propsModal, mode }) {
   return (
     <Grid.Row marginLeft={0} marginRight={0} flex={1} justifyContent="center" position="relative">
       <Grid.Col
         display="flex"
-        backgroundColor="white"
+        backgroundColor="background.main"
         paddingRight={{ md: '0' }}
         value={{ xs: 12, md: 5, lg: 4 }}
+        mode={mode}
       >
         <Box
+          mode={mode}
           /* boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)" */
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          backgroundColor="white"
+          backgroundColor="background.main"
           padding={{
             xs: '16px',
             md: '85px',
@@ -191,15 +213,19 @@ export default function FormCadastro({ onClose, propsModal }) {
               onClose();
             }}
           />
-          <UserContent />
+          <UserContent mode={mode} />
 
         </Box>
       </Grid.Col>
     </Grid.Row>
   );
 }
+UserContent.propTypes = {
+  mode: PropTypes.string.isRequired,
+};
 
 FormCadastro.propTypes = {
   onClose: PropTypes.func.isRequired,
   propsModal: PropTypes.object.isRequired,
+  mode: PropTypes.string.isRequired,
 };

@@ -7,6 +7,7 @@ import LikeAnimation from '../../../theme/animations/LikeAnimation.json';
 import Box from '../../foundation/layout/Box';
 import LikeIcon from '../../../theme/LikeIcon';
 import Text from '../../foundation/Text';
+import likeService from '../../../infra/services/like/likeService';
 
 const ImageStyle = styled.figure`
   position: relative;
@@ -55,19 +56,25 @@ const ImageStyle = styled.figure`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   & > div > svg {
     width: 20%;
     height: 20%;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  & > div > span {
+    font-weight: bold;
   }
 `;
 
-export default function FeedUserImage({ src, className, alt }) {
+export default function FeedUserImage({
+  id, src, className, alt, likes,
+}) {
   const [like, setLike] = React.useState({
     have: false,
     ready: false,
-    numberLikes: 0,
+    numberLikes: likes.length,
   });
   return (
     <ImageStyle
@@ -83,18 +90,24 @@ export default function FeedUserImage({ src, className, alt }) {
         <Box
           onClick={() => {
             if (like.numberLikes === 0) {
-              setLike({
-                have: like.have,
-                ready: true,
-                numberLikes: like.numberLikes + 1,
-              });
+              const resp = likeService.like(id, like.numberLikes + 1);
+              if (resp) {
+                setLike({
+                  have: like.have,
+                  ready: true,
+                  numberLikes: like.numberLikes + 1,
+                });
+              }
             }
             if (like.numberLikes === 1) {
-              setLike({
-                have: like.have,
-                ready: true,
-                numberLikes: like.numberLikes - 1,
-              });
+              const resp = likeService.like(id, like.numberLikes - 1);
+              if (resp) {
+                setLike({
+                  have: like.have,
+                  ready: true,
+                  numberLikes: like.numberLikes - 1,
+                });
+              }
             }
           }}
         >
@@ -104,20 +117,26 @@ export default function FeedUserImage({ src, className, alt }) {
       )}
       {like.have && like.ready && (
         <Box
-          onClick={() => {
+          onClick={async () => {
             if (like.numberLikes === 1) {
-              setLike({
-                have: like.have,
-                ready: false,
-                numberLikes: like.numberLikes - 1,
-              });
+              const resp = likeService.like(id, like.numberLikes - 1);
+              if (resp) {
+                setLike({
+                  have: like.have,
+                  ready: true,
+                  numberLikes: like.numberLikes - 1,
+                });
+              }
             }
             if (like.numberLikes === 0) {
-              setLike({
-                have: like.have,
-                ready: false,
-                numberLikes: like.numberLikes + 1,
-              });
+              const resp = await likeService.like(id, like.numberLikes + 1);
+              if (resp) {
+                setLike({
+                  have: like.have,
+                  ready: true,
+                  numberLikes: like.numberLikes + 1,
+                });
+              }
             }
           }}
         >
@@ -133,12 +152,21 @@ export default function FeedUserImage({ src, className, alt }) {
           <Text color="primary.main">{like.numberLikes}</Text>
         </Box>
       )}
-      {console.log(like.numberLikes)}
     </ImageStyle>
   );
 }
+FeedUserImage.defaultProps = {
+  likes: [],
+};
 FeedUserImage.propTypes = {
+  id: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  likes: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string,
+      likes: PropTypes.string,
+    }),
+  ),
 };

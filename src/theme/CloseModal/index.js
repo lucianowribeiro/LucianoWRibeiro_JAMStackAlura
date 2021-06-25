@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 import { CloseCircle } from '@styled-icons/evaicons-solid/CloseCircle';
+import { get } from 'lodash';
 import breakpointsMedia from '../utils/breakpointsMedia';
 
 const CloseModal = styled(CloseCircle)`
-  color: ${({ theme }) => theme.colors.tertiary.light.color};
+  color: ${({ theme }) => get(theme, `${'light' || 'dark'}.tertiary.light.color`)};
   width: 2rem;
   cursor: pointer;
   align-self: flex-end;

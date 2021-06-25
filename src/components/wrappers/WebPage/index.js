@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import Footer from '../../commons/Footer';
 import Menu from '../../commons/Menu';
 import Modal from '../../commons/Modal';
@@ -21,7 +21,7 @@ export default function WebPage({
   messages,
 }) {
   const [isModalOpen, setModalState] = React.useState(false);
-
+  const [isTheme, setTheme] = React.useState('light');
   return (
     <WebPageContext.Provider
       value={{
@@ -31,12 +31,21 @@ export default function WebPage({
     >
       <SEO headTitle={seoProps.headTitle} />
 
-      <Box flex="1" display="flex" flexDirection="column" {...boxProps}>
+      <Box
+        flex="1"
+        display="flex"
+        flexDirection="column"
+        backgroundColor="background.main"
+        backgroundImage={isTheme === 'light' ? 'url(/images/bubblesLight.svg)' : 'url(/images/bubblesDark.svg)'}
+        mode={isTheme}
+        {...boxProps}
+      >
         <Modal isOpen={isModalOpen} onClose={() => setModalState(false)}>
           {(propsModal) => (
             <FormCadastro
               onClose={() => setModalState(!isModalOpen)}
               propsModal={propsModal}
+              mode={isTheme}
             />
           )}
         </Modal>
@@ -44,10 +53,12 @@ export default function WebPage({
           <Menu
             currentPage={seoProps.pathName}
             onCadastrarClick={() => setModalState(true)}
+            mode={isTheme}
+            onSwitchTheme={() => (isTheme === 'light' ? setTheme('dark') : setTheme('light'))}
           />
         )}
         {children}
-        <Footer />
+        <Footer mode={isTheme} />
       </Box>
     </WebPageContext.Provider>
   );

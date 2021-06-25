@@ -118,7 +118,9 @@ const DescriptionPost = styled.div`
   }
 `;
 
-export default function PostCombo({ filter, url }) {
+export default function PostCombo({
+  likes, description, filter, url,
+}) {
   const webLogged = React.useContext(LoggedPageContext);
   return (
     <PostComboStyle>
@@ -141,7 +143,7 @@ export default function PostCombo({ filter, url }) {
         <div>
           <LikeIcon isButton />
           <Text tag="p" variant="paragraph1" color="tertiary.main">
-            5.2k
+            {likes.length}
           </Text>
           <MessageIcon />
           <Text tag="p" variant="paragraph1" color="tertiary.main">
@@ -167,7 +169,7 @@ export default function PostCombo({ filter, url }) {
           />
         </div>
         <Text tag="p" variant="paragraph1" color="tertiary.main">
-          So excited to play this new ...
+          {description}
         </Text>
         <Button variant="tertiary.light" disabled>
           <Text tag="span" variant="paragraph1" color="tertiary.main">
@@ -178,7 +180,17 @@ export default function PostCombo({ filter, url }) {
     </PostComboStyle>
   );
 }
+PostCombo.defaultProps = {
+  likes: [],
+};
 PostCombo.propTypes = {
   url: PropTypes.string.isRequired,
   filter: PropTypes.string.isRequired,
+  likes: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string,
+      likes: PropTypes.string,
+    }),
+  ),
+  description: PropTypes.string.isRequired,
 };

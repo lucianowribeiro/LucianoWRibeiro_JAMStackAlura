@@ -9,7 +9,6 @@ export default webPageHOC(HomeScreen, {
       pathName: 'Home',
     },
     boxProps: {
-      backgroundImage: 'url(/images/bubbles.svg)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom right',
     },

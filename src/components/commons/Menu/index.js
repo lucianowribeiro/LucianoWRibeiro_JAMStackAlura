@@ -4,6 +4,7 @@ import Logo from '../../../theme/Logo';
 import Text from '../../foundation/Text';
 import Button from '../Button';
 import MenuWrapper from './styles/MenuWrapper';
+import SwitchIcon from '../../../theme/SwitchIcon';
 
 const links = [
   {
@@ -19,30 +20,35 @@ const links = [
     url: '/sobre',
   },
 ];
-export default function Menu({ currentPage, onCadastrarClick }) {
+export default function Menu({
+  currentPage, onCadastrarClick, onSwitchTheme, mode,
+}) {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
-        <Logo />
+        <Logo mode={mode} />
       </MenuWrapper.LeftSide>
-      <MenuWrapper.CentralSide>
+      <MenuWrapper.CentralSide mode={mode}>
         {links.map((link) => (
           <li key={link.url}>
-            <Text color="tertiary.main" href={link.url}>
+            <Text color="tertiary.main" href={link.url} mode={mode}>
               {link.texto === currentPage && link.texto}
             </Text>
-            <Text color="tertiary.light" href={link.url}>
+            <Text color="tertiary.light" href={link.url} mode={mode}>
               {link.texto !== currentPage && link.texto}
             </Text>
           </li>
         ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button ghost variant="secondary.main" href="/app/login">
+        <Button ghost variant="secondary.main" href="/app/login" mode={mode}>
           Entrar
         </Button>
-        <Button variant="primary.main" onClick={onCadastrarClick}>
+        <Button variant="primary.main" onClick={onCadastrarClick} mode={mode}>
           Cadastrar
+        </Button>
+        <Button ghost onClick={onSwitchTheme} mode={mode}>
+          <SwitchIcon mode={mode} />
         </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
@@ -55,4 +61,6 @@ Menu.defaultProps = {
 Menu.propTypes = {
   currentPage: PropTypes.string,
   onCadastrarClick: PropTypes.func.isRequired,
+  onSwitchTheme: PropTypes.func.isRequired,
+  mode: PropTypes.string.isRequired,
 };

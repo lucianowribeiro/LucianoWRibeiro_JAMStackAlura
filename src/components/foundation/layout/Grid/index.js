@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { get } from 'lodash';
 import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 import propToStyle from '../../../../theme/utils/propToStyle';
 
@@ -157,6 +158,7 @@ const Grid = {
     ${propToStyle('marginBottom')}
     ${propToStyle('marginLeft')}
     ${propToStyle('textAlign')}
+    ${({ theme, backgroundColor, mode }) => backgroundColor && `background-color: ${get(theme, `${mode}.${backgroundColor}.color`)}`}
   `,
 };
 export default Grid;

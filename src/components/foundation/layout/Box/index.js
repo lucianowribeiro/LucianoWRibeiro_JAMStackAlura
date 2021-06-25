@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import lodash from 'lodash';
+import { get } from 'lodash';
 import propToStyle from '../../../../theme/utils/propToStyle';
 
 const Box = styled.div`
@@ -32,6 +32,6 @@ const Box = styled.div`
   
   
   ${({ theme, borderRadiusTheme }) => borderRadiusTheme && `border-radius: ${theme.borderRadius}`};
-  ${({ theme, backgroundColor }) => backgroundColor && `background-color: ${lodash.get(theme, `colors.${backgroundColor}.color`)}`}
+  ${({ theme, backgroundColor, mode }) => backgroundColor && `background-color: ${get(theme, `${mode}.${backgroundColor}.color`)}`}
 `;
 export default Box;

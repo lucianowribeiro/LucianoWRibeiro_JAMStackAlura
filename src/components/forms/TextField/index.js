@@ -2,6 +2,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 import Text from '../../foundation/Text';
 
 const InputWrapper = styled.div`
@@ -10,14 +11,15 @@ const InputWrapper = styled.div`
 
 const Input = styled(Text)`
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.tertiary.light.color};
+  background-color: ${({ theme, mode }) => get(theme, `${mode}.background.main.color`)};
+  border: 1px solid ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
   padding: 12px 16px;
   outline: 0;
   border-radius: ${({ theme }) => theme.borderRadius};
-  ${({ theme, isFieldInvalid }) => isFieldInvalid && css`
-    border-color: ${theme.colors.error.main.color};
+  ${({ theme, isFieldInvalid, mode }) => isFieldInvalid && css`
+    border-color: ${get(theme, `${mode}.error.main.color`)};
     & + span {
-      color: ${theme.colors.error.main.color};
+      color: ${get(theme, `${mode}.error.main.color`)};
       font-size: 11px;
     }
   `}
@@ -49,6 +51,7 @@ export default function TextField({
           variant="smallestException"
           color="error.main"
           role="alert"
+          {...props}
         >
           {error}
         </Text>

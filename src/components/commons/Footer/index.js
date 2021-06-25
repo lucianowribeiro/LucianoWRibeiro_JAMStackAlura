@@ -1,6 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
 import RedHeart from '../../../theme/RedHeart';
+import Text from '../../foundation/Text';
+import Link from '../Link';
 
 const FooterWrapper = styled.footer`
   padding: 14px;
@@ -15,7 +18,6 @@ const FooterWrapper = styled.footer`
     margin-right: 23px;
   }
   a {
-    color: ${({ theme }) => theme.colors.primary.main.color};
     text-decoration: none;
     transition: .3s;
     &:hover,
@@ -25,30 +27,29 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-export default function Footer(props) {
+export default function Footer({ ...props }) {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
-      <a href="https://www.alura.com.br/">
+      <Link href="https://www.alura.com.br/">
         <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
-      </a>
-      <p>
+      </Link>
+      <Text tag="p" color="tertiary.main" {...props}>
         Criado com
         <RedHeart />
         por
         {' '}
-        <a href="https://github.com/lucianowribeiro/">
-          <span>@lucianowribeiro</span>
-        </a>
+        <Link href="https://github.com/lucianowribeiro/" color="primary.main" {...props}>
+          <Text>@lucianowribeiro</Text>
+        </Link>
         {' '}
         durante
         {' '}
         o
         {' '}
-        <a href="https://www.alura.com.br/">
-          <span>Bootcamp Alura JAM Stack</span>
-        </a>
-      </p>
+        <Link href="https://www.alura.com.br/" color="primary.main" {...props}>
+          <Text>Bootcamp Alura JAM Stack</Text>
+        </Link>
+      </Text>
     </FooterWrapper>
   );
 }

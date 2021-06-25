@@ -8,6 +8,7 @@ import SearchIcon from './icons/SearchIcon';
 import Button from '../../commons/Button';
 import { LoggedPageContext } from '../../wrappers/LoggedPage/context';
 import UserAvatar from '../../../theme/UserAvatar';
+import SwitchIcon from '../../../theme/SwitchIcon';
 
 export default function Menu() {
   const webLogged = React.useContext(LoggedPageContext);
@@ -32,6 +33,9 @@ export default function Menu() {
         <LikeIcon isButton />
         <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(true)}>
           <UserAvatar size="smallest" />
+        </Button>
+        <Button variant="background.light">
+          <SwitchIcon />
         </Button>
       </MenuWrapper.LeftSide>
     </MenuWrapper>

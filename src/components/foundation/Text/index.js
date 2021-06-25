@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import propToStyle from '../../../theme/utils/propToStyle';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import Link from '../../commons/Link';
@@ -38,7 +38,7 @@ export const TextStyleVariantsMap = {
 
 const TextBase = styled.span`
   ${({ variant }) => TextStyleVariantsMap[variant]}
-  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
+  color: ${({ theme, color, mode }) => get(theme, `${mode}.${color}.color`)};
   ${propToStyle('textAlign')}
   ${propToStyle('marginBottom')}
   ${propToStyle('margin')}

@@ -21,7 +21,6 @@ const userService = {
       return {
         user: {
           ...user,
-          likes: '100',
         },
         posts: response.data,
       };

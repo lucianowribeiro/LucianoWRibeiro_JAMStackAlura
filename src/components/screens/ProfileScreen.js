@@ -102,9 +102,11 @@ export default function ProfileScreen() {
               {webLogged.profile.posts.map((post) => (
                 <FeedUserImage
                   key={post['_id']}
+                  id={post['_id']}
                   src={post.photoUrl}
                   className={`filter-${post.filter}`}
                   alt="posts user feed"
+                  likes={post.likes}
                 />
               ))}
             </Grid.Col>
@@ -127,6 +129,8 @@ export default function ProfileScreen() {
                   key={post['_id']}
                   filter={post.filter}
                   url={post.photoUrl}
+                  likes={post.likes}
+                  description={post.description}
                 />
               ))}
             </Grid.Col>
