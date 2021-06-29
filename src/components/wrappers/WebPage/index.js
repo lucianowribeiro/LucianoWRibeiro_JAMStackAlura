@@ -27,6 +27,7 @@ export default function WebPage({
       value={{
         toogleModalCadastro: () => setModalState(!isModalOpen),
         getCMSContent: (csmkey) => get(messages, csmkey),
+        mode: isTheme,
       }}
     >
       <SEO headTitle={seoProps.headTitle} />

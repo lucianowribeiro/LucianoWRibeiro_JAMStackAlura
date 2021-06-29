@@ -3,10 +3,11 @@ import Button from '../commons/Button';
 import Box from '../foundation/layout/Box';
 import Grid from '../foundation/layout/Grid';
 import Text from '../foundation/Text';
-import { WebPageContext } from '../wrappers/WebPage';
+import { WebPageContext } from '../wrappers/WebPage/context';
 
 export default function HomeScreen() {
-  const webPage = React.useContext(WebPageContext);
+  const webPageContext = React.useContext(WebPageContext);
+
   return (
     <Box
       display="flex"
@@ -32,6 +33,7 @@ export default function HomeScreen() {
               variant="title"
               tag="h1"
               color="tertiary.main"
+              mode={webPageContext.mode}
           // textAlign="right"
               textAlign={{
                 xs: 'center',
@@ -48,6 +50,7 @@ export default function HomeScreen() {
                 xs: 'center',
                 md: 'left',
               }}
+              mode={webPageContext.mode}
             >
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industrys standard dummy text
@@ -61,7 +64,8 @@ export default function HomeScreen() {
               }}
               display="block"
               variant="primary.main"
-              onClick={() => webPage.toogleModalCadastro()}
+              onClick={() => webPageContext.toogleModalCadastro()}
+              mode={webPageContext.mode}
             >
               Cadastrar
             </Button>

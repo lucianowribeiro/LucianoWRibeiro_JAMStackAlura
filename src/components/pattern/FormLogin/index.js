@@ -23,7 +23,7 @@ const loginSchema = yup.object().shape({
     .min(8, 'Sua senha precisa ter ao menos 8 caracteres'),
 });
 
-export default function FormLogin({ onSubmit }) {
+export default function FormLogin({ onSubmit, mode }) {
   const router = useRouter();
   const initialValues = {
     usuario: '',
@@ -72,6 +72,7 @@ export default function FormLogin({ onSubmit }) {
         isTouched={form.touched.usuario}
         onChange={form.handleChange}
         onBlur={form.handleBlur}
+        mode={mode}
       />
       <TextField
         placeholder="Senha"
@@ -82,6 +83,7 @@ export default function FormLogin({ onSubmit }) {
         isTouched={form.touched.senha}
         onChange={form.handleChange}
         onBlur={form.handleBlur}
+        mode={mode}
       />
 
       <Button
@@ -93,6 +95,7 @@ export default function FormLogin({ onSubmit }) {
         }}
         fullWidth
         disabled={form.isFormDisabled}
+        mode={mode}
       >
         Entrar
       </Button>
@@ -111,6 +114,7 @@ export default function FormLogin({ onSubmit }) {
           <Text
             variant="smallestException"
             color="error.main"
+            mode={mode}
           >
             {messagError}
           </Text>
@@ -130,6 +134,7 @@ export default function FormLogin({ onSubmit }) {
           <Text
             variant="smallestException"
             color="success.main"
+            mode={mode}
           >
             LOADING ...
           </Text>
@@ -144,4 +149,5 @@ FormLogin.defaultProps = {
 
 FormLogin.propTypes = {
   onSubmit: PropTypes.func,
+  mode: PropTypes.string.isRequired,
 };

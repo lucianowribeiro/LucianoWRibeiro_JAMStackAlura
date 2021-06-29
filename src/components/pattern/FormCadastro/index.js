@@ -136,6 +136,7 @@ function UserContent({ mode }) {
         <Link
           href="/app/login"
           color="secondary.main"
+          mode={mode}
         >
           Entrar
         </Link>

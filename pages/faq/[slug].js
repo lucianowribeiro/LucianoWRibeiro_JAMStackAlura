@@ -50,6 +50,9 @@ export async function getStaticProps({ params }) {
           headTitle: dadosDaPagina.question.title,
           pathName: 'Perguntas Frequentes',
         },
+        boxProps: {
+          backgroundImage: 'none',
+        },
       },
     },
   };

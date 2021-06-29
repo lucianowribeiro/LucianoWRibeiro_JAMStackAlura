@@ -16,5 +16,8 @@ export default webPageHOC(AboutScreen, {
       headTitle: 'Sobre',
       pathName: 'Sobre',
     },
+    boxProps: {
+      backgroundImage: 'none',
+    },
   },
 });

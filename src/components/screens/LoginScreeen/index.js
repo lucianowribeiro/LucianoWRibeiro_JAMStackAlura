@@ -39,16 +39,18 @@ export default function LoginScreen() {
             <Link
               href="/"
               color="secondary.main"
+              mode={webPageContext.mode}
             >
-              <Logo size="large" />
+              <Logo size="large" mode={webPageContext.mode} />
             </Link>
           </Box>
-          <FormLogin />
+          <FormLogin mode={webPageContext.mode} />
           <Text
             variant="paragraph1"
             tag="p"
             color="tertiary.light"
             textAlign="center"
+            mode={webPageContext.mode}
           >
             {'Não tem uma conta? '}
             <Link
@@ -58,6 +60,7 @@ export default function LoginScreen() {
                 event.preventDefault();
                 webPageContext.toogleModalCadastro();
               }}
+              mode={webPageContext.mode}
             >
               Cadastre-se
             </Link>

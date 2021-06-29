@@ -15,6 +15,9 @@ export default webPageHOC(FAQPage, {
       headTitle: 'Perguntas Frequentes',
       pathName: 'Perguntas Frequentes',
     },
+    boxProps: {
+      backgroundImage: 'none',
+    },
   },
 });
 
