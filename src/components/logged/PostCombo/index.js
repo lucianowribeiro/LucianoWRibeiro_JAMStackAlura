@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 import LikeIcon from '../../../theme/LikeIcon';
 import UserAvatar from '../../../theme/UserAvatar';
 import Button from '../../commons/Button';
@@ -17,7 +18,7 @@ const PostComboStyle = styled.article`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.background.light.color};
+  background-color: ${({ theme, mode }) => get(theme, `${mode}.colors.background.light.color`)};
   width: 100%;
   margin-top: 32px;
   & > img {
@@ -83,7 +84,7 @@ const DescriptionPost = styled.div`
   & > div img {
     height: 32px;
     width: 32px;
-    border: 2px solid ${({ theme }) => theme.colors.background.main.color};
+    border: 2px solid ${({ theme, mode }) => get(theme, `${mode}.background.main.color`)};
   }
   & > div img:first-child(1) {
     position: absolute;
@@ -123,15 +124,15 @@ export default function PostCombo({
 }) {
   const webLogged = React.useContext(LoggedPageContext);
   return (
-    <PostComboStyle>
+    <PostComboStyle mode={webLogged.mode}>
       <HeaderPost>
         <div>
           <UserAvatar size="medium" />
-          <Text tag="p" variant="paragraph1" color="tertiary.main">
+          <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
             {webLogged.profile.user.username}
           </Text>
         </div>
-        <MoreIcon />
+        <MoreIcon mode={webLogged.mode} />
       </HeaderPost>
       <img
         src={url}
@@ -141,19 +142,19 @@ export default function PostCombo({
       />
       <IconsPost>
         <div>
-          <LikeIcon isButton />
-          <Text tag="p" variant="paragraph1" color="tertiary.main">
+          <LikeIcon isButton mode={webLogged.mode} />
+          <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
             {likes.length}
           </Text>
           <MessageIcon />
-          <Text tag="p" variant="paragraph1" color="tertiary.main">
+          <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
             1.2k
           </Text>
-          <DirectIcon />
+          <DirectIcon mode={webLogged.mode} />
         </div>
-        <BookmarkIcon />
+        <BookmarkIcon mode={webLogged.mode} />
       </IconsPost>
-      <DescriptionPost>
+      <DescriptionPost mode={webLogged.mode}>
         <div>
           <UserAvatar
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLKybvXmdnFY15zYfKKEHh1DxA0USfX8vw85Eu6f34E1rDIciMTjX5PQsOaa61HIXIzuY&usqp=CAU"
@@ -168,11 +169,11 @@ export default function PostCombo({
             size="small"
           />
         </div>
-        <Text tag="p" variant="paragraph1" color="tertiary.main">
+        <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
           {description}
         </Text>
-        <Button variant="tertiary.light" disabled>
-          <Text tag="span" variant="paragraph1" color="tertiary.main">
+        <Button variant="tertiary.light" disabled mode={webLogged.mode}>
+          <Text tag="span" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
             Mais
           </Text>
         </Button>

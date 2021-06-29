@@ -15,7 +15,7 @@ export default function ProfileScreen() {
   const webLogged = React.useContext(LoggedPageContext);
   return (
     <>
-      <Menu />
+      <Menu mode={webLogged.mode} switchTheme={webLogged.switchTheme} />
       {webLogged.isUserPerfil && (
         <Grid.Container as="main">
           <Grid.Row as="article">
@@ -28,7 +28,7 @@ export default function ProfileScreen() {
               alignItems={{ xs: 'center', md: 'flex-end' }}
               marginTop={{ xs: '50px', md: '0' }}
             >
-              <Text tag="h1" variant="title" color="tertiary.main">
+              <Text tag="h1" variant="title" color="tertiary.main" mode={webLogged.mode}>
                 <UserAvatar size="biggest" />
               </Text>
             </Grid.Col>
@@ -50,6 +50,7 @@ export default function ProfileScreen() {
                     marginBottom: '8px',
                   }}
                   color="tertiary.main"
+                  mode={webLogged.mode}
                 >
                   {webLogged.profile.posts.length}
                 </Text>
@@ -58,6 +59,7 @@ export default function ProfileScreen() {
                   variant="paragraph1"
                   color="tertiary.light"
                   style={{ margin: '0' }}
+                  mode={webLogged.mode}
                 >
                   Publicacoes
                 </Text>
@@ -75,6 +77,7 @@ export default function ProfileScreen() {
                     marginBottom: '8px',
                   }}
                   color="tertiary.main"
+                  mode={webLogged.mode}
                 >
                   {webLogged.profile.user.name}
                 </Text>
@@ -83,6 +86,7 @@ export default function ProfileScreen() {
                   variant="paragraph1"
                   color="tertiary.light"
                   style={{ margin: '0' }}
+                  mode={webLogged.mode}
                 >
                   A simple person that like to do simple things ...
                 </Text>

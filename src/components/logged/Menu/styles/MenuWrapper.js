@@ -1,15 +1,16 @@
 import styled, { css } from 'styled-components';
 import { PlusCircleFill } from '@styled-icons/bootstrap/PlusCircleFill';
+import { get } from 'lodash';
 import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 
 export const AddIcon = styled(PlusCircleFill)`
   width: 32px;
   height: 38px;
-  color: ${({ theme }) => theme.colors.secondary.main.color};
-  background-color: ${({ theme }) => theme.colors.background.light.color};
+  color: ${({ theme, mode }) => get(theme, `${mode}.secondary.main.color`)};
+  background-color: ${({ theme, mode }) => get(theme, `${mode}.background.light.color`)};
 `;
 const MenuWrapper = styled.header`
-  background-color: ${({ theme }) => theme.colors.background.light.color};
+  background-color: ${({ theme, mode }) => get(theme, `${mode}.background.light.color`)};
   display: flex;
   width: 100%;
   z-index: 2;
@@ -35,7 +36,7 @@ const MenuWrapper = styled.header`
         order: 7;
       }
       box-shadow: 0.5px 0 3px
-        ${({ theme }) => theme.colors.tertiary.light.color};
+        ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
       border-radius: ${({ theme }) => theme.borderRadius};
       & > a {
         position: absolute;
@@ -65,7 +66,7 @@ const MenuWrapper = styled.header`
         order: 6;
       }
       box-shadow: 0 0.5px 1px
-        ${({ theme }) => theme.colors.tertiary.light.color};
+        ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
       border-radius: initial;
       justify-content: space-around;
       & > a{

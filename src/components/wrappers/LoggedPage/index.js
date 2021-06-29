@@ -13,6 +13,7 @@ export { LoggedPageContext } from './context';
 export default function LoggedPage({ children, profile }) {
   const [isUserPerfil, setUserPerfil] = React.useState(false);
   const [isPostOpen, setPostOpen] = React.useState(false);
+  const [isTheme, setTheme] = React.useState('light');
   const [image, setImage] = React.useState({
     have: false,
     loading: false,
@@ -26,6 +27,8 @@ export default function LoggedPage({ children, profile }) {
         tooglePost: () => setPostOpen(!isPostOpen),
         isUserPerfil,
         profile,
+        mode: isTheme,
+        switchTheme: () => (isTheme === 'light' ? setTheme('dark') : setTheme('light')),
       }}
     >
       <SEO headTitle={`Seja bem vindo(a) ${profile.user.name}`} />
@@ -35,6 +38,7 @@ export default function LoggedPage({ children, profile }) {
         flexDirection={{ xs: 'column-reverse', md: 'column' }}
         alignItems="center"
         minHeight="100vh"
+        mode={isTheme}
       >
         <Modal
           isOpen={isPostOpen}
@@ -52,6 +56,7 @@ export default function LoggedPage({ children, profile }) {
                 ready: false,
               })}
               propsModal={propsModal}
+              mode={isTheme}
             />
           )}
         </Modal>

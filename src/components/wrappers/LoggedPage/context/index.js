@@ -5,5 +5,6 @@ export const LoggedPageContext = React.createContext({
   tooglePost: () => {},
   isUserPerfil: false,
   profile: {},
+  mode: '',
   switchTheme: () => {},
 });
