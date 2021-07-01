@@ -11,7 +11,8 @@ const InputWrapper = styled.div`
 
 const Input = styled(Text)`
   width: 100%;
-  background-color: ${({ theme, mode }) => get(theme, `${mode}.background.main.color`)};
+  color: ${({ theme, mode }) => get(theme, `${mode}.tertiary.main.color`)};
+  background-color: ${({ theme, mode, color }) => get(theme, `${mode}.${color}.color`)};
   border: 1px solid ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
   padding: 12px 16px;
   outline: 0;

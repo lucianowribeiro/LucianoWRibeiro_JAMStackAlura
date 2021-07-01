@@ -22,21 +22,22 @@ export default function Menu({ mode, switchTheme }) {
             type="search"
             placeholder="Pesquisar"
             name="pesquisar"
+            color="background.light"
             mode={mode}
           />
           <SearchIcon mode={mode} />
         </MenuWrapper.SearchSide>
-        <Button variant="secondary.main" onClick={webLogged.tooglePost}>
+        <Button variant="background.light" onClick={webLogged.tooglePost} mode={mode}>
           <AddIcon mode={mode} />
         </Button>
-        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(false)}>
+        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(false)} mode={mode}>
           <HomeIcon mode={mode} />
         </Button>
-        <LikeIcon isButton mode={mode} />
-        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(true)}>
+        <LikeIcon variant="background.light" isButton color="tertiary.main" mode={mode} />
+        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(true)} mode={mode}>
           <UserAvatar size="smallest" />
         </Button>
-        <Button variant="background.light" onClick={switchTheme}>
+        <Button variant="background.light" onClick={switchTheme} mode={mode}>
           <SwitchIcon mode={mode} />
         </Button>
       </MenuWrapper.LeftSide>

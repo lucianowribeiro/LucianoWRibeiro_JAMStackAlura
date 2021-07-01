@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
-import RedHeart from '../../../theme/RedHeart';
+import HeartIcon from '../../../theme/HeartIcon';
 import Text from '../../foundation/Text';
 import Link from '../Link';
 
@@ -35,7 +35,7 @@ export default function Footer({ ...props }) {
       </Link>
       <Text tag="p" color="tertiary.main" {...props}>
         Criado com
-        <RedHeart />
+        <HeartIcon {...props} />
         por
         {' '}
         <Link href="https://github.com/lucianowribeiro/" color="primary.main" {...props}>

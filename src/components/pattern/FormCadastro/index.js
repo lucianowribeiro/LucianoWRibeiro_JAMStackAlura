@@ -213,6 +213,7 @@ export default function FormCadastro({ onClose, propsModal, mode }) {
             onClick={() => {
               onClose();
             }}
+            mode={mode}
           />
           <UserContent mode={mode} />
 

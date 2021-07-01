@@ -111,7 +111,7 @@ export default function FeedUserImage({
             }
           }}
         >
-          <LikeIcon color="white" />
+          <LikeIcon color="background.light" />
           <Text color="primary.main">{like.numberLikes}</Text>
         </Box>
       )}
