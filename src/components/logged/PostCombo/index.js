@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { get } from 'lodash';
-import LikeIcon from '../../../theme/LikeIcon';
+import LikeIcon from '../../../theme/icons/LikeIcon';
 import UserAvatar from '../../../theme/UserAvatar';
 import Button from '../../commons/Button';
 import Text from '../../foundation/Text';

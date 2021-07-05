@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import { CloseCircle } from '@styled-icons/evaicons-solid/CloseCircle';
 import { get } from 'lodash';
-import breakpointsMedia from '../utils/breakpointsMedia';
+import breakpointsMedia from '../../utils/breakpointsMedia';
 
-const CloseModal = styled(CloseCircle)`
+const CloseModalIcon = styled(CloseCircle)`
   color: ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
   width: 2rem;
   cursor: pointer;
@@ -44,4 +44,4 @@ const CloseModal = styled(CloseCircle)`
         `)}
 `;
 
-export default CloseModal;
+export default CloseModalIcon;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../../components/commons/Link';
+import Link from '../../../components/commons/Link';
 
 const sizes = {
   small: {

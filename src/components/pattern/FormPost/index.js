@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import PostImage from './utils/PostImage';
-import CloseModal from '../../../theme/CloseModal';
+import CloseModalIcon from '../../../theme/icons/CloseModalIcon';
 import Box from '../../foundation/layout/Box';
 import PostFilter from './utils/PostFilter';
 import PostContent from './utils/PostContent';
@@ -38,7 +38,7 @@ export default function FormPost({
       {...propsModal}
       mode={mode}
     >
-      <CloseModal
+      <CloseModalIcon
         type="post"
         onClick={() => {
           onClose();

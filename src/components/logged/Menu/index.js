@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Logo from '../../../theme/Logo';
+import Logo from '../../../theme/icons/Logo';
 import TextField from '../../forms/TextField';
 import MenuWrapper, { AddIcon } from './styles/MenuWrapper';
 import HomeIcon from './icons/HomeIcon';
-import LikeIcon from '../../../theme/LikeIcon';
+import LikeIcon from '../../../theme/icons/LikeIcon';
 import SearchIcon from './icons/SearchIcon';
 import Button from '../../commons/Button';
 import { LoggedPageContext } from '../../wrappers/LoggedPage/context';
 import UserAvatar from '../../../theme/UserAvatar';
-import SwitchIcon from '../../../theme/SwitchIcon';
+import SwitchIcon from '../../../theme/icons/SwitchIcon';
 
 export default function Menu({ mode, switchTheme }) {
   const webLogged = React.useContext(LoggedPageContext);

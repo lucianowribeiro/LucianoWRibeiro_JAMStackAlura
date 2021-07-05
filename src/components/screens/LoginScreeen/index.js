@@ -4,7 +4,7 @@ import Box from '../../foundation/layout/Box';
 import Grid from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 import { WebPageContext } from '../../wrappers/WebPage';
-import Logo from '../../../theme/Logo';
+import Logo from '../../../theme/icons/Logo';
 import FormLogin from '../../pattern/FormLogin';
 
 export default function LoginScreen() {

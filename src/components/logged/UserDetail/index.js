@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GithubIcon from '../../../theme/GithubIcon';
+import GithubIcon from '../../../theme/icons/GithubIcon';
 import UserAvatar from '../../../theme/UserAvatar';
 import Box from '../../foundation/layout/Box';
 import Text from '../../foundation/Text';

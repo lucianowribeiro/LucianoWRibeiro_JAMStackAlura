@@ -5,7 +5,7 @@ import { Lottie } from '@crello/react-lottie';
 import PropTypes from 'prop-types';
 import Box from '../../foundation/layout/Box';
 import Grid from '../../foundation/layout/Grid';
-import CloseModal from '../../../theme/CloseModal';
+import CloseModalIcon from '../../../theme/icons/CloseModalIcon';
 // eslint-disable-next-line react/prop-types
 import Button from '../../commons/Button';
 import TextField from '../../forms/TextField';
@@ -209,7 +209,7 @@ export default function FormCadastro({ onClose, propsModal, mode }) {
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsModal}
         >
-          <CloseModal
+          <CloseModalIcon
             type="user"
             onClick={() => {
               onClose();

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Logo from '../../../theme/Logo';
+import Logo from '../../../theme/icons/Logo';
 import Text from '../../foundation/Text';
 import Button from '../Button';
 import MenuWrapper from './styles/MenuWrapper';
-import SwitchIcon from '../../../theme/SwitchIcon';
+import SwitchIcon from '../../../theme/icons/SwitchIcon';
 
 const links = [
   {

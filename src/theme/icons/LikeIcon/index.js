@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../../components/commons/Button';
+import Button from '../../../components/commons/Button';
 
 const LikeSVG = ({ fill }) => (
   <svg

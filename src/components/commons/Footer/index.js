@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
-import HeartIcon from '../../../theme/HeartIcon';
+import HeartIcon from '../../../theme/icons/HeartIcon';
 import Text from '../../foundation/Text';
 import Link from '../Link';
+import AluraIcon from '../../../theme/icons/AluraIcon';
 
 const FooterWrapper = styled.footer`
   padding: 14px;
@@ -13,11 +14,12 @@ const FooterWrapper = styled.footer`
   border-radius: 4px; 
   padding-right: 28px;
   padding-left: 28px;
-  img {
+  & > a > svg {
     width: 58px;
-    margin-right: 23px;
+    margin-right: 12px;
+    margin-bottom: 6px;
   }
-  a {
+  & a {
     text-decoration: none;
     transition: .3s;
     &:hover,
@@ -31,7 +33,7 @@ export default function Footer({ ...props }) {
   return (
     <FooterWrapper {...props}>
       <Link href="https://www.alura.com.br/">
-        <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
+        <AluraIcon {...props} />
       </Link>
       <Text tag="p" color="tertiary.main" {...props}>
         Criado com

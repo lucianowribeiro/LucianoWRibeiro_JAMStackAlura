@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import LikeAnimation from '../../../theme/animations/LikeAnimation.json';
 import Box from '../../foundation/layout/Box';
-import LikeIcon from '../../../theme/LikeIcon';
+import LikeIcon from '../../../theme/icons/LikeIcon';
 import Text from '../../foundation/Text';
 import likeService from '../../../infra/services/like/likeService';
 import { LoggedPageContext } from '../../wrappers/LoggedPage/context';
