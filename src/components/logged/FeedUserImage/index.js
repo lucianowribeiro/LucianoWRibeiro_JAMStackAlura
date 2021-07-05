@@ -44,7 +44,7 @@ const ImageStyle = styled.figure`
     height: 100%;
   }
   & > div:hover {
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(20px);
   }
   & > div {
     z-index: 20;
@@ -113,7 +113,7 @@ export default function FeedUserImage({
             }
           }}
         >
-          <LikeIcon color="white" mode={webLogged.mode} />
+          <LikeIcon color="primary.main" mode={webLogged.mode} />
           <Text color="primary.main" mode={webLogged.mode}>{like.numberLikes}</Text>
         </Box>
       )}

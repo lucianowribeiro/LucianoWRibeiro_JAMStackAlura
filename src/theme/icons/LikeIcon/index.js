@@ -28,6 +28,8 @@ export default function LikeIcon({
     if (color === 'tertiary.main' && mode === 'dark') return '#fff';
     if (color === 'background.light' && mode === 'light') return '#fff';
     if (color === 'background.light' && mode === 'dark') return '#000';
+    if (color === 'primary.main' && mode === 'light') return '#D7385E';
+    if (color === 'primary.main' && mode === 'dark') return '#F27895';
     return color;
   };
   if (isButton) {
