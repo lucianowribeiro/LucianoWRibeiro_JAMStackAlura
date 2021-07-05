@@ -12,18 +12,22 @@ const InputWrapper = styled.div`
 const Input = styled(Text)`
   width: 100%;
   color: ${({ theme, mode }) => get(theme, `${mode}.tertiary.main.color`)};
-  background-color: ${({ theme, mode, color }) => get(theme, `${mode}.${color}.color`)};
-  border: 1px solid ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
+  background-color: ${({ theme, mode, color }) => (color
+    ? get(theme, `${mode}.${color}.color`)
+    : get(theme, `${mode}.background.main.color`))};
+  border: 1px solid
+    ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
   padding: 12px 16px;
   outline: 0;
   border-radius: ${({ theme }) => theme.borderRadius};
-  ${({ theme, isFieldInvalid, mode }) => isFieldInvalid && css`
-    border-color: ${get(theme, `${mode}.error.main.color`)};
-    & + span {
-      color: ${get(theme, `${mode}.error.main.color`)};
-      font-size: 11px;
-    }
-  `}
+  ${({ theme, isFieldInvalid, mode }) => isFieldInvalid
+    && css`
+      border-color: ${get(theme, `${mode}.error.main.color`)};
+      & + span {
+        color: ${get(theme, `${mode}.error.main.color`)};
+        font-size: 11px;
+      }
+    `}
 `;
 
 Input.defaultProps = {
@@ -32,7 +36,13 @@ Input.defaultProps = {
 };
 
 export default function TextField({
-  placeholder, name, onChange, value, error, isTouched, ...props
+  placeholder,
+  name,
+  onChange,
+  value,
+  error,
+  isTouched,
+  ...props
 }) {
   const hasError = Boolean(error);
   const isFieldInvalid = hasError && isTouched;

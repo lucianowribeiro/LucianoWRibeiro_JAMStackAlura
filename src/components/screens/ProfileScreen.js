@@ -150,6 +150,7 @@ export default function ProfileScreen() {
                 variant="paragraph1"
                 color="tertiary.light"
                 style={{ paddingLeft: '55px', fontWeight: '500' }}
+                mode={webLogged.mode}
               >
                 Projetos da galera
               </Text>

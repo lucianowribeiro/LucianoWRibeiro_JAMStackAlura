@@ -51,7 +51,7 @@ const ButtonWrapper = styled.button`
   })}
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.2;
+    ${({ mode }) => (mode === 'light' ? css`opacity: 0.2` : css`opacity: 0.5`)};
   }
   ${({ fullWidth }) => fullWidth
     && css`

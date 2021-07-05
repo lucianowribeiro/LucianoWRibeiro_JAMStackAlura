@@ -4,8 +4,10 @@ import TextField from '../../../forms/TextField';
 import Button from '../../../commons/Button';
 import ArrowRightIcon from '../icons/ArrowRightIcon';
 import Text from '../../../foundation/Text';
+import { LoggedPageContext } from '../../../wrappers/LoggedPage/context';
 
 export default function PostContent({ image, setImage, setFilter }) {
+  const loggedPage = React.useContext(LoggedPageContext);
   return (
     <form
       style={{
@@ -34,6 +36,8 @@ export default function PostContent({ image, setImage, setFilter }) {
               ready: false,
             });
           }}
+          color="background.light"
+          mode={loggedPage.mode}
         />
         <Button
           onClick={(event) => {
@@ -60,11 +64,12 @@ export default function PostContent({ image, setImage, setFilter }) {
             right: '0',
           }}
           variant="secondary.main"
+          mode={loggedPage.mode}
         >
           <ArrowRightIcon />
         </Button>
       </div>
-      <Text color="tertiary.light">
+      <Text color="tertiary.light" mode={loggedPage.mode}>
         Formatos suportados: jpg, png, svg e xpto.
       </Text>
       <Button
@@ -76,11 +81,12 @@ export default function PostContent({ image, setImage, setFilter }) {
         variant="primary.main"
         fullWidth
         disabled={!image.ready}
+        mode={loggedPage.mode}
       >
         Avançar
       </Button>
       {!image.have && (
-      <Text variant="smallestException" color="error.main">
+      <Text variant="smallestException" color="error.main" mode={loggedPage.mode}>
         Por favor insere uma url valida!
       </Text>
       )}

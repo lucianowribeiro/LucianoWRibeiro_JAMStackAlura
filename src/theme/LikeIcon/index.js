@@ -28,7 +28,7 @@ export default function LikeIcon({
     if (color === 'tertiary.main' && mode === 'dark') return '#fff';
     if (color === 'background.light' && mode === 'light') return '#fff';
     if (color === 'background.light' && mode === 'dark') return '#000';
-    return '';
+    return color;
   };
   if (isButton) {
     return (

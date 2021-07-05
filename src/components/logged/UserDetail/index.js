@@ -20,7 +20,7 @@ export default function UserDetail({
       <Box display="flex" justifyContent="center" alignItems="center">
         <UserAvatar size={size} src={src} />
         <Box marginLeft="20px" width="180px">
-          <Text tag="h2" style={{ fontWeight: '500', marginBottom: '4px' }} variant="paragraph1" mode={webLogged.mode}>{username}</Text>
+          <Text tag="h2" style={{ fontWeight: '500', marginBottom: '4px' }} variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>{username}</Text>
           <Text tag="h3" style={{ fontWeight: '500', marginTop: '4px' }} variant="paragraph1" color="tertiary.light" mode={webLogged.mode}>{name}</Text>
         </Box>
       </Box>

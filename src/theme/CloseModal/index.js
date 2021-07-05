@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import breakpointsMedia from '../utils/breakpointsMedia';
 
 const CloseModal = styled(CloseCircle)`
-  color: ${({ theme, mode }) => get(theme, `${mode}.tertiary.main.color`)};
+  color: ${({ theme, mode }) => get(theme, `${mode}.tertiary.light.color`)};
   width: 2rem;
   cursor: pointer;
   align-self: flex-end;

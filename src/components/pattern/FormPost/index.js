@@ -14,6 +14,7 @@ export default function FormPost({
   resetPostForm,
   onClose,
   propsModal,
+  mode,
 }) {
   const [filter, setFilter] = React.useState({ submit: false, type: '' });
   return (
@@ -23,7 +24,7 @@ export default function FormPost({
       flexDirection="column"
       justifyContent="space-between"
       alignItems="center"
-      backgroundColor="white"
+      backgroundColor="background.light"
       borderRadius="2%"
       height={{ xs: '95vh', sm: '65vh', md: '60vh' }}
       width={{
@@ -35,6 +36,7 @@ export default function FormPost({
       }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...propsModal}
+      mode={mode}
     >
       <CloseModal
         type="post"
@@ -43,6 +45,7 @@ export default function FormPost({
           setFilter({ submit: false, type: '' });
           resetPostForm();
         }}
+        mode={mode}
       />
       <PostImage image={image} filter={filter} setImage={setImage} />
       {filter.submit ? (
@@ -70,4 +73,5 @@ FormPost.propTypes = {
   onClose: PropTypes.func.isRequired,
   propsModal: PropTypes.object.isRequired,
   resetPostForm: PropTypes.func.isRequired,
+  mode: PropTypes.string.isRequired,
 };

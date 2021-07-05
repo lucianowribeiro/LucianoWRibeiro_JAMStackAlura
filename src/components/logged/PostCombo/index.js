@@ -32,6 +32,10 @@ const HeaderPost = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  & > svg:hover,& > svg:visited {
+    cursor: pointer;
+    filter: blur(0.8px);
+  }
   & > div {
     width: 35%;
     display: flex;
@@ -55,15 +59,18 @@ const IconsPost = styled.nav`
   & > * {
     height: 100%;
   }
+  & svg {
+    height: 75%;
+  }
+  & svg:hover,& svg:visited {
+    cursor: pointer;
+    filter: blur(0.8px);
+  }
   & > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 220px;
-  }
-  & > div > button {
-    padding: 0;
-    width: 32px;
   }
   & > div p {
     font-weight: 500;
@@ -142,11 +149,11 @@ export default function PostCombo({
       />
       <IconsPost>
         <div>
-          <LikeIcon isButton mode={webLogged.mode} />
+          <LikeIcon mode={webLogged.mode} color="tertiary.main" />
           <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
             {likes.length}
           </Text>
-          <MessageIcon />
+          <MessageIcon mode={webLogged.mode} />
           <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
             1.2k
           </Text>
@@ -173,9 +180,7 @@ export default function PostCombo({
           {description}
         </Text>
         <Button variant="tertiary.light" disabled mode={webLogged.mode}>
-          <Text tag="span" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
-            Mais
-          </Text>
+          Mais
         </Button>
       </DescriptionPost>
     </PostComboStyle>

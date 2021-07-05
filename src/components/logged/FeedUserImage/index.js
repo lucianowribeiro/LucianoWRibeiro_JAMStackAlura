@@ -8,6 +8,7 @@ import Box from '../../foundation/layout/Box';
 import LikeIcon from '../../../theme/LikeIcon';
 import Text from '../../foundation/Text';
 import likeService from '../../../infra/services/like/likeService';
+import { LoggedPageContext } from '../../wrappers/LoggedPage/context';
 
 const ImageStyle = styled.figure`
   position: relative;
@@ -71,6 +72,7 @@ const ImageStyle = styled.figure`
 export default function FeedUserImage({
   id, src, className, alt, likes,
 }) {
+  const webLogged = React.useContext(LoggedPageContext);
   const [like, setLike] = React.useState({
     have: false,
     ready: false,
@@ -111,8 +113,8 @@ export default function FeedUserImage({
             }
           }}
         >
-          <LikeIcon color="background.light" />
-          <Text color="primary.main">{like.numberLikes}</Text>
+          <LikeIcon color="white" mode={webLogged.mode} />
+          <Text color="primary.main" mode={webLogged.mode}>{like.numberLikes}</Text>
         </Box>
       )}
       {like.have && like.ready && (
@@ -149,7 +151,7 @@ export default function FeedUserImage({
               autoplay: true,
             }}
           />
-          <Text color="primary.main">{like.numberLikes}</Text>
+          <Text color="primary.main" mode={webLogged.mode}>{like.numberLikes}</Text>
         </Box>
       )}
     </ImageStyle>

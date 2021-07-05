@@ -15,6 +15,7 @@ import ErrorAnimation from '../../../theme/animations/ErrorAnimation.json';
 import LoadingAnimation from '../../../theme/animations/LoadingAnimation.json';
 import SuccessAnimation from '../../../theme/animations/SuccessAnimation.json';
 import Link from '../../commons/Link';
+import { WebPageContext } from '../../wrappers/WebPage/context';
 
 const formStates = {
   DEFAULT: 'DEFAULT',
@@ -23,8 +24,9 @@ const formStates = {
   ERROR: 'ERROR',
 };
 
-function UserContent({ mode }) {
+function UserContent() {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
+  const webpage = React.useContext(WebPageContext);
   const [submissionStatus, setSubmissionStatus] = React.useState(
     formStates.DEFAULT,
   );
@@ -66,9 +68,7 @@ function UserContent({ mode }) {
               if (respostaDoServidor.ok) {
                 return respostaDoServidor.json();
               }
-              throw new Error(
-                'Não foi possível cadastrar o usuário agora :(',
-              );
+              throw new Error('Não foi possível cadastrar o usuário agora :(');
             })
             .then((respostaConvertidaEmObjeto) => {
               setSubmissionStatus(formStates.DONE);
@@ -83,7 +83,7 @@ function UserContent({ mode }) {
         }, 2000);
       }}
     >
-      <Text variant="title" tag="h1" color="tertiary.main" mode={mode}>
+      <Text variant="title" tag="h1" color="tertiary.main" mode={webpage.mode}>
         Pronto para saber da vida dos outros?
       </Text>
 
@@ -92,10 +92,10 @@ function UserContent({ mode }) {
         tag="p"
         color="tertiary.light"
         marginBottom="32px"
-        mode={mode}
+        mode={webpage.mode}
       >
-        Você está a um passo de saber tudoo que está rolando no bairro,
-        complete seu cadastro agora!
+        Você está a um passo de saber tudoo que está rolando no bairro, complete
+        seu cadastro agora!
       </Text>
       <div>
         <TextField
@@ -103,7 +103,7 @@ function UserContent({ mode }) {
           placeholder="User"
           value={userInfo.user}
           onChange={handleChange}
-          mode={mode}
+          mode={webpage.mode}
         />
       </div>
       <div>
@@ -112,7 +112,7 @@ function UserContent({ mode }) {
           placeholder="Username"
           value={userInfo.username}
           onChange={handleChange}
-          mode={mode}
+          mode={webpage.mode}
         />
       </div>
       <Button
@@ -120,7 +120,7 @@ function UserContent({ mode }) {
         variant="primary.main"
         disabled={isfomInvalid}
         fullWidth
-        mode={mode}
+        mode={webpage.mode}
       >
         Cadastrar
       </Button>
@@ -129,56 +129,52 @@ function UserContent({ mode }) {
         tag="p"
         color="tertiary.main"
         textAlign="center"
-        mode={mode}
+        mode={webpage.mode}
       >
         Já tem uma conta?
         {' '}
-        <Link
-          href="/app/login"
-          color="secondary.main"
-          mode={mode}
-        >
+        <Link href="/app/login" color="secondary.main" mode={webpage.mode}>
           Entrar
         </Link>
       </Text>
       {isFormSubmited && submissionStatus === formStates.DONE && (
-      <Box display="flex" justifyContent="center">
-        <Lottie
-          width="150px"
-          height="150px"
-          config={{
-            animationData: SuccessAnimation,
-            loop: true,
-            autoplay: true,
-          }}
-        />
-      </Box>
+        <Box display="flex" justifyContent="center">
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{
+              animationData: SuccessAnimation,
+              loop: true,
+              autoplay: true,
+            }}
+          />
+        </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.LOADING && (
-      <Box display="flex" justifyContent="center">
-        <Lottie
-          width="150px"
-          height="150px"
-          config={{
-            animationData: LoadingAnimation,
-            loop: true,
-            autoplay: true,
-          }}
-        />
-      </Box>
+        <Box display="flex" justifyContent="center">
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{
+              animationData: LoadingAnimation,
+              loop: true,
+              autoplay: true,
+            }}
+          />
+        </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.ERROR && (
-      <Box display="flex" justifyContent="center">
-        <Lottie
-          width="150px"
-          height="150px"
-          config={{
-            animationData: ErrorAnimation,
-            loop: true,
-            autoplay: true,
-          }}
-        />
-      </Box>
+        <Box display="flex" justifyContent="center">
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{
+              animationData: ErrorAnimation,
+              loop: true,
+              autoplay: true,
+            }}
+          />
+        </Box>
       )}
     </form>
   );
@@ -186,7 +182,13 @@ function UserContent({ mode }) {
 
 export default function FormCadastro({ onClose, propsModal, mode }) {
   return (
-    <Grid.Row marginLeft={0} marginRight={0} flex={1} justifyContent="center" position="relative">
+    <Grid.Row
+      marginLeft={0}
+      marginRight={0}
+      flex={1}
+      justifyContent="center"
+      position="relative"
+    >
       <Grid.Col
         display="flex"
         backgroundColor="background.main"
@@ -196,7 +198,6 @@ export default function FormCadastro({ onClose, propsModal, mode }) {
       >
         <Box
           mode={mode}
-          /* boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)" */
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -215,17 +216,12 @@ export default function FormCadastro({ onClose, propsModal, mode }) {
             }}
             mode={mode}
           />
-          <UserContent mode={mode} />
-
+          <UserContent />
         </Box>
       </Grid.Col>
     </Grid.Row>
   );
 }
-UserContent.propTypes = {
-  mode: PropTypes.string.isRequired,
-};
-
 FormCadastro.propTypes = {
   onClose: PropTypes.func.isRequired,
   propsModal: PropTypes.object.isRequired,
