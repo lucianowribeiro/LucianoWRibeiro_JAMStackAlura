@@ -24,6 +24,7 @@ const MenuWrapper = styled.header`
       }
       & button:nth-child(3) {
         margin-right: 96px;
+        margin-left: 20px;
         order: 2;
       }
       & button:nth-child(4) {
@@ -54,6 +55,7 @@ const MenuWrapper = styled.header`
       }
       & button:nth-child(3) {
         margin-right: 32px;
+        margin-left: 0;
         order: 3;
       }
       & button:nth-child(4) {
