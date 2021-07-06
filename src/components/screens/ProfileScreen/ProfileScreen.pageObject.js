@@ -1,20 +1,33 @@
-export default class LoginScreenPageObject {
+import LoginScreenPageObject from '../LoginScreeen/LoginScreeen.pageObject';
+
+export default class ProfileScreenPageObject {
   constructor(cy) {
     this.cy = cy;
-
-    this.cy.visit('/app/profile');
   }
 
-  fillLoginForm({ user, password }) {
-    this.cy.get('#formCadastro input[name="usuario"]').type(user);
-    this.cy.get('#formCadastro input[name="senha"]').type(password);
+  toBeLogged() {
+    this.cy.intercept('https://instalura-api-git-master-omariosouto.vercel.app')
+      .as('userLogin');
+    const loginScreen = new LoginScreenPageObject(this.cy);
+    loginScreen
+      .fillLoginForm({ user: 'luciano', password: 'senhasegura' })
+      .submitLoginForm();
+    this.cy.url().should('include', '/app/profile');
+    this.cy.wait('@userLogin')
+      .then(() => this);
 
     return this;
   }
 
-  submitLoginForm() {
-    this.cy.get('#formCadastro button[type="submit"]').click();
+  openPostModal() {
+    this.cy.get('header > nav > button.openModal').click();
+    return this;
+  }
 
+  insertUrl(url) {
+    this.cy.get('aside article form input[name="image_url"]').type(url);
+    this.cy.get('aside article form button.changeUrl').click();
+    this.cy.get('aside article form button.submitUrl').click();
     return this;
   }
 }

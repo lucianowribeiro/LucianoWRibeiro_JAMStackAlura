@@ -40,6 +40,7 @@ export default function PostContent({ image, setImage, setFilter }) {
           mode={loggedPage.mode}
         />
         <Button
+          className="changeUrl"
           onClick={(event) => {
             event.preventDefault();
             setImage({
@@ -73,6 +74,7 @@ export default function PostContent({ image, setImage, setFilter }) {
         Formatos suportados: jpg, png, svg e xpto.
       </Text>
       <Button
+        className="submitUrl"
         onClick={(event) => {
           event.preventDefault();
           setFilter({ submit: true, type: '' });

@@ -27,7 +27,7 @@ export default function Menu({ mode, switchTheme }) {
           />
           <SearchIcon mode={mode} />
         </MenuWrapper.SearchSide>
-        <Button variant="background.light" onClick={webLogged.tooglePost} mode={mode}>
+        <Button className="openModal" variant="background.light" onClick={webLogged.tooglePost} mode={mode}>
           <AddIcon mode={mode} />
         </Button>
         <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(false)} mode={mode}>
