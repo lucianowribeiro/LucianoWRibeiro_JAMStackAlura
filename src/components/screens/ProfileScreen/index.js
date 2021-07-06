@@ -1,15 +1,15 @@
 /* eslint-disable dot-notation */
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
-import Grid from '../foundation/layout/Grid';
-import Text from '../foundation/Text';
-import { LoggedPageContext } from '../wrappers/LoggedPage';
-import Menu from '../logged/Menu';
-import PostCombo from '../logged/PostCombo';
-import UserDetail from '../logged/UserDetail';
-import UserAvatar from '../../theme/UserAvatar';
-import Box from '../foundation/layout/Box';
-import FeedUserImage from '../logged/FeedUserImage';
+import Grid from '../../foundation/layout/Grid';
+import Text from '../../foundation/Text';
+import { LoggedPageContext } from '../../wrappers/LoggedPage';
+import Menu from '../../logged/Menu';
+import PostCombo from '../../logged/PostCombo';
+import UserDetail from '../../logged/UserDetail';
+import UserAvatar from '../../../theme/UserAvatar';
+import Box from '../../foundation/layout/Box';
+import FeedUserImage from '../../logged/FeedUserImage';
 
 export default function ProfileScreen() {
   const webLogged = React.useContext(LoggedPageContext);
