@@ -30,4 +30,15 @@ export default class ProfileScreenPageObject {
     this.cy.get('aside article form button.submitUrl').click();
     return this;
   }
+
+  choiceFilter(filter) {
+    this.cy.get('.next > .flickity-button-icon').click();
+    this.cy.get(`aside article form button > img.filter-${filter}`).click();
+    return this;
+  }
+
+  submitImage() {
+    this.cy.get('aside article form > button.submitPost').click();
+    return this;
+  }
 }

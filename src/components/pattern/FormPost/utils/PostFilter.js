@@ -108,6 +108,7 @@ export default function PostFilter({
             ))}
           </Flickity>
           <Button
+            className="submitPost"
             form="filters"
             style={{ width: '80%', marginTop: '2.5rem' }}
             variant="primary.main"
@@ -140,6 +141,7 @@ export default function PostFilter({
           }}
         >
           <Lottie
+            className="animationSucess"
             width="100px"
             height="100px"
             config={{
@@ -167,6 +169,7 @@ export default function PostFilter({
           }}
         >
           <Lottie
+            className="animationError"
             width="100px"
             height="100px"
             config={{

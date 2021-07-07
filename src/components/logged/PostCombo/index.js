@@ -188,10 +188,11 @@ export default function PostCombo({
 }
 PostCombo.defaultProps = {
   likes: [],
+  filter: 'none',
 };
 PostCombo.propTypes = {
   url: PropTypes.string.isRequired,
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.string,
   likes: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string,
