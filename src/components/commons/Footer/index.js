@@ -1,6 +1,10 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
-import RedHeart from '../../../theme/RedHeart';
+import HeartIcon from '../../../theme/icons/HeartIcon';
+import Text from '../../foundation/Text';
+import Link from '../Link';
+import AluraIcon from '../../../theme/icons/AluraIcon';
 
 const FooterWrapper = styled.footer`
   padding: 14px;
@@ -10,12 +14,12 @@ const FooterWrapper = styled.footer`
   border-radius: 4px; 
   padding-right: 28px;
   padding-left: 28px;
-  img {
+  & > a > svg {
     width: 58px;
-    margin-right: 23px;
+    margin-right: 12px;
+    margin-bottom: 6px;
   }
-  a {
-    color: ${({ theme }) => theme.colors.primary.main.color};
+  & a {
     text-decoration: none;
     transition: .3s;
     &:hover,
@@ -25,30 +29,29 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-export default function Footer(props) {
+export default function Footer({ ...props }) {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
-      <a href="https://www.alura.com.br/">
-        <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
-      </a>
-      <p>
+      <Link href="https://www.alura.com.br/">
+        <AluraIcon {...props} />
+      </Link>
+      <Text tag="p" color="tertiary.main" {...props}>
         Criado com
-        <RedHeart />
+        <HeartIcon {...props} />
         por
         {' '}
-        <a href="https://github.com/lucianowribeiro/">
-          <span>@lucianowribeiro</span>
-        </a>
+        <Link href="https://github.com/lucianowribeiro/" color="primary.main" {...props}>
+          <Text>@lucianowribeiro</Text>
+        </Link>
         {' '}
         durante
         {' '}
         o
         {' '}
-        <a href="https://www.alura.com.br/">
-          <span>Bootcamp Alura JAM Stack</span>
-        </a>
-      </p>
+        <Link href="https://www.alura.com.br/" color="primary.main" {...props}>
+          <Text>Bootcamp Alura JAM Stack</Text>
+        </Link>
+      </Text>
     </FooterWrapper>
   );
 }

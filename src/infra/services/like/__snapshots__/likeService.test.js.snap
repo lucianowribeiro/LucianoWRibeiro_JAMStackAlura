@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`likeService like() when click on image and it fails return null and keeping the same number of likes 1`] = `null`;
+
+exports[`likeService like() when click on image and succeed setting the number of likes 1`] = `
+Object {
+  "__v": 0,
+  "_id": "some id",
+  "createdAt": "some data",
+  "description": "some description",
+  "filter": "some filter",
+  "likes": Array [
+    Object {
+      "_id": "some id",
+      "user": "some user",
+    },
+  ],
+  "photoUrl": "https://images.endeavor.org.br/uploads/2015/05/simples-nacional1.jpg",
+  "updatedAt": "some data 2",
+  "user": "some user",
+}
+`;

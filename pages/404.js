@@ -6,5 +6,8 @@ export default webPageHOC(Screen404, {
     seoProps: {
       headTitle: '404',
     },
+    boxProps: {
+      backgroundImage: 'none',
+    },
   },
 });

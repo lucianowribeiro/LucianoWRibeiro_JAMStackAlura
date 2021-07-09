@@ -1,17 +1,21 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Lottie } from '@crello/react-lottie';
-
-import Button from '../../commons/Button';
-import Grid from '../../foundation/layout/Grid';
+import PropTypes from 'prop-types';
 import Box from '../../foundation/layout/Box';
+import Grid from '../../foundation/layout/Grid';
+import CloseModalIcon from '../../../theme/icons/CloseModalIcon';
+// eslint-disable-next-line react/prop-types
+import Button from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Text from '../../foundation/Text';
-import CloseModal from '../../../theme/CloseModal';
 
-import ErrorAnimation from '../animations/ErrorAnimation.json';
-import LoadingAnimation from '../animations/LoadingAnimation.json';
-import SuccessAnimation from '../animations/SuccessAnimation.json';
+import ErrorAnimation from '../../../theme/animations/ErrorAnimation.json';
+import LoadingAnimation from '../../../theme/animations/LoadingAnimation.json';
+import SuccessAnimation from '../../../theme/animations/SuccessAnimation.json';
+import Link from '../../commons/Link';
+import { WebPageContext } from '../../wrappers/WebPage/context';
 
 const formStates = {
   DEFAULT: 'DEFAULT',
@@ -20,9 +24,12 @@ const formStates = {
   ERROR: 'ERROR',
 };
 
-function FormContent() {
+function UserContent() {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
-  const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
+  const webpage = React.useContext(WebPageContext);
+  const [submissionStatus, setSubmissionStatus] = React.useState(
+    formStates.DEFAULT,
+  );
 
   const [userInfo, setUserInfo] = React.useState({
     user: '',
@@ -37,7 +44,6 @@ function FormContent() {
       [nameField]: valueField,
     });
   }
-
   const isfomInvalid = userInfo.user.length === 0 || userInfo.username.length === 0;
   return (
     <form
@@ -77,7 +83,7 @@ function FormContent() {
         }, 2000);
       }}
     >
-      <Text variant="title" tag="h1" color="tertiary.main">
+      <Text variant="title" tag="h1" color="tertiary.main" mode={webpage.mode}>
         Pronto para saber da vida dos outros?
       </Text>
 
@@ -86,6 +92,7 @@ function FormContent() {
         tag="p"
         color="tertiary.light"
         marginBottom="32px"
+        mode={webpage.mode}
       >
         Você está a um passo de saber tudoo que está rolando no bairro, complete
         seu cadastro agora!
@@ -96,6 +103,7 @@ function FormContent() {
           placeholder="User"
           value={userInfo.user}
           onChange={handleChange}
+          mode={webpage.mode}
         />
       </div>
       <div>
@@ -104,6 +112,7 @@ function FormContent() {
           placeholder="Username"
           value={userInfo.username}
           onChange={handleChange}
+          mode={webpage.mode}
         />
       </div>
       <Button
@@ -111,42 +120,59 @@ function FormContent() {
         variant="primary.main"
         disabled={isfomInvalid}
         fullWidth
+        mode={webpage.mode}
       >
         Cadastrar
       </Button>
-      {isFormSubmited && submissionStatus === formStates.DONE && (
-      <Box
-        display="flex"
-        justifyContent="center"
+      <Text
+        variant="paragraph1"
+        tag="p"
+        color="tertiary.main"
+        textAlign="center"
+        mode={webpage.mode}
       >
-        <Lottie
-          width="150px"
-          height="150px"
-          config={{ animationData: SuccessAnimation, loop: true, autoplay: true }}
-        />
-      </Box>
-      )}
-      {isFormSubmited && submissionStatus === formStates.LOADING && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
+        Já tem uma conta?
+        {' '}
+        <Link href="/app/login" color="secondary.main" mode={webpage.mode}>
+          Entrar
+        </Link>
+      </Text>
+      {isFormSubmited && submissionStatus === formStates.DONE && (
+        <Box display="flex" justifyContent="center">
           <Lottie
             width="150px"
             height="150px"
-            config={{ animationData: LoadingAnimation, loop: true, autoplay: true }}
+            config={{
+              animationData: SuccessAnimation,
+              loop: true,
+              autoplay: true,
+            }}
+          />
+        </Box>
+      )}
+      {isFormSubmited && submissionStatus === formStates.LOADING && (
+        <Box display="flex" justifyContent="center">
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{
+              animationData: LoadingAnimation,
+              loop: true,
+              autoplay: true,
+            }}
           />
         </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.ERROR && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
+        <Box display="flex" justifyContent="center">
           <Lottie
             width="150px"
             height="150px"
-            config={{ animationData: ErrorAnimation, loop: true, autoplay: true }}
+            config={{
+              animationData: ErrorAnimation,
+              loop: true,
+              autoplay: true,
+            }}
           />
         </Box>
       )}
@@ -154,39 +180,50 @@ function FormContent() {
   );
 }
 
-// eslint-disable-next-line react/prop-types
-export default function FormCadastro({ onClose, propsModal }) {
+export default function FormCadastro({ onClose, propsModal, mode }) {
   return (
-    <Grid.Row marginLeft={0} marginRight={0} flex={1} justifyContent="flex-end">
+    <Grid.Row
+      marginLeft={0}
+      marginRight={0}
+      flex={1}
+      justifyContent="center"
+      position="relative"
+    >
       <Grid.Col
         display="flex"
-        flexDirection="row-reverse"
-        backgroundColor="white"
+        backgroundColor="background.main"
         paddingRight={{ md: '0' }}
         value={{ xs: 12, md: 5, lg: 4 }}
+        mode={mode}
       >
-        <CloseModal
-          onClick={() => {
-            onClose();
-          }}
-        />
         <Box
-          /* boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)" */
+          mode={mode}
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          flex={1}
+          backgroundColor="background.main"
           padding={{
             xs: '16px',
             md: '85px',
           }}
-          backgroundColor="white"
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsModal}
         >
-          <FormContent />
+          <CloseModalIcon
+            type="user"
+            onClick={() => {
+              onClose();
+            }}
+            mode={mode}
+          />
+          <UserContent />
         </Box>
       </Grid.Col>
     </Grid.Row>
   );
 }
+FormCadastro.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  propsModal: PropTypes.object.isRequired,
+  mode: PropTypes.string.isRequired,
+};

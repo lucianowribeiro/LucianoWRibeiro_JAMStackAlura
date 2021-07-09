@@ -7,10 +7,10 @@ import Button from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Box from '../../foundation/layout/Box';
 import useForm from '../../../infra/hooks/form/UseForm';
-import loginService from '../../../services/login/loginService';
+import loginService from '../../../infra/services/login/loginService';
 import Text from '../../foundation/Text';
-import ErrorAnimation from '../animations/ErrorAnimation.json';
-import LoadingAnimation from '../animations/LoadingAnimation.json';
+import ErrorAnimation from '../../../theme/animations/ErrorAnimation.json';
+import LoadingAnimation from '../../../theme/animations/LoadingAnimation.json';
 
 const loginSchema = yup.object().shape({
   usuario: yup
@@ -23,7 +23,7 @@ const loginSchema = yup.object().shape({
     .min(8, 'Sua senha precisa ter ao menos 8 caracteres'),
 });
 
-export default function FormLogin({ onSubmit }) {
+export default function FormLogin({ onSubmit, mode }) {
   const router = useRouter();
   const initialValues = {
     usuario: '',
@@ -41,14 +41,13 @@ export default function FormLogin({ onSubmit }) {
       setAnimationSubmit(loginStatus.LOADING);
       form.setIsFormDisabled(true);
       loginService.login({
-        username: values.usuario, // 'omariosouto'
-        password: values.senha, // 'senhasegura'
+        username: values.usuario,
+        password: values.senha,
       })
         .then(() => {
           router.push('/app/profile');
         })
         .catch((error) => {
-          // Desafio: Mostrar o erro na tela
           setMessageError(error.message);
           setAnimationSubmit(loginStatus.ERROR);
         })
@@ -73,6 +72,7 @@ export default function FormLogin({ onSubmit }) {
         isTouched={form.touched.usuario}
         onChange={form.handleChange}
         onBlur={form.handleBlur}
+        mode={mode}
       />
       <TextField
         placeholder="Senha"
@@ -83,6 +83,7 @@ export default function FormLogin({ onSubmit }) {
         isTouched={form.touched.senha}
         onChange={form.handleChange}
         onBlur={form.handleBlur}
+        mode={mode}
       />
 
       <Button
@@ -94,6 +95,7 @@ export default function FormLogin({ onSubmit }) {
         }}
         fullWidth
         disabled={form.isFormDisabled}
+        mode={mode}
       >
         Entrar
       </Button>
@@ -112,6 +114,7 @@ export default function FormLogin({ onSubmit }) {
           <Text
             variant="smallestException"
             color="error.main"
+            mode={mode}
           >
             {messagError}
           </Text>
@@ -131,6 +134,7 @@ export default function FormLogin({ onSubmit }) {
           <Text
             variant="smallestException"
             color="success.main"
+            mode={mode}
           >
             LOADING ...
           </Text>
@@ -145,4 +149,5 @@ FormLogin.defaultProps = {
 
 FormLogin.propTypes = {
   onSubmit: PropTypes.func,
+  mode: PropTypes.string.isRequired,
 };

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { get } from 'lodash';
 import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
 import propToStyle from '../../../../theme/utils/propToStyle';
 
@@ -45,6 +46,8 @@ const Grid = {
     ${propToStyle('marginTop')}
     ${propToStyle('marginBottom')}
     ${propToStyle('flexDirection')}
+    ${propToStyle('position')}
+    
 
   `,
   Col: styled.div`
@@ -141,6 +144,7 @@ const Grid = {
     });
   }}
     ${propToStyle('display')}
+    ${propToStyle('flexWrap')}
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
@@ -150,6 +154,11 @@ const Grid = {
     ${propToStyle('backgroundColor')}
     ${propToStyle('height')}
     ${propToStyle('order')}
+    ${propToStyle('marginTop')}
+    ${propToStyle('marginBottom')}
+    ${propToStyle('marginLeft')}
+    ${propToStyle('textAlign')}
+    ${({ theme, backgroundColor, mode }) => backgroundColor && `background-color: ${get(theme, `${mode}.${backgroundColor}.color`)}`}
   `,
 };
 export default Grid;

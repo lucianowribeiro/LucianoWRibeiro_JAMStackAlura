@@ -19,6 +19,7 @@ describe('<FormLogin />', () => {
       await act(async () => render(
         <FormLogin
           onSubmit={onSubmit}
+          mode="dark"
         />,
       ));
 
@@ -42,7 +43,7 @@ describe('<FormLogin />', () => {
 
   describe('when form fields are invalid', () => {
     test('displays the respective errors', async () => {
-      render(<FormLogin onSubmit={onSubmit} />);
+      render(<FormLogin onSubmit={onSubmit} mode="teste" />);
 
       const inputUsuario = screen.getByPlaceholderText('Usuário');
       inputUsuario.focus();

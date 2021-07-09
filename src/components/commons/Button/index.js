@@ -2,21 +2,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import { TextStyleVariantsMap } from '../../foundation/Text';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import propToStyle from '../../../theme/utils/propToStyle';
 import Link from '../Link';
 
 const ButtonGhost = css`
-  color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
+  color: ${({ theme, variant, mode }) => get(theme, `${mode}.${variant}.color`)};
   background: transparent;
 `;
 
 const ButtonDefault = css`
-  color: white;
-  background-color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
-  color: ${(props) => get(props.theme, `colors.${props.variant}.contrastText`)};
+  background-color: ${({ theme, variant, mode }) => get(theme, `${mode}.${variant}.color`)};
+  color: ${({ theme, variant, mode }) => get(theme, `${mode}.${variant}.contrastText`)};
 `;
 
 const ButtonWrapper = styled.button`
@@ -24,9 +23,7 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   padding: 12px 26px;
   font-weight: bold;
-  opacity: 1;
   border-radius: 8px;
-
   ${TextStyleVariantsMap.smallestException}
 
   ${(props) => {
@@ -36,10 +33,10 @@ const ButtonWrapper = styled.button`
     return ButtonDefault;
   }}
   transition: opacity ${({ theme }) => theme.transition};
-  border-radius: ${(props) => props.theme.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius};
   &:hover,
   &:focus {
-    opacity: 0.5;
+    filter: blur(0.9px);
   }
 
   ${breakpointsMedia({
@@ -54,7 +51,7 @@ const ButtonWrapper = styled.button`
   })}
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.2;
+    ${({ mode }) => (mode === 'light' ? css`opacity: 0.2` : css`opacity: 0.5`)};
   }
   ${({ fullWidth }) => fullWidth
     && css`
