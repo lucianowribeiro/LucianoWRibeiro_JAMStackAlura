@@ -16,7 +16,7 @@ export default function ProfileScreen() {
   return (
     <>
       <Menu mode={webLogged.mode} switchTheme={webLogged.switchTheme} />
-      {webLogged.isUserPerfil && (
+      {webLogged.isFeed && (
         <Grid.Container as="main">
           <Grid.Row as="article">
             <Grid.Col
@@ -117,7 +117,7 @@ export default function ProfileScreen() {
           </Grid.Row>
         </Grid.Container>
       )}
-      {!webLogged.isUserPerfil && (
+      {!webLogged.isFeed && (
         <Grid.Container as="main">
           <Grid.Row as="article">
             <Grid.Col

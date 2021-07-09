@@ -41,8 +41,8 @@ export default function FormLogin({ onSubmit, mode }) {
       setAnimationSubmit(loginStatus.LOADING);
       form.setIsFormDisabled(true);
       loginService.login({
-        username: values.usuario, // 'omariosouto'
-        password: values.senha, // 'senhasegura'
+        username: values.usuario,
+        password: values.senha,
       })
         .then(() => {
           router.push('/app/profile');

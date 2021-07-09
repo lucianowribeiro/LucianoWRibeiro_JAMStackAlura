@@ -30,11 +30,11 @@ export default function Menu({ mode, switchTheme }) {
         <Button className="openModal" variant="background.light" onClick={webLogged.tooglePost} mode={mode}>
           <AddIcon mode={mode} />
         </Button>
-        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(false)} mode={mode}>
+        <Button variant="background.light" onClick={() => webLogged.toogleFeed(false)} mode={mode}>
           <HomeIcon mode={mode} />
         </Button>
         <LikeIcon variant="background.light" isButton color="tertiary.main" mode={mode} />
-        <Button variant="background.light" onClick={() => webLogged.toogleUserPerfil(true)} mode={mode}>
+        <Button className="openFeed" variant="background.light" onClick={() => webLogged.toogleFeed(true)} mode={mode}>
           <UserAvatar size="smallest" />
         </Button>
         <Button variant="background.light" onClick={switchTheme} mode={mode}>

@@ -11,7 +11,7 @@ import FormPost from '../../pattern/FormPost';
 export { LoggedPageContext } from './context';
 
 export default function LoggedPage({ children, profile }) {
-  const [isUserPerfil, setUserPerfil] = React.useState(false);
+  const [isFeed, setFeed] = React.useState(false);
   const [isPostOpen, setPostOpen] = React.useState(false);
   const [isTheme, setTheme] = React.useState('light');
   const [image, setImage] = React.useState({
@@ -23,9 +23,9 @@ export default function LoggedPage({ children, profile }) {
   return (
     <LoggedPageContext.Provider
       value={{
-        toogleUserPerfil: (status) => setUserPerfil(status),
+        toogleFeed: (status) => setFeed(status),
         tooglePost: () => setPostOpen(!isPostOpen),
-        isUserPerfil,
+        isFeed,
         profile,
         mode: isTheme,
         switchTheme: () => (isTheme === 'light' ? setTheme('dark') : setTheme('light')),

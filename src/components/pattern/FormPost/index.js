@@ -39,6 +39,7 @@ export default function FormPost({
       mode={mode}
     >
       <CloseModalIcon
+        className="closeFormPost"
         type="post"
         onClick={() => {
           onClose();

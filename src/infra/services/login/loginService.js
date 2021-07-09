@@ -13,7 +13,7 @@ const loginService = {
       method: 'POST',
       body: {
         username,
-        password, // 'senhasegura'
+        password,
       },
     })
       .then((respostaConvertida) => {

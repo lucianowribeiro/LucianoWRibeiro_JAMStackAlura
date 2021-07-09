@@ -1,21 +1,14 @@
-import LoginScreenPageObject from '../LoginScreeen/LoginScreeen.pageObject';
-
 export default class ProfileScreenPageObject {
   constructor(cy) {
     this.cy = cy;
   }
 
   toBeLogged() {
-    this.cy.intercept('https://instalura-api-git-master-omariosouto.vercel.app')
-      .as('userLogin');
-    const loginScreen = new LoginScreenPageObject(this.cy);
-    loginScreen
-      .fillLoginForm({ user: 'luciano', password: 'senhasegura' })
-      .submitLoginForm();
-    this.cy.url().should('include', '/app/profile');
-    this.cy.wait('@userLogin')
-      .then(() => this);
-
+    Cypress.Cookies.defaults({
+      preserve: 'TOKEN_APP',
+    });
+    this.cy.setCookie('TOKEN_APP', 'yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzN2JmODY2NDcyOTUwMDA3M2I3ZDgyIiwidXNlcm5hbWUiOiJsdWNpYW5vIiwicm9sZSI6WyJ1c2VyIl19LCJpYXQiOjE2MjU4NTE3NDIsImV4cCI6MTYyNjQ1NjU0Mn0.9xouT1u2DcpNlahkwI4iVAjhL-4WruW2cxmH5f5-lLY');
+    this.cy.visit('/app/profile');
     return this;
   }
 
@@ -39,6 +32,13 @@ export default class ProfileScreenPageObject {
 
   submitImage() {
     this.cy.get('aside article form > button.submitPost').click();
+    return this;
+  }
+
+  viewImage() {
+    this.cy.reload();
+    this.cy.url().should('include', '/app/profile');
+    this.cy.get('header > nav > button.openFeed').click();
     return this;
   }
 }

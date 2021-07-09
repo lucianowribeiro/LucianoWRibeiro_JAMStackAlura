@@ -1,9 +1,9 @@
 import React from 'react';
 // eslint-disable-next-line import/prefer-default-export
 export const LoggedPageContext = React.createContext({
-  toogleUserPerfil: () => {},
+  toogleFeed: () => {},
   tooglePost: () => {},
-  isUserPerfil: false,
+  isFeed: false,
   profile: {},
   mode: '',
   switchTheme: () => {},
