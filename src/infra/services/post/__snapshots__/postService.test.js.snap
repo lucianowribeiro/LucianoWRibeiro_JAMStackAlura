@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`postService post() when user post an image and it fails return null 1`] = `null`;
+
+exports[`postService post() when user post an image and succeed store the post data 1`] = `
+Object {
+  "__v": 0,
+  "_id": "some id",
+  "createdAt": "some data",
+  "description": "some description",
+  "filter": "some filter",
+  "likes": Array [],
+  "photoUrl": "some url",
+  "updatedAt": "some data 2",
+  "user": "some user",
+}
+`;

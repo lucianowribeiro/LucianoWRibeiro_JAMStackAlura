@@ -7,10 +7,10 @@ const BASE_URL = isStagingEnv
   : 'https://instalura-api-omariosouto.vercel.app';
 
 const postService = {
-  async post(data) {
+  async post(data, HttpClientModule = HttpClient, authServiceModule = authService) {
     try {
-      const token = await authService().getToken();
-      const response = await HttpClient(`${BASE_URL}/api/posts`, {
+      const token = await authServiceModule().getToken();
+      const response = await HttpClientModule(`${BASE_URL}/api/posts`, {
         method: 'POST',
         body: data,
         headers: {

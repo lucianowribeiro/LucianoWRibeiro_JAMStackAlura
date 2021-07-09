@@ -19,7 +19,7 @@ describe('<FormLogin />', () => {
       await act(async () => render(
         <FormLogin
           onSubmit={onSubmit}
-          mode="teste"
+          mode="dark"
         />,
       ));
 

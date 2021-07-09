@@ -1,3 +1,5 @@
+import { LOGIN_APP_TOKEN } from '../../../infra/services/login/loginService';
+
 export default class ProfileScreenPageObject {
   constructor(cy) {
     this.cy = cy;
@@ -5,9 +7,9 @@ export default class ProfileScreenPageObject {
 
   toBeLogged() {
     Cypress.Cookies.defaults({
-      preserve: 'TOKEN_APP',
+      preserve: LOGIN_APP_TOKEN,
     });
-    this.cy.setCookie('TOKEN_APP', 'yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzN2JmODY2NDcyOTUwMDA3M2I3ZDgyIiwidXNlcm5hbWUiOiJsdWNpYW5vIiwicm9sZSI6WyJ1c2VyIl19LCJpYXQiOjE2MjU4NTE3NDIsImV4cCI6MTYyNjQ1NjU0Mn0.9xouT1u2DcpNlahkwI4iVAjhL-4WruW2cxmH5f5-lLY');
+    this.cy.setCookie(LOGIN_APP_TOKEN, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzN2JmODY2NDcyOTUwMDA3M2I3ZDgyIiwidXNlcm5hbWUiOiJsdWNpYW5vIiwicm9sZSI6WyJ1c2VyIl19LCJpYXQiOjE2MjU4NTU5NzUsImV4cCI6MTYyNjQ2MDc3NX0.HZOcjrOJLXVm7xxhCkK87zHr7cKud7ZXLM_dZKQGGwY');
     this.cy.visit('/app/profile');
     return this;
   }

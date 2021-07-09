@@ -151,6 +151,7 @@ export default function PostCombo({
         <div>
           <LikeIcon mode={webLogged.mode} color="tertiary.main" />
           <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
+            {console.log(likes)}
             {likes.length}
           </Text>
           <MessageIcon mode={webLogged.mode} />

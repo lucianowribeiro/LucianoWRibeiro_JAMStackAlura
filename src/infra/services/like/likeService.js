@@ -7,10 +7,10 @@ const BASE_URL = isStagingEnv
   : 'https://instalura-api-omariosouto.vercel.app';
 
 const likeService = {
-  async like(id, data) {
+  async like(id, data, HttpClientModule = HttpClient) {
     try {
       const token = await authService().getToken();
-      const response = await HttpClient(`${BASE_URL}/api/posts/${id}/like`, {
+      const response = await HttpClientModule(`${BASE_URL}/api/posts/${id}/like`, {
         method: 'POST',
         body: { data },
         headers: {
