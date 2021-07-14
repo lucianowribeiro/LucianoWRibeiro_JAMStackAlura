@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`postService getProfilePage() when user post an image and it fails return null and keeping the same number of likes 1`] = `null`;
-
-exports[`postService getProfilePage() when user post an image and succeed set the number of likes 1`] = `null`;
