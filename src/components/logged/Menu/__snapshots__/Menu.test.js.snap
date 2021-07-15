@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HomeIcon /> renders component 1`] = `
+exports[`<HomeIcon /> renders component with light theme 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": .c1 {
@@ -488,7 +488,7 @@ Object {
             />
           </button>
           <button
-            class="c7"
+            class="c7 swichTheme"
             mode="light"
           >
             <svg
@@ -680,7 +680,7 @@ Object {
           />
         </button>
         <button
-          class="Button__ButtonWrapper-dey3sw-0 gCsKCo"
+          class="Button__ButtonWrapper-dey3sw-0 gCsKCo swichTheme"
           mode="light"
         >
           <svg

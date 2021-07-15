@@ -37,7 +37,7 @@ export default function Menu({ mode, switchTheme }) {
         <Button className="openFeed" variant="background.light" onClick={() => webLogged.toogleFeed(true)} mode={mode}>
           <UserAvatar size="smallest" />
         </Button>
-        <Button variant="background.light" onClick={switchTheme} mode={mode}>
+        <Button className="swichTheme" variant="background.light" onClick={switchTheme} mode={mode}>
           <SwitchIcon mode={mode} />
         </Button>
       </MenuWrapper.LeftSide>
