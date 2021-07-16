@@ -11,16 +11,20 @@ describe('<HomeIcon />', () => {
       render(
         <Menu mode="dark" switchTheme={onSwitchMock} />,
       );
-      user.click(screen.getByRole('navigation').lastChild);
+      const switchButton = screen.getByRole('navigation').lastChild;
+      user.click(switchButton);
       expect(onSwitchMock).toHaveBeenCalledTimes(1);
+      expect(switchButton).toMatchSnapshot();
     });
     test('with light theme', () => {
       const onSwitchMock = jest.fn();
       render(
         <Menu mode="light" switchTheme={onSwitchMock} />,
       );
-      user.click(screen.getByRole('navigation').lastChild);
+      const switchButton = screen.getByRole('navigation').lastChild;
+      user.click(switchButton);
       expect(onSwitchMock).toHaveBeenCalledTimes(1);
+      expect(switchButton).toMatchSnapshot();
     });
   });
 });
