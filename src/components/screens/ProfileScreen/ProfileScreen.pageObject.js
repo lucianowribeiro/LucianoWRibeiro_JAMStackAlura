@@ -9,7 +9,7 @@ export default class ProfileScreenPageObject {
     Cypress.Cookies.defaults({
       preserve: LOGIN_APP_TOKEN,
     });
-    this.cy.setCookie(LOGIN_APP_TOKEN, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzN2JmODY2NDcyOTUwMDA3M2I3ZDgyIiwidXNlcm5hbWUiOiJsdWNpYW5vIiwicm9sZSI6WyJ1c2VyIl19LCJpYXQiOjE2MjU4NTU5NzUsImV4cCI6MTYyNjQ2MDc3NX0.HZOcjrOJLXVm7xxhCkK87zHr7cKud7ZXLM_dZKQGGwY');
+    this.cy.setCookie(LOGIN_APP_TOKEN, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAzN2JmODY2NDcyOTUwMDA3M2I3ZDgyIiwidXNlcm5hbWUiOiJsdWNpYW5vIiwicm9sZSI6WyJ1c2VyIl19LCJpYXQiOjE2MjY1MjY3ODksImV4cCI6MTYyNzEzMTU4OX0.rxm1MyiW0GLwkQPbLlTbEIDO0DLgXEt3BZCYMEjZCLY');
     this.cy.visit('/app/profile');
     return this;
   }

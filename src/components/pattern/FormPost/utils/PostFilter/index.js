@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Flickity from 'react-flickity-component';
 import { Lottie } from '@crello/react-lottie';
-import Button from '../../../commons/Button';
-import Box from '../../../foundation/layout/Box';
-import LoadingAnimation from '../../../../theme/animations/LoadingAnimation.json';
-import ErrorAnimation from '../../../../theme/animations/ErrorAnimation.json';
-import SuccessAnimation from '../../../../theme/animations/SuccessAnimation.json';
-import postService from '../../../../infra/services/post/postService';
-import Text from '../../../foundation/Text';
-import { LoggedPageContext } from '../../../wrappers/LoggedPage/context';
+import Button from '../../../../commons/Button';
+import Box from '../../../../foundation/layout/Box';
+import LoadingAnimation from '../../../../../theme/animations/LoadingAnimation.json';
+import ErrorAnimation from '../../../../../theme/animations/ErrorAnimation.json';
+import SuccessAnimation from '../../../../../theme/animations/SuccessAnimation.json';
+import postService from '../../../../../infra/services/post/postService';
+import Text from '../../../../foundation/Text';
+import { LoggedPageContext } from '../../../../wrappers/LoggedPage/context';
 
 export default function PostFilter({
   url, setFilter, filterType, reset,

@@ -7,7 +7,12 @@ describe('<UserDetail />', () => {
   describe('renders component', () => {
     test('with props default', () => {
       const component = render(
-        <UserDetail spacing="test" username="username" name="name" size="other" />,
+        <UserDetail
+          spacing="test"
+          username="username"
+          name="name"
+          size="other"
+        />,
       );
       // verify size and src
       const userAvatar = screen.getByRole('img', { name: /user avatar/i });
@@ -19,41 +24,48 @@ describe('<UserDetail />', () => {
       //
       expect(component).toMatchSnapshot();
     });
-    test('with src setted and big size', () => {
-      render(
-        // verify spacing component
-        <UserDetail
-          src="https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg"
-          spacing="big"
-          username="teste"
-          name="teste"
-          size="big"
-        />,
-      );
-
-      // verify size and src
-
-      // verify user and username
-      //
-      // expect(component).toMatchSnapshot();
-    });
     test('with src setted and small size', () => {
       const component = render(
-        // verify spacing component
         <UserDetail
           src="https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg"
           spacing="small"
-          username="teste"
-          name="teste"
+          username="username"
+          name="name"
           size="small"
         />,
       );
-      expect(component.baseElement).toHaveStyle('padding: 0 0 10px 0');
       // verify size and src
-
-      // verify user and username
+      const userAvatar = screen.getByRole('img', { name: /user avatar/i });
+      expect(userAvatar).toHaveAttribute(
+        'src',
+        'https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg',
+      );
+      expect(userAvatar).toHaveStyle({ width: '38.2px', height: '38.2px' });
       //
-      // expect(component).toMatchSnapshot();
+      expect(component).toMatchSnapshot();
+    });
+    test('with src setted and big size', () => {
+      const component = render(
+        <UserDetail
+          src="https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg"
+          spacing="big"
+          username="username"
+          name="name"
+          size="big"
+        />,
+      );
+      // verify size and src
+      const userAvatar = screen.getByRole('img', { name: /user avatar/i });
+      expect(userAvatar).toHaveAttribute(
+        'src',
+        'https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg',
+      );
+      expect(userAvatar).toHaveStyle({
+        width: '64px',
+        height: '64px',
+      });
+      //
+      expect(component).toMatchSnapshot();
     });
   });
 });

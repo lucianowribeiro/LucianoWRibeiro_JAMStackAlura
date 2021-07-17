@@ -127,7 +127,7 @@ const DescriptionPost = styled.div`
 `;
 
 export default function PostCombo({
-  likes, description, filter, url,
+  likes, description, filter, url, username,
 }) {
   const webLogged = React.useContext(LoggedPageContext);
   return (
@@ -136,7 +136,7 @@ export default function PostCombo({
         <div>
           <UserAvatar size="medium" />
           <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
-            {webLogged.profile.user.username}
+            {username}
           </Text>
         </div>
         <MoreIcon mode={webLogged.mode} />
@@ -151,7 +151,6 @@ export default function PostCombo({
         <div>
           <LikeIcon mode={webLogged.mode} color="tertiary.main" />
           <Text tag="p" variant="paragraph1" color="tertiary.main" mode={webLogged.mode}>
-            {console.log(likes)}
             {likes.length}
           </Text>
           <MessageIcon mode={webLogged.mode} />
@@ -201,4 +200,5 @@ PostCombo.propTypes = {
     }),
   ),
   description: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
 };

@@ -135,6 +135,7 @@ export default function ProfileScreen() {
                   url={post.photoUrl}
                   likes={post.likes}
                   description={post.description}
+                  username={webLogged.profile.user.username}
                 />
               ))}
             </Grid.Col>

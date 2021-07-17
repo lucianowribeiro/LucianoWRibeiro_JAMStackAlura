@@ -70,15 +70,11 @@ function UserContent() {
               }
               throw new Error('Não foi possível cadastrar o usuário agora :(');
             })
-            .then((respostaConvertidaEmObjeto) => {
+            .then(() => {
               setSubmissionStatus(formStates.DONE);
-              // eslint-disable-next-line no-console
-              console.log(respostaConvertidaEmObjeto);
             })
-            .catch((error) => {
+            .catch(() => {
               setSubmissionStatus(formStates.ERROR);
-              // eslint-disable-next-line no-console
-              console.error(error);
             });
         }, 2000);
       }}

@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeedUserImage /> renders component clicking in a feed image to open like animation 1`] = `
+.c1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0 > img {
+  width: 100%;
+  height: 100%;
+}
+
+.c0 > div:hover {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.c0 > div {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 > div > svg {
+  width: 20%;
+  height: 20%;
+  margin-bottom: 12px;
+}
+
+.c0 > div > span {
+  font-weight: bold;
+}
+
+@media only screen and (min-width:0px) {
+  .c0 {
+    width: 32%;
+    height: 110px;
+    margin: 0.1rem;
+  }
+}
+
+@media only screen and (min-width:480px) {
+  .c0 {
+    width: 31%;
+    height: 130px;
+    margin: 0.2rem;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .c0 {
+    width: 45%;
+    height: 270px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width:992px) {
+  .c0 {
+    width: 28%;
+    height: 250px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .c0 {
+    width: 30%;
+    height: 300px;
+    margin: 1rem;
+  }
+}
+
+<figure
+  class="c0"
+>
+  <img
+    alt="test feed"
+    class="filter-1977"
+    loading="lazy"
+    src="https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg"
+  />
+  <div
+    class=""
+  >
+    <svg
+      fill="none"
+      height="32"
+      viewBox="0 0 32 32"
+      width="32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M27.7867 6.1469C27.1057 5.46558 26.2971 4.9251 25.4071 4.55635C24.5172 4.1876 23.5633 3.9978 22.6 3.9978C21.6367 3.9978 20.6828 4.1876 19.7929 4.55635C18.9029 4.9251 18.0943 5.46558 17.4133 6.1469L16 7.56024L14.5867 6.1469C13.2111 4.77131 11.3454 3.99852 9.4 3.99852C7.45462 3.99852 5.58892 4.77131 4.21333 6.1469C2.83774 7.52249 2.06494 9.38819 2.06494 11.3336C2.06494 13.2789 2.83774 15.1446 4.21333 16.5202L5.62666 17.9336L16 28.3069L26.3733 17.9336L27.7867 16.5202C28.468 15.8392 29.0085 15.0307 29.3772 14.1407C29.746 13.2508 29.9358 12.2969 29.9358 11.3336C29.9358 10.3703 29.746 9.41637 29.3772 8.52643C29.0085 7.63648 28.468 6.82791 27.7867 6.1469V6.1469Z"
+        stroke="primary.main"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2.66667"
+      />
+    </svg>
+    <span
+      class="c1"
+      color="primary.main"
+      mode=""
+    >
+      1
+    </span>
+  </div>
+</figure>
+`;
+
+exports[`<FeedUserImage /> renders component with initial state 1`] = `
+.c0 {
+  position: relative;
+}
+
+.c0 > img {
+  width: 100%;
+  height: 100%;
+}
+
+.c0 > div:hover {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.c0 > div {
+  z-index: 20;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 > div > svg {
+  width: 20%;
+  height: 20%;
+  margin-bottom: 12px;
+}
+
+.c0 > div > span {
+  font-weight: bold;
+}
+
+@media only screen and (min-width:0px) {
+  .c0 {
+    width: 32%;
+    height: 110px;
+    margin: 0.1rem;
+  }
+}
+
+@media only screen and (min-width:480px) {
+  .c0 {
+    width: 31%;
+    height: 130px;
+    margin: 0.2rem;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .c0 {
+    width: 45%;
+    height: 270px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width:992px) {
+  .c0 {
+    width: 28%;
+    height: 250px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width:1200px) {
+  .c0 {
+    width: 30%;
+    height: 300px;
+    margin: 1rem;
+  }
+}
+
+<figure
+  class="c0"
+>
+  <img
+    alt="test feed"
+    class="filter-1977"
+    loading="lazy"
+    src="https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg"
+  />
+</figure>
+`;
