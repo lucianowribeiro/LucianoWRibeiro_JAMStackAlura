@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HomeIcon /> renders component with dark theme 1`] = `
+exports[`<Menu /> renders component with dark theme switch theme 1`] = `
 .c1 {
   display: inline-block;
   vertical-align: middle;
@@ -104,7 +104,7 @@ exports[`<HomeIcon /> renders component with dark theme 1`] = `
 </button>
 `;
 
-exports[`<HomeIcon /> renders component with light theme 1`] = `
+exports[`<Menu /> renders component with light theme and switch theme 1`] = `
 .c1 {
   display: inline-block;
   vertical-align: middle;

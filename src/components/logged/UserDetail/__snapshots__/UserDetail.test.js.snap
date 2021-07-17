@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserDetail /> renders component with props default 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .c2 {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  padding: 0;
+  padding: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  width: 180px;
+  margin-left: 20px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100px;
+}
+
+.c4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+<body>
+    <div>
+      <div
+        class="c0"
+        display="flex"
+      >
+        <div
+          class="c1"
+          display="flex"
+        >
+          <img
+            alt="user avatar"
+            class="c2"
+            src="https://images.unsplash.com/photo-1618678900888-da259539f5ef?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE4NzYzMTky&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600"
+          />
+          <div
+            class="c3"
+            width="180px"
+          >
+            <h2
+              class="c4"
+              color="tertiary.main"
+              mode=""
+              style="font-weight: 500; margin-bottom: 4px;"
+            >
+              username
+            </h2>
+            <h3
+              class="c4"
+              color="tertiary.light"
+              mode=""
+              style="font-weight: 500; margin-top: 4px;"
+            >
+              name
+            </h3>
+          </div>
+        </div>
+        <div
+          class="c5"
+          display="flex"
+          width="100px"
+        >
+          <svg
+            fill="none"
+            height="23"
+            viewBox="0 0 22 23"
+            width="22"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 21.9999V18.1299C15.0375 17.6531 14.9731 17.1737 14.811 16.7237C14.6489 16.2737 14.3929 15.8634 14.06 15.5199C17.2 15.1699 20.5 13.9799 20.5 8.51994C20.4997 7.12376 19.9627 5.78114 19 4.76994C19.4559 3.54844 19.4236 2.19829 18.91 0.999938C18.91 0.999938 17.73 0.649938 15 2.47994C12.708 1.85876 10.292 1.85876 8 2.47994C5.27 0.649938 4.09 0.999938 4.09 0.999938C3.57638 2.19829 3.54414 3.54844 4 4.76994C3.03013 5.78864 2.49252 7.1434 2.5 8.54994C2.5 13.9699 5.8 15.1599 8.94 15.5499C8.611 15.8899 8.35726 16.2953 8.19531 16.7399C8.03335 17.1844 7.96681 17.658 8 18.1299V21.9999M8 18.9999C3 20.4999 3 16.4999 1 15.9999L8 18.9999Z"
+              stroke="#FFA59A"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+          <h3
+            class="c4"
+            color="secondary.main"
+            mode=""
+            style="margin: 0px; font-weight: 500;"
+          >
+            Github
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="Box-sc-1swxen0-0 dcpqcd"
+      display="flex"
+    >
+      <div
+        class="Box-sc-1swxen0-0 gODeHs"
+        display="flex"
+      >
+        <img
+          alt="user avatar"
+          class="UserAvatar__UserStyle-sc-8cb7v6-0 ikxryg"
+          src="https://images.unsplash.com/photo-1618678900888-da259539f5ef?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE4NzYzMTky&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600"
+        />
+        <div
+          class="Box-sc-1swxen0-0 bnjTTF"
+          width="180px"
+        >
+          <h2
+            class="Text__TextBase-s0iq10-0 gviOmd"
+            color="tertiary.main"
+            mode=""
+            style="font-weight: 500; margin-bottom: 4px;"
+          >
+            username
+          </h2>
+          <h3
+            class="Text__TextBase-s0iq10-0 gviOmd"
+            color="tertiary.light"
+            mode=""
+            style="font-weight: 500; margin-top: 4px;"
+          >
+            name
+          </h3>
+        </div>
+      </div>
+      <div
+        class="Box-sc-1swxen0-0 brwULZ"
+        display="flex"
+        width="100px"
+      >
+        <svg
+          fill="none"
+          height="23"
+          viewBox="0 0 22 23"
+          width="22"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15 21.9999V18.1299C15.0375 17.6531 14.9731 17.1737 14.811 16.7237C14.6489 16.2737 14.3929 15.8634 14.06 15.5199C17.2 15.1699 20.5 13.9799 20.5 8.51994C20.4997 7.12376 19.9627 5.78114 19 4.76994C19.4559 3.54844 19.4236 2.19829 18.91 0.999938C18.91 0.999938 17.73 0.649938 15 2.47994C12.708 1.85876 10.292 1.85876 8 2.47994C5.27 0.649938 4.09 0.999938 4.09 0.999938C3.57638 2.19829 3.54414 3.54844 4 4.76994C3.03013 5.78864 2.49252 7.1434 2.5 8.54994C2.5 13.9699 5.8 15.1599 8.94 15.5499C8.611 15.8899 8.35726 16.2953 8.19531 16.7399C8.03335 17.1844 7.96681 17.658 8 18.1299V21.9999M8 18.9999C3 20.4999 3 16.4999 1 15.9999L8 18.9999Z"
+            stroke="#FFA59A"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+        <h3
+          class="Text__TextBase-s0iq10-0 gviOmd"
+          color="secondary.main"
+          mode=""
+          style="margin: 0px; font-weight: 500;"
+        >
+          Github
+        </h3>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
