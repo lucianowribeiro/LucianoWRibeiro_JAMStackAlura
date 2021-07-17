@@ -6,9 +6,9 @@ export default webPageHOC(HomeScreen, {
   pageProps: {
     seoProps: {
       headTitle: 'Home',
+      pathName: 'Home',
     },
     boxProps: {
-      backgroundImage: 'url(/images/bubbles.svg)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom right',
     },

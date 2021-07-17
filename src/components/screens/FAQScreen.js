@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Text from '../foundation/Text';
 import Box from '../foundation/layout/Box';
 import Grid from '../foundation/layout/Grid';
+import { WebPageContext } from '../wrappers/WebPage/context';
 
 export default function FAQScreen({ faqCategories }) {
+  const webPageContext = React.useContext(WebPageContext);
   return (
     <Grid.Container style={{ flex: 1 }}>
       <Grid.Row
@@ -18,6 +20,7 @@ export default function FAQScreen({ faqCategories }) {
             tag="h2"
             color="tertiary.main"
             textAlign="center"
+            mode={webPageContext.mode}
           >
             Como podemos te ajudar?
           </Text>
@@ -33,6 +36,7 @@ export default function FAQScreen({ faqCategories }) {
                     tag="h2"
                     color="tertiary.main"
                     marginBottom="26px"
+                    mode={webPageContext.mode}
                   >
                     {category.title}
                   </Text>
@@ -45,6 +49,7 @@ export default function FAQScreen({ faqCategories }) {
                           variant="paragraph1"
                           tag="h2"
                           color="tertiary.light"
+                          mode={webPageContext.mode}
                         >
                           {question.title}
                         </Text>

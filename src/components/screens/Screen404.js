@@ -3,8 +3,10 @@ import Text from '../foundation/Text';
 import Grid from '../foundation/layout/Grid';
 import Button from '../commons/Button';
 import Box from '../foundation/layout/Box';
+import { WebPageContext } from '../wrappers/WebPage/context';
 
 export default function Screen404() {
+  const webPageContext = React.useContext(WebPageContext);
   return (
     <Box
       display="flex"
@@ -23,12 +25,14 @@ export default function Screen404() {
               tag="h1"
               variant="title"
               color="tertiary.main"
+              mode={webPageContext.mode}
             >
               Parece que algo não esta certo :P
             </Text>
             <Button
               variant="primary.main"
               href="/"
+              mode={webPageContext.mode}
             >
               Voltar
             </Button>

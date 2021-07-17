@@ -3,26 +3,27 @@ import React from 'react';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+import { get } from 'lodash';
 
 const StyledLink = styled.a`
-  color: inherit;
-  ${({ theme, color }) => (color
-    ? `color: ${get(theme, `colors.${color}.color`)}`
+  ${({ theme, mode, color }) => (color
+    ? `color: ${get(theme, `${mode}.${color}.color`)}`
     : 'color: inherit;')};
   text-decoration: none;
-  opacity: 1;
   transition: opacity ${({ theme }) => theme.transition};
+  opacity: 1;
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: .7;
   }
 `;
 
-export default function Link({ children, href, ...props }) {
+export default function Link({
+  children, href, color, ...props
+}) {
   return (
     <NextLink href={href} passHref>
-      <StyledLink {...props}>
+      <StyledLink color={color} {...props}>
         {children}
       </StyledLink>
     </NextLink>
@@ -31,5 +32,9 @@ export default function Link({ children, href, ...props }) {
 
 Link.propTypes = {
   href: PropTypes.string.isRequired,
+  color: PropTypes.string,
   children: PropTypes.node.isRequired,
+};
+Link.defaultProps = {
+  color: 'primary.main',
 };

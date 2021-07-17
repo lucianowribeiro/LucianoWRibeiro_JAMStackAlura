@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> renders component with dark theme switch theme 1`] = `
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  border: 0;
+  cursor: pointer;
+  padding: 12px 26px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  background-color: #000;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  border-radius: 12px;
+}
+
+.c0:hover,
+.c0:focus {
+  -webkit-filter: blur(0.9px);
+  filter: blur(0.9px);
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c2 {
+  color: #FFFFFF;
+  width: 32px;
+  height: 32px;
+}
+
+.c2:hover,
+.c2:visited {
+  color: #F27895;
+}
+
+@media only screen and (min-width:0px) {
+
+}
+
+@media only screen and (min-width:768px) {
+
+}
+
+@media only screen and (min-width:0px) {
+
+}
+
+@media only screen and (min-width:768px) {
+
+}
+
+@media only screen and (min-width:0px) {
+
+}
+
+@media only screen and (min-width:768px) {
+
+}
+
+@media only screen and (min-width:0px) {
+  .c0 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .c0 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+<button
+  class="c0 swichTheme"
+  mode="dark"
+>
+  <svg
+    aria-hidden="true"
+    class="c1 c2"
+    fill="currentColor"
+    focusable="false"
+    mode="dark"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M13 3H7a7 7 0 100 14h6a7 7 0 100-14zm0 12a5 5 0 11.001-10.001A5 5 0 0113 15z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`<Menu /> renders component with light theme and switch theme 1`] = `
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  border: 0;
+  cursor: pointer;
+  padding: 12px 26px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  background-color: #FFFFFF;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  border-radius: 12px;
+}
+
+.c0:hover,
+.c0:focus {
+  -webkit-filter: blur(0.9px);
+  filter: blur(0.9px);
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+.c2 {
+  color: #070C0E;
+  width: 32px;
+  height: 32px;
+}
+
+.c2:hover,
+.c2:visited {
+  color: #D7385E;
+}
+
+@media only screen and (min-width:0px) {
+
+}
+
+@media only screen and (min-width:768px) {
+
+}
+
+@media only screen and (min-width:0px) {
+
+}
+
+@media only screen and (min-width:768px) {
+
+}
+
+@media only screen and (min-width:0px) {
+
+}
+
+@media only screen and (min-width:768px) {
+
+}
+
+@media only screen and (min-width:0px) {
+  .c0 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .c0 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+<button
+  class="c0 swichTheme"
+  mode="light"
+>
+  <svg
+    aria-hidden="true"
+    class="c1 c2"
+    fill="currentColor"
+    focusable="false"
+    mode="light"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M13 3H7a7 7 0 100 14h6a7 7 0 100-14zm0 12a5 5 0 11.001-10.001A5 5 0 0113 15z"
+    />
+  </svg>
+</button>
+`;

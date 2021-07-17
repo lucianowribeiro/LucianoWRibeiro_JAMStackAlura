@@ -1,0 +1,679 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostCombo /> renders component with props 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .c3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.c7 {
+  border: 0;
+  cursor: pointer;
+  padding: 12px 26px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  border-radius: 12px;
+}
+
+.c7:hover,
+.c7:focus {
+  -webkit-filter: blur(0.9px);
+  filter: blur(0.9px);
+}
+
+.c7:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c2 {
+  border-radius: 50%;
+  width: 50.93px;
+  height: 51.07px;
+}
+
+.c6 {
+  border-radius: 50%;
+  width: 38.2px;
+  height: 38.2px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.c0 > img {
+  width: 100%;
+}
+
+.c1 {
+  padding: 50px 0;
+  width: 85%;
+  height: 52px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 > svg:hover,
+.c1 > svg:visited {
+  cursor: pointer;
+  -webkit-filter: blur(0.8px);
+  filter: blur(0.8px);
+}
+
+.c1 > div {
+  width: 35%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+
+.c1 > div * {
+  margin-left: 20px;
+}
+
+.c1 > div > p {
+  font-weight: 500;
+}
+
+.c4 {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 85%;
+  height: 80px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4 > * {
+  height: 100%;
+}
+
+.c4 svg {
+  height: 75%;
+}
+
+.c4 svg:hover,
+.c4 svg:visited {
+  cursor: pointer;
+  -webkit-filter: blur(0.8px);
+  filter: blur(0.8px);
+}
+
+.c4 > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 220px;
+}
+
+.c4 > div p {
+  font-weight: 500;
+}
+
+.c5 {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  width: 85%;
+  height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 > div {
+  position: relative;
+}
+
+.c5 > div img {
+  height: 32px;
+  width: 32px;
+  border: 2px solid;
+}
+
+.c5 > div img:first-child(1) {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+}
+
+.c5 > div img:nth-child(2) {
+  z-index: 6;
+  top: 0;
+  left: -30px;
+  position: absolute;
+}
+
+.c5 > div img:nth-child(3) {
+  z-index: 5;
+  top: 0;
+  left: -15px;
+  position: absolute;
+}
+
+.c5 button:disabled {
+  padding: 6px 12px;
+}
+
+@media only screen and (min-width:0px) {
+  .c7 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .c7 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@media only screen and (min-width:0px) {
+  .c5 > p {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width:992px) {
+  .c5 > p {
+    width: initial;
+  }
+}
+
+<body>
+    <div>
+      <article
+        class="c0"
+        mode=""
+      >
+        <nav
+          class="c1"
+        >
+          <div>
+            <img
+              alt="user avatar"
+              class="c2"
+              src="https://images.unsplash.com/photo-1618678900888-da259539f5ef?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE4NzYzMTky&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600"
+            />
+            <p
+              class="c3"
+              color="tertiary.main"
+              mode=""
+            >
+              username
+            </p>
+          </div>
+          <svg
+            fill="none"
+            height="39"
+            viewBox="0 0 39 39"
+            width="39"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.1142 21.0695C19.9932 21.0695 20.7057 20.355 20.7057 19.4736C20.7057 18.5922 19.9932 17.8777 19.1142 17.8777C18.2352 17.8777 17.5227 18.5922 17.5227 19.4736C17.5227 20.355 18.2352 21.0695 19.1142 21.0695Z"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.19078"
+            />
+            <path
+              d="M30.2546 21.0695C31.1336 21.0695 31.8461 20.355 31.8461 19.4736C31.8461 18.5922 31.1336 17.8777 30.2546 17.8777C29.3756 17.8777 28.6631 18.5922 28.6631 19.4736C28.6631 20.355 29.3756 21.0695 30.2546 21.0695Z"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.19078"
+            />
+            <path
+              d="M7.97335 21.0695C8.85232 21.0695 9.56486 20.355 9.56486 19.4736C9.56486 18.5922 8.85232 17.8777 7.97335 17.8777C7.09438 17.8777 6.38184 18.5922 6.38184 19.4736C6.38184 20.355 7.09438 21.0695 7.97335 21.0695Z"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.19078"
+            />
+          </svg>
+        </nav>
+        <img
+          alt="post face"
+          class="filter-filter-1977"
+          loading="lazy"
+          src="https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg"
+        />
+        <nav
+          class="c4"
+        >
+          <div>
+            <svg
+              fill="none"
+              height="32"
+              viewBox="0 0 32 32"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27.7867 6.1469C27.1057 5.46558 26.2971 4.9251 25.4071 4.55635C24.5172 4.1876 23.5633 3.9978 22.6 3.9978C21.6367 3.9978 20.6828 4.1876 19.7929 4.55635C18.9029 4.9251 18.0943 5.46558 17.4133 6.1469L16 7.56024L14.5867 6.1469C13.2111 4.77131 11.3454 3.99852 9.4 3.99852C7.45462 3.99852 5.58892 4.77131 4.21333 6.1469C2.83774 7.52249 2.06494 9.38819 2.06494 11.3336C2.06494 13.2789 2.83774 15.1446 4.21333 16.5202L5.62666 17.9336L16 28.3069L26.3733 17.9336L27.7867 16.5202C28.468 15.8392 29.0085 15.0307 29.3772 14.1407C29.746 13.2508 29.9358 12.2969 29.9358 11.3336C29.9358 10.3703 29.746 9.41637 29.3772 8.52643C29.0085 7.63648 28.468 6.82791 27.7867 6.1469V6.1469Z"
+                stroke="tertiary.main"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.66667"
+              />
+            </svg>
+            <p
+              class="c3"
+              color="tertiary.main"
+              mode=""
+            >
+              1
+            </p>
+            <svg
+              fill="none"
+              height="33"
+              viewBox="0 0 33 33"
+              width="33"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.1221 15.3166C31.1275 17.423 30.6368 19.5009 29.6897 21.381C28.5668 23.6341 26.8405 25.5291 24.7042 26.8539C22.5679 28.1787 20.106 28.8809 17.5942 28.8819C15.4936 28.8873 13.4215 28.3952 11.5465 27.4455L2.47485 30.4778L5.49873 21.381C4.55167 19.5009 4.06089 17.423 4.06637 15.3166C4.06734 12.7978 4.7676 10.3291 6.08873 8.18688C7.40986 6.04468 9.29966 4.31362 11.5465 3.18759C13.4215 2.23791 15.4936 1.74577 17.5942 1.75127H18.39C21.7072 1.93478 24.8404 3.33882 27.1897 5.69455C29.5389 8.05028 30.9391 11.1922 31.1221 14.5186V15.3166Z"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3.19078"
+              />
+            </svg>
+            <p
+              class="c3"
+              color="tertiary.main"
+              mode=""
+            >
+              1.2k
+            </p>
+            <svg
+              fill="none"
+              height="40"
+              viewBox="0 0 39 40"
+              width="39"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M35.2598 4.15527L17.7532 21.7104"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3.19078"
+              />
+              <path
+                d="M35.2597 4.15527L24.1191 36.0736L17.7531 21.7104L3.42944 15.3267L35.2597 4.15527Z"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3.19078"
+              />
+            </svg>
+          </div>
+          <svg
+            fill="none"
+            height="32"
+            viewBox="0 0 26 32"
+            width="26"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.2543 30.4777L13.1137 22.4981L1.97314 30.4777V4.94305C1.97314 4.09653 2.3085 3.28467 2.90543 2.68609C3.50236 2.0875 4.31198 1.75122 5.15617 1.75122H21.0713C21.9155 1.75122 22.7251 2.0875 23.322 2.68609C23.9189 3.28467 24.2543 4.09653 24.2543 4.94305V30.4777Z"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.19078"
+            />
+          </svg>
+        </nav>
+        <div
+          class="c5"
+          mode=""
+        >
+          <div>
+            <img
+              alt="user avatar"
+              class="c6"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLKybvXmdnFY15zYfKKEHh1DxA0USfX8vw85Eu6f34E1rDIciMTjX5PQsOaa61HIXIzuY&usqp=CAU"
+            />
+            <img
+              alt="user avatar"
+              class="c6"
+              src="https://ocdn.eu/images/pulscms/Mjc7MDA_/e2340fc4d1c27ba063115973a477ef87.jpeg"
+            />
+            <img
+              alt="user avatar"
+              class="c6"
+              src="https://extra.globo.com/incoming/24287426-475-b4d/w976h550-PROP/ronaldinho-gaucho-2.jpg"
+            />
+          </div>
+          <p
+            class="c3"
+            color="tertiary.main"
+            mode=""
+          >
+            some description
+          </p>
+          <button
+            class="c7"
+            disabled=""
+            mode=""
+          >
+            Mais
+          </button>
+        </div>
+      </article>
+    </div>
+  </body>,
+  "container": <div>
+    <article
+      class="PostCombo__PostComboStyle-sc-12t5dqj-0 hdpWML"
+      mode=""
+    >
+      <nav
+        class="PostCombo__HeaderPost-sc-12t5dqj-1 cYnDNc"
+      >
+        <div>
+          <img
+            alt="user avatar"
+            class="UserAvatar__UserStyle-sc-8cb7v6-0 jTkPUY"
+            src="https://images.unsplash.com/photo-1618678900888-da259539f5ef?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE4NzYzMTky&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600"
+          />
+          <p
+            class="Text__TextBase-s0iq10-0 gviOmd"
+            color="tertiary.main"
+            mode=""
+          >
+            username
+          </p>
+        </div>
+        <svg
+          fill="none"
+          height="39"
+          viewBox="0 0 39 39"
+          width="39"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19.1142 21.0695C19.9932 21.0695 20.7057 20.355 20.7057 19.4736C20.7057 18.5922 19.9932 17.8777 19.1142 17.8777C18.2352 17.8777 17.5227 18.5922 17.5227 19.4736C17.5227 20.355 18.2352 21.0695 19.1142 21.0695Z"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3.19078"
+          />
+          <path
+            d="M30.2546 21.0695C31.1336 21.0695 31.8461 20.355 31.8461 19.4736C31.8461 18.5922 31.1336 17.8777 30.2546 17.8777C29.3756 17.8777 28.6631 18.5922 28.6631 19.4736C28.6631 20.355 29.3756 21.0695 30.2546 21.0695Z"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3.19078"
+          />
+          <path
+            d="M7.97335 21.0695C8.85232 21.0695 9.56486 20.355 9.56486 19.4736C9.56486 18.5922 8.85232 17.8777 7.97335 17.8777C7.09438 17.8777 6.38184 18.5922 6.38184 19.4736C6.38184 20.355 7.09438 21.0695 7.97335 21.0695Z"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3.19078"
+          />
+        </svg>
+      </nav>
+      <img
+        alt="post face"
+        class="filter-filter-1977"
+        loading="lazy"
+        src="https://sites.google.com/site/minhasemoco/_/rsrc/1342875510991/config/Google%20-%20Google%20Chrome.jpg"
+      />
+      <nav
+        class="PostCombo__IconsPost-sc-12t5dqj-2 cKumiH"
+      >
+        <div>
+          <svg
+            fill="none"
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27.7867 6.1469C27.1057 5.46558 26.2971 4.9251 25.4071 4.55635C24.5172 4.1876 23.5633 3.9978 22.6 3.9978C21.6367 3.9978 20.6828 4.1876 19.7929 4.55635C18.9029 4.9251 18.0943 5.46558 17.4133 6.1469L16 7.56024L14.5867 6.1469C13.2111 4.77131 11.3454 3.99852 9.4 3.99852C7.45462 3.99852 5.58892 4.77131 4.21333 6.1469C2.83774 7.52249 2.06494 9.38819 2.06494 11.3336C2.06494 13.2789 2.83774 15.1446 4.21333 16.5202L5.62666 17.9336L16 28.3069L26.3733 17.9336L27.7867 16.5202C28.468 15.8392 29.0085 15.0307 29.3772 14.1407C29.746 13.2508 29.9358 12.2969 29.9358 11.3336C29.9358 10.3703 29.746 9.41637 29.3772 8.52643C29.0085 7.63648 28.468 6.82791 27.7867 6.1469V6.1469Z"
+              stroke="tertiary.main"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.66667"
+            />
+          </svg>
+          <p
+            class="Text__TextBase-s0iq10-0 gviOmd"
+            color="tertiary.main"
+            mode=""
+          >
+            1
+          </p>
+          <svg
+            fill="none"
+            height="33"
+            viewBox="0 0 33 33"
+            width="33"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31.1221 15.3166C31.1275 17.423 30.6368 19.5009 29.6897 21.381C28.5668 23.6341 26.8405 25.5291 24.7042 26.8539C22.5679 28.1787 20.106 28.8809 17.5942 28.8819C15.4936 28.8873 13.4215 28.3952 11.5465 27.4455L2.47485 30.4778L5.49873 21.381C4.55167 19.5009 4.06089 17.423 4.06637 15.3166C4.06734 12.7978 4.7676 10.3291 6.08873 8.18688C7.40986 6.04468 9.29966 4.31362 11.5465 3.18759C13.4215 2.23791 15.4936 1.74577 17.5942 1.75127H18.39C21.7072 1.93478 24.8404 3.33882 27.1897 5.69455C29.5389 8.05028 30.9391 11.1922 31.1221 14.5186V15.3166Z"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.19078"
+            />
+          </svg>
+          <p
+            class="Text__TextBase-s0iq10-0 gviOmd"
+            color="tertiary.main"
+            mode=""
+          >
+            1.2k
+          </p>
+          <svg
+            fill="none"
+            height="40"
+            viewBox="0 0 39 40"
+            width="39"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M35.2598 4.15527L17.7532 21.7104"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.19078"
+            />
+            <path
+              d="M35.2597 4.15527L24.1191 36.0736L17.7531 21.7104L3.42944 15.3267L35.2597 4.15527Z"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3.19078"
+            />
+          </svg>
+        </div>
+        <svg
+          fill="none"
+          height="32"
+          viewBox="0 0 26 32"
+          width="26"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24.2543 30.4777L13.1137 22.4981L1.97314 30.4777V4.94305C1.97314 4.09653 2.3085 3.28467 2.90543 2.68609C3.50236 2.0875 4.31198 1.75122 5.15617 1.75122H21.0713C21.9155 1.75122 22.7251 2.0875 23.322 2.68609C23.9189 3.28467 24.2543 4.09653 24.2543 4.94305V30.4777Z"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3.19078"
+          />
+        </svg>
+      </nav>
+      <div
+        class="PostCombo__DescriptionPost-sc-12t5dqj-3 isucSX"
+        mode=""
+      >
+        <div>
+          <img
+            alt="user avatar"
+            class="UserAvatar__UserStyle-sc-8cb7v6-0 eveDzs"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLKybvXmdnFY15zYfKKEHh1DxA0USfX8vw85Eu6f34E1rDIciMTjX5PQsOaa61HIXIzuY&usqp=CAU"
+          />
+          <img
+            alt="user avatar"
+            class="UserAvatar__UserStyle-sc-8cb7v6-0 eveDzs"
+            src="https://ocdn.eu/images/pulscms/Mjc7MDA_/e2340fc4d1c27ba063115973a477ef87.jpeg"
+          />
+          <img
+            alt="user avatar"
+            class="UserAvatar__UserStyle-sc-8cb7v6-0 eveDzs"
+            src="https://extra.globo.com/incoming/24287426-475-b4d/w976h550-PROP/ronaldinho-gaucho-2.jpg"
+          />
+        </div>
+        <p
+          class="Text__TextBase-s0iq10-0 gviOmd"
+          color="tertiary.main"
+          mode=""
+        >
+          some description
+        </p>
+        <button
+          class="Button__ButtonWrapper-dey3sw-0 hxjHNE"
+          disabled=""
+          mode=""
+        >
+          Mais
+        </button>
+      </div>
+    </article>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

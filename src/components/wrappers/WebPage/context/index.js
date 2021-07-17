@@ -3,4 +3,5 @@ import React from 'react';
 export const WebPageContext = React.createContext({
   toogleModalCadastro: () => {},
   getCMSContent: (csmkey) => csmkey,
+  mode: '',
 });

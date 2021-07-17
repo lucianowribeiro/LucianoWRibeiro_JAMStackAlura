@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-const ModalWrapper = styled.div`
+const ModalWrapper = styled.aside`
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    background: rgba(0,0,0,0.1);
+    justify-content: flex-start;
+    background: rgba(0,0,0,0.4);
     position: fixed;
     top: 0;
     left: 0;
@@ -17,6 +17,7 @@ const ModalWrapper = styled.div`
     overflow: scroll;
     transition: .3s;
     z-index: 100;
+    backdrop-filter: blur(10px);
     ${({ isOpen }) => {
     if (isOpen) {
       return css`
@@ -44,25 +45,26 @@ function Modal({ isOpen, onClose, children }) {
       isOpen={isOpen}
       onClick={(event) => {
         const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
-        if (!isSafeArea) onClose();
+        if (!isSafeArea) {
+          onClose();
+        }
       }}
     >
       {isOpen && <LockScroll />}
       <motion.div
         variants={{
           open: {
-            x: 0,
+            y: 180,
           },
           close: {
-            x: '100%',
+            y: 0,
           },
         }}
         animate={isOpen ? 'open' : 'closed'}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.2 }}
         style={{
           display: 'flex',
-          flex: 1,
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
         }}
       >
         {children({

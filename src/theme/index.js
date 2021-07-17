@@ -1,6 +1,6 @@
 import typographyVariants from './typographyVariants';
 
-const colors = {
+const light = {
   background: {
     light: {
       color: '#FFFFFF',
@@ -49,8 +49,55 @@ const colors = {
       contrastText: '#fff',
     },
   },
-  modes: {
-    dark: [],
+};
+const dark = {
+  background: {
+    light: {
+      color: '#000',
+    },
+    main: {
+      color: '#030506',
+    },
+  },
+  borders: {
+    main: {
+      color: '#181F22',
+    },
+  },
+  primary: {
+    main: {
+      color: '#F27895',
+      contrastText: '#fff',
+    },
+  },
+  secondary: {
+    main: {
+      color: '#FFA59A',
+      contrastText: '#000',
+    },
+  },
+  tertiary: {
+    main: {
+      color: '#FFFFFF',
+      contrastText: '#fff',
+    },
+    light: {
+      color: '#D5D5D5',
+      contrastText: '#fff',
+    },
+  },
+  // Feedback colors
+  error: {
+    main: {
+      color: '#EB5C50',
+      contrastText: '#fff',
+    },
+  },
+  success: {
+    main: {
+      color: '#28a745',
+      contrastText: '#fff',
+    },
   },
 };
 const breakpoints = {
@@ -61,7 +108,8 @@ const breakpoints = {
   xl: 1200,
 };
 export default {
-  colors,
+  light,
+  dark,
   typographyVariants,
   breakpoints,
   borderRadius: '12px',
