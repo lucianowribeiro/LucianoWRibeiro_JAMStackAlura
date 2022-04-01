@@ -45,7 +45,7 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-flickity-component": "^3.6.1",
-    "react-is": "^16.8.0",
+    "react-is": "^18.0.0",
     "start-server-and-test": "^1.12.1",
     "styled-components": "^5.0.0",
     "styled-normalize": "^8.0.7",
